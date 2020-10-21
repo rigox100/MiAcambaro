@@ -1,0 +1,20 @@
+input.input-clean { 
+    border: none !important; 
+    background-color: white !important;  
+    color: #000000; 
+
+} 
+
+input:focus { 
+    outline: none; 
+}  
+
+a.lock{
+    pointer-events: none;
+}
+
+.img-anuncio{
+    -webkit-box-shadow: 10px 10px 19px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 19px -6px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 19px -6px rgba(0,0,0,0.75);
+  }
