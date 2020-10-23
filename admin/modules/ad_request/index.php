@@ -24,13 +24,13 @@ $solicitudes = Solicitud::recuperarTodos();
           ?>
             <h3>Solicitudes de anuncio</h3> <br>
           <?php  if (count($solicitudes) > 0): ?>
-            <table class="table table-bordered" >
+            <table class="table table-bordered" id="table-data">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Folio</th>
       <th scope="col">Fecha </th>
       <th scope="col">Solicitante</th>
-      <th scope="col">RFC</th>
+      <!--<th scope="col">RFC</th>-->
       <th scope="col">Negocio</th>
       <th scope="col">Estatus</th>
       <th scope="col">Revisar</th>
@@ -47,7 +47,7 @@ $solicitudes = Solicitud::recuperarTodos();
       <td><?php echo $item[0] ?></td>
       <td><?php echo $item[22] ?></td>
       <td><?php echo $item[16]." ".$item[17] ?></td>
-      <td><?php echo $item[4] ?></td>
+      <!--<td><?php //echo $item[4] ?></td>-->
       <td><?php  echo $item[2] ?></td>
       <td>
         <?php

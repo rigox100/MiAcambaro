@@ -60,10 +60,12 @@ Revisa las <a href="../lib/validar_solicitud.php" data-toggle="modal" data-targe
             <input class="form-control" type="file" name="url_imagen" id="url_imagen">
             </div>
 
+            
             <div class="form-group">
-            <label for="rfc">RFC</label>
-            <input class="form-control" type="text" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="<?php echo $solicitud->getRFC()?>">
+            <!--<label for="rfc">RFC</label>-->
+            <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
             </div>
+          
 
             <div class="form-group">
             <label for="tel">Télefono de contacto</label>
@@ -86,16 +88,8 @@ Revisa las <a href="../lib/validar_solicitud.php" data-toggle="modal" data-targe
             </div>
 
             <div class="form-group">
-            <label for="municipio">Municipio</label>
-           <select class="form-control" name="municipio" id="municipio">
-                <option value="">Seleccione una opción</option>
-                <option value="Acámbaro" <?php if($solicitud->getMunicipio()=='Acámbaro'){ echo 'Selected';}?>>Acámbaro</option>
-                <option value="Taranda" <?php if($solicitud->getMunicipio()=='Taranda'){ echo 'Selected';}?>>Taranda</option>
-                <option value="Jerécuaro" <?php if($solicitud->getMunicipio()=='Jerecuaro'){ echo 'Selected';}?>>Jerécuaro</option>
-                <option value="Coroneo" <?php if($solicitud->getMunicipio()=='Coroneo'){ echo 'Selected';}?>>Coroneo</option>
-               
-
-           </select>
+            <label for="municipio">Localidad/Municipio</label>
+          <input type="text" name="municipio" id="municipio" class="form-control"value="<?php echo $solicitud->getMunicipio()?>" >
             </div>
 
             <div class="form-group">

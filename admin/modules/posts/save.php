@@ -18,7 +18,6 @@ $categoria = Categoria::recuperarTodos();
     }
 
    
- 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
       $idCategoria = (isset($_POST['idCategoria'])) ? $_POST['idCategoria'] : null;
@@ -29,15 +28,23 @@ $categoria = Categoria::recuperarTodos();
       $colonia = (isset($_POST['colonia'])) ? $_POST['colonia'] : null;
       $cp = (isset($_POST['cp'])) ? $_POST['cp'] : null;
       $tel = (isset($_POST['tel'])) ? $_POST['tel'] : null;
+      $facebook = (isset($_POST['facebook'])) ? $_POST['facebook'] : null;
+      $instagram = (isset($_POST['instagram'])) ? $_POST['instagram'] : null;
+      $youtube = (isset($_POST['youtube'])) ? $_POST['youtube'] : null;
       $sitio = (isset($_POST['sitio'])) ? $_POST['sitio'] : null;
+      $google_maps = (isset($_POST['google_maps'])) ? $_POST['google_maps'] : null;
       $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
+      $primer_dia_sem = (isset($_POST['primer_dia_sem'])) ? $_POST['primer_dia_sem'] : null;
+      $ultimo_dia_sem = (isset($_POST['ultimo_dia_sem'])) ? $_POST['ultimo_dia_sem'] : null;
       $entrada = (isset($_POST['entrada'])) ? $_POST['entrada'] : null;
       $cierre = (isset($_POST['cierre'])) ? $_POST['cierre'] : null;
+      $estatus_anuncio = (isset($_POST['estatus_anuncio'])) ? $_POST['estatus_anuncio'] : null;
+      $destacado = (isset($_POST['destacado'])) ? $_POST['destacado'] : null;
+      $keywords = (isset($_POST['keywords'])) ? $_POST['keywords'] : null;
       $url = (isset($_REQUEST['url'])) ? $_REQUEST['url'] : null;
+      $fecha_publicacion = date('Y-m-d');
 
-     
-       
-      if($idCategoria && $titulo && $municipio && $estado && $calle && $colonia && $cp && $tel  && $descripcion && $entrada && $cierre) {
+    
             //Procesamiento Anuncio
               $anuncio->setIdCategoria($idCategoria);
               $anuncio->setTitulo($titulo);
@@ -47,11 +54,23 @@ $categoria = Categoria::recuperarTodos();
               $anuncio->setColonia($colonia);
               $anuncio->setCp($cp);
               $anuncio->setTelefono($tel);
+              $anuncio->setFacebook($facebook);
+              $anuncio->setInstagram($instagram);
+              $anuncio->setYoutube($youtube);
               $anuncio->setSitio($sitio);
+              $anuncio->setGoogleMaps($google_maps);
               $anuncio->setDescripcion($descripcion);
+              $anuncio->setPrimerDiaSem($primer_dia_sem);
+              $anuncio->setUltimoDiaSem($ultimo_dia_sem);
               $anuncio->setEntrada($entrada);
               $anuncio->setCierre($cierre);
-
+              $anuncio->setEstatusAnuncio($estatus_anuncio);
+              $anuncio->setKeywords($keywords);
+              $anuncio->setFechaPublicacion($fecha_publicacion);
+              $anuncio->setDestacado($destacado);
+              //$anuncio->setIdSolicitud($idSolicitud);
+              
+        
 
               if($idSolicitud != NULL){
                
@@ -96,6 +115,8 @@ $categoria = Categoria::recuperarTodos();
                           window.location.href="save.php";
                           </script>';
               } 
+
+
             }else{
               $anuncio->setUrlImagen($url);  
               if($idSolicitud != NULL){
@@ -107,14 +128,9 @@ $categoria = Categoria::recuperarTodos();
                 $solicitud->actualizarSolicitud();
                 }
               
-
-               header('Location: index.php');
-              
-
-
-      }
-        
-  
+            
+              header('Location: index.php');
+            
     }
       
     include_once '../../assets/template/header.php';
@@ -154,11 +170,11 @@ $categoria = Categoria::recuperarTodos();
             </div>
 
             <div class="form-group">
-            <input class="form-control" type="hidden" name="idSolicitud" id="idSolicitud" value="<?php echo $anuncio->getIdSolicitud(); ?>">
+            <input class="form-control" type="hidden" name="idSolicitud" id="idSolicitud" value="<?php echo $anuncio->getIdSolicitud();?>">
             </div>
            
             <div class="form-group">
-            <label for="idCategoria">Categoría</label>
+            <label for="idCategoria">Clasificación del anuncio</label>
             <select class="form-control" name="idCategoria" id="idCategoria">
                 <option value="">Selecciona una opción</option>
                 <?php foreach ($categoria as $item): ?>
@@ -168,11 +184,9 @@ $categoria = Categoria::recuperarTodos();
             ?>
             </select>
             </div>
-            
-
-
+          
             <div class="form-group">
-            <label for="titulo">Nombre de la Empresa</label>
+            <label for="titulo">Título (Negocio, Profesión u oficio)</label>
             <input class="form-control" type="text" name="titulo" id="titulo" value="<?php echo $anuncio->getTitulo(); ?>">
             </div>
 
@@ -187,16 +201,9 @@ $categoria = Categoria::recuperarTodos();
             </div>
 
             <div class="form-group">
-            <label for="municipio">Municipio</label>
-            <select class="form-control" name="municipio" id="municipio">
-                <option value="">Selecciona una opción</option>
-                <option value="Acámbaro" <?php if($anuncio->getMunicipio()=='Acámbaro'){ echo 'Selected';}?>>Acámbaro</option>
-                <option value="Taranda" <?php if($anuncio->getMunicipio()=='Taranda'){ echo 'Selected';}?>>Taranda</option>
-                <option value="Jerécuaro" <?php if($anuncio->getMunicipio()=='Jerecuaro'){ echo 'Selected';}?>>Jerécuaro</option>
-                <option value="Coroneo" <?php if($anuncio->getMunicipio()=='Coroneo'){ echo 'Selected';}?>>Coroneo</option>
-                <option value="Salvatierra" <?php if($anuncio->getMunicipio()=='Salvatierra'){ echo 'Selected';}?>>Salvatierra</option>
-                <option value="Tarimoro" <?php if($anuncio->getMunicipio()=='Tarimoro'){ echo 'Selected';}?>>Tarimoro</option>
-            </select>
+            <label for="municipio">Municipio/Localidad</label>
+            <input type="text" class="form-control" name="municipio" id="municipio" value="<?php echo $anuncio->getMunicipio();?>">
+               
             </div>
 
             <div class="form-group">
@@ -225,21 +232,101 @@ $categoria = Categoria::recuperarTodos();
             </div>
 
             <div class="form-group">
-            <label for="nombre">Sitio Web</label>
-            <input class="form-control" type="text" name="sitio" id="sitio" value="<?php echo $anuncio->getSitio(); ?>">
+            <label for="facebook">Facebook <small>(Opcional)</small></label>
+            <input class="form-control" type="text" name="facebook" id="facebook" placeholder="Ingresa enlace de la cuenta de facebook" value="<?php echo $anuncio->getFacebook(); ?>">
             </div>
+
+            <div class="form-group">
+            <label for="instagram">Instagram <small>(Opcional)</small></label>
+            <input class="form-control" type="text" name="instagram" id="instagram" placeholder="Ingresa enlace de la cuenta de Instagram" value="<?php echo $anuncio->getFacebook(); ?>">
+            </div>
+
+            <div class="form-group">
+            <label for="youtube">Youtube <small>(Opcional)</small></label>
+            <input class="form-control" type="text" name="youtube" id="youtube" placeholder="Ingresa enlace de la cuenta de Instagram" value="<?php echo $anuncio->getYoutube(); ?>">
+            </div>
+
+            <div class="form-group">
+            <label for="nombre">Sitio Web <small>(Opcional)</small></label>
+            <input class="form-control" type="text" name="sitio" id="sitio" value="<?php echo $anuncio->getSitio(); ?>" placeholder="Ingresa el enlace a tu sitio web">
+            </div>
+
+            <div class="form-group">
+            <label for="google_maps">Google Maps <small>(Opcional)</small></label>
+            <input class="form-control" type="text" name="google_maps" id="google_maps" placeholder="Ingresa enlace del negocio en Google Maps" value="<?php echo $anuncio->getGoogleMaps(); ?>">
+            </div>
+
 
             <div class="form-group">
             <label for="descripcion">Descripción</label>
            <textarea class="form-control" name="descripcion" id="descripcion" rows="5" ><?php echo $anuncio->getDescripcion(); ?></textarea>
             </div>  
 
+           
+       
             <div class="form-group">
-            <label for="descripcion">Horario</label> </br>
+            <label>Horario</label> <br><br>
+
+
             
-            Entrada: <input class="form-control" type="time" name="entrada" id="entrada" value="<?php if($anuncio->getEntrada()){ echo $anuncio->getEntrada();}else{echo "00:00";} ?>" min="00:00" max="24:00" step="3600">
-            Cierre: <input class="form-control" type="time" name="cierre" id="cierre" value="<?php if($anuncio->getCierre()){ echo $anuncio->getCierre();}else{echo "00:00";} ?>" min="00:00" max="24:00" step="3600">
+            
+              <label for="primer_dia_sem">De:</label>
+               
+              <select name="primer_dia_sem" id="primer_dia_sem" class="form-control" style="width: 60%;">
+              <option value="">Selecciona una opción</option>
+              <option value="Lunes" <?php if($anuncio->getPrimerDiaSem()=='Lunes'){ echo 'Selected';}?>>Lunes</option>
+              <option value="Martes" <?php if($anuncio->getPrimerDiaSem()=='Martes'){ echo 'Selected';}?>>Martes</option>
+              <option value="Miércoles" <?php if($anuncio->getPrimerDiaSem()=='Miércoles'){ echo 'Selected';}?>>Miércoles</option>
+              <option value="Jueves" <?php if($anuncio->getPrimerDiaSem()=='Jueves'){ echo 'Selected';}?>>Jueves</option>
+              <option value="Viernes" <?php if($anuncio->getPrimerDiaSem()=='Viernes'){ echo 'Selected';}?>>Viernes</option>
+              <option value="Sábado" <?php if($anuncio->getPrimerDiaSem()=='Sábado'){ echo 'Selected';}?>>Sábado</option>
+              <option value="Domingo" <?php if($anuncio->getPrimerDiaSem()=='Domingo'){ echo 'Selected';}?>>Domingo</option>
+            
+            </select> 
+
+
+            <label for="ultimo_dia_sem">a:</label>
+            <select name="ultimo_dia_sem" id="ultimo_dia_sem" class="form-control" style="width: 60%;">
+              <option value="">Selecciona una opción</option>
+              <option value="Lunes" <?php if($anuncio->getUltimoDiaSem()=='Lunes'){ echo 'Selected';}?>>Lunes</option>
+              <option value="Martes" <?php if($anuncio->getUltimoDiaSem()=='Martes'){ echo 'Selected';}?>>Martes</option>
+              <option value="Miércoles" <?php if($anuncio->getUltimoDiaSem()=='Miércoles'){ echo 'Selected';}?>>Miércoles</option>
+              <option value="Jueves" <?php if($anuncio->getUltimoDiaSem()=='Jueves'){ echo 'Selected';}?>>Jueves</option>
+              <option value="Viernes" <?php if($anuncio->getUltimoDiaSem()=='Viernes'){ echo 'Selected';}?>>Viernes</option>
+              <option value="Sábado" <?php if($anuncio->getUltimoDiaSem()=='Sábado'){ echo 'Selected';}?>>Sábado</option>
+              <option value="Domingo" <?php if($anuncio->getUltimoDiaSem()=='Domingo'){ echo 'Selected';}?>>Domingo</option>
+            </select> 
+            
+            <br>
+            <label>Abierto desde: </label><input class="form-control" type="time" name="entrada" id="entrada" value="<?php if($anuncio->getEntrada()){ echo $anuncio->getEntrada();}else{echo "00:00";} ?>" min="00:00" max="24:00" step="3600" style="width: 60%;">
+            <label>Hasta: </label><input class="form-control" type="time" name="cierre" id="cierre" value="<?php if($anuncio->getCierre()){ echo $anuncio->getCierre();}else{echo "00:00";} ?>" min="00:00" max="24:00" step="3600" style="width: 60%;">
             </div> 
+
+
+            <div class="form-group">
+            <label for="keywords">Palabras Clave</label>
+           <textarea class="form-control" name="keywords" id="keywords" rows="5" ><?php echo $anuncio->getKeywords(); ?></textarea>
+            </div>  
+
+
+            <div class="form-group">
+              <label for="destacado">Anuncio destacado</label>
+            <select name="destacado" id="destacado" class="form-control" style="width: 60%;">
+              <option value="No" <?php if($anuncio->getDestacado()=='No'){ echo 'Selected';}?>>No</option>
+              <option value="Sí" <?php if($anuncio->getDestacado()=='Sí'){ echo 'Selected';}?>>Sí</option>
+            </select> 
+            </div>
+
+
+            <div class="form-group">
+              <label for="estatus_anuncio">Estatus Anuncio</label>
+            <select name="estatus_anuncio" id="estatus_anuncio" class="form-control" style="width: 60%;">
+              <option value="Activo" <?php if($anuncio->getEstatusAnuncio()=='Activo'){ echo 'Selected';}?>>Activo</option>
+              <option value="Inactivo"<?php if($anuncio->getEstatusAnuncio()=='Inactivo'){ echo 'Selected';}?>>Inactivo</option>
+            </select> 
+            </div>
+
+
 
             <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Guardar">

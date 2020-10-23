@@ -5,9 +5,9 @@
     
     $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
     $idSolicitud = (isset($_REQUEST['idSolicitud'])) ? $_REQUEST['idSolicitud'] : null;
-   
+    
 
-    if($idSolicitud){
+    if($idSolicitud!=NULL){
         $mensaje = 'Su solicitud ha sido vuelta a poner en proceso debido a una actualización en el sistema, en breve será revisada';
         $estatus_solicitud = 'En proceso';
         $solicitud = Solicitud::buscarPorId($idSolicitud);

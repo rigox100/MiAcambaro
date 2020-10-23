@@ -1,11 +1,11 @@
    <div class="jumbotron">
-<h4 class="display-4">¿Quiéres anunciar tu negocio?</h4>
+<h4 class="display-4">Si tienes un negocio, eres un profesionista o te dedicas a algún oficio y quieres anunciarte.</h4>
   <p class="lead font-weight-bold"> Es muy sencillo, solo sigue los siguientes pasos:</p>
   <p class="lead"> 1.- Registra los datos en el formulario de solicitud.</p>
   <p class="lead"> 2.- Espera a que el administrador revise tu información y valide tus datos.</p>
   <p class="lead"> 3.- Una vez validados tus datos el administrador se pondrá en contecto contigo.</p>
   <hr>
-  <p class="lead font-weight-bold text-primary"> <small>*Solo se aceptan solicitudes de negocios establecidos en el estado de Guanajuato de los municipios de Acámbaro, Salvatierra, Jerécuaro y Coroneo. </small></p>
+  <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse.  </small></p>
 
   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
   Abrir formulario de solicitud
@@ -41,9 +41,9 @@
             <input class="form-control" type="file" name="url_imagen" id="url_imagen">
             </div>
 
+            
             <div class="form-group">
-            <label for="rfc">RFC</label>
-            <input class="form-control" type="text" name="rfc" id="rfc" pattern="[A-ZÑ&]{3,4}\d{6}[A-V1-9][A-Z1-9][0-9A]" placeholder="Ingresa el RFC de tu negocio" value="">
+            <input class="form-control" type="hidden" name="rfc" id="rfc"  placeholder="Ingresa el RFC de tu negocio" value="">
             </div>
 
             <div class="form-group">
@@ -67,15 +67,8 @@
             </div>
 
             <div class="form-group">
-            <label for="municipio">Municipio</label>
-           <select class="form-control" name="municipio" id="municipio">
-                <option value="">Seleccione una opción</option>
-                <option value="Acámbaro">Acámbaro</option>
-                <option value="Coroneo">Coroneo</option>
-                <option value="Jerécuaro">Jerécuaro</option>
-                <option value="Salvatierra">Taranda</option>
-
-           </select>
+            <label for="municipio">Localidad/Municipio</label>
+          <input type="text" name="municipio" id="municipio" class="form-control" >
             </div>
 
             <div class="form-group">

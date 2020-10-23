@@ -182,7 +182,7 @@ $total = array_values($num_solcitudes)[0];
               <li class="nav-item">
                 <a href="modules/posts_categories/index.php" class="nav-link">
                   <i class="fa fa-cog"></i>
-                  <p>Categorías de anuncios</p>
+                  <p>Clasificaciones de anuncios</p>
                 </a>
               </li>
               <li class="nav-item">

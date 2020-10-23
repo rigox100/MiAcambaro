@@ -26,7 +26,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
               if($_GET['message']=="success"){
                 ?>
              <div class="alert alert-success alert-dismissible fade show" role="alert">
-  <small>Los datos de la solicitud se han actualizado correctamente </small>
+  <small>Los información se han actualizado correctamente </small>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -53,7 +53,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
               <thead class="thead-dark">
                 <tr>
                   <th scope="col">Fecha de solicitud</th>
-                  <th scope="col">RFC</th>
+                  <!--<th scope="col">RFC</th>-->
                   <th scope="col">Nombre del Negocio</th>
                   <th scope="col">Estatus</th>
                   <th scope="col">Observaciones</th>
@@ -71,7 +71,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
                   <tr>
 
                     <td><?php echo $item[15] ?></td>
-                    <td><?php echo $item[4] ?></td>
+                    <!--<td><?php //echo $item[4] ?></td>-->
                     <td><?php echo $item[2] ?></td>
                     <td>
                       <?php

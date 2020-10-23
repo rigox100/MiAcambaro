@@ -42,9 +42,9 @@ include_once '../../assets/template/header.php';
 
           <div  style="width:80%; margin-left:10%; background-color: white; padding:20px; border-radius:10px;">
           <?php    if($edit): ?>
-            <h4 class="text-center">Editar categoría</h4> <br>
+            <h4 class="text-center">Editar clasificación</h4> <br>
           <?php else: ?>
-            <h4 class="text-center">Registrar categoría</h4> <br>
+            <h4 class="text-center">Registrar clasificación</h4> <br>
           <?php endif; ?>
             <form action="save.php" method="post">
 
@@ -53,7 +53,7 @@ include_once '../../assets/template/header.php';
             </div>
 
             <div class="form-group">
-            <label for="nombre">Nombre de la categoría</label>
+            <label for="nombre">Título de la clasificación</label>
             <input class="form-control" type="text" name="nombre" id="nombre" value="<?php echo $categoria->getNombre(); ?>" required>
             </div>
 

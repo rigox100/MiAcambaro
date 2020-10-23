@@ -31,7 +31,7 @@ $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
           <table class="table table-bordered">
                 <thead class="thead-dark">
                     <tr class="table-info">
-                        <td colspan="2" ><h3 class="text-center font-weight-bold font-italic"> <?php echo $anuncio->getTitulo(); ?> </h3></td>
+                        <td colspan="2" ><h3 class="text-center font-weight-bold font-italic"> <?php echo $anuncio->getTitulo(); ?> </h3><h4 class="text-center">Publicado el: <?php $date=date_create($anuncio->getFechaPublicacion()); echo date_format($date,"d-m-Y"); ?> </h4></td>
                     </tr>
 
 
@@ -88,20 +88,48 @@ $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
                     </tr>
 
                     <tr>
+                    <th  scope="col">Facebook</th> 
+                    <td class=" text-center"><a href="<?php echo $anuncio->getFacebook(); ?>"  target="_blank"> <?php echo $anuncio->getFacebook(); ?> </a></td>               
+                    </tr>
+                    
+                    <tr>
+                    <th  scope="col">Instagram</th> 
+                    <td class=" text-center"><a href="<?php echo $anuncio->getInstagram(); ?>"  target="_blank"> <?php echo $anuncio->getInstagram(); ?> </a></td>               
+                    </tr>
+                    <tr>
+                    <th  scope="col">Canal de Youtube</th> 
+                    <td class=" text-center"><a href="<?php echo $anuncio->getYoutube(); ?>"  target="_blank"> <?php echo $anuncio->getYoutube(); ?> </a></td>               
+                    </tr>
+
+                    <tr>
                     <th  scope="col">Sitio Web</th> 
-                    <td class="text-center"><?php echo $anuncio->getSitio(); ?></td>               
+                    <td class=" text-center"><a href="<?php echo $anuncio->getSitio(); ?>"  target="_blank"> <?php echo $anuncio->getSitio(); ?> </a></td>               
                     </tr>
 
                     <tr>
                     <th  scope="col">Descripción</th> 
                     <td class=" text-center"><?php echo $anuncio->getDescripcion(); ?></td>               
                     </tr>
+                    <tr>
+                    <th  scope="col">Horario</th> 
+                    <td class=" text-center">Abierto de: <?php echo $anuncio->getPrimerDiaSem(); ?> a: <?php echo $anuncio->getUltimoDiaSem();?> </td>               
+                    
+                  </tr>
 
                     <tr>
-                    <th scope="col">Horario</th> 
+                    <th></th> 
                     <td class=" text-center"> <?php echo $anuncio->getEntrada() . " - ". $anuncio->getCierre(); ?></td>               
                     </tr>
 
+                    <tr>
+                    <th  scope="col">Estatus del anuncio</th> 
+                    <td class=" text-center"><?php echo $anuncio->getEstatusAnuncio(); ?></td>               
+                    </tr>
+                    
+                    <tr>
+                    <th  scope="col">Palabras Clave</th> 
+                    <td class=" text-center"><?php echo $anuncio->getKeywords(); ?></td>               
+                    </tr>
           
                 </thead>
 
