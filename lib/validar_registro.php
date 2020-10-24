@@ -43,11 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     error_reporting( E_ALL );
     $from = "admin@miacambaro.mx";
     $to = $email;
-    $subject = "Confirma tu cuenta en Mi Ac&aacute;mbaro";
+    $subject = "Confirmar tu cuenta en MiAcambaro.mx";
     $message = '
     <html>
     <head>
-      <title>Activaci&oacute;n de cuenta en Mi Ac&aacute;mbaro</title>
+      <title>Confirmar tu cuenta en MiAcambaro.mx</title>
     </head>
     <body>
       <h1>¡Gracias por registrarte en Mi Ac&aacute;mbaro</h1>
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ';
 
 
-    $headers = "From: Mi Ac&aacute;mbaro";
+    $headers = "From: MiAcambaro.mx";
     mail($to,$subject,$message, $headers);
     //echo "The email message was sent.";
 
