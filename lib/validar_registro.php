@@ -22,13 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
   // verificar la respuesta
   if($arrResponse["success"] == '1' && $arrResponse["action"] == $action && $arrResponse["score"] >= 0.5) {
-      // Si entra aqui, es un humano, puedes procesar el formulario
-    echo "ok!, eres un humano";
-  } else {
-      // Si entra aqui, es un robot....
-    echo "Lo siento, parece que eres un Robot";
-  }
-
+     
   $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : null;
   $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : null;
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
@@ -44,9 +38,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $usuario->setIdRol($idRol);
   if ($usuario->guardar()) {
 
-    header('Location: login.php?email=' . $email . '&message=success');
+  
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
+    $from = "admin@miacambaro.mx";
+    $to = $email;
+    $subject = "Confirmación de cuenta en MiAcámbaro";
+    $message = "PHP mail works just fine";
+    $headers = "De:" . $from;
+    mail($to,$subject,$message, $headers);
+    echo "The email message was sent.";
+
+    //header('Location: login.php?email=' . $email . '&message=success');
   } else {
 
-    echo '<p class="aler alert-warning">Este correo ya ha sido registrado</p>';
+    echo '<p class="aler alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';
   }
+
+  } else {
+      // Si entra aqui, es un robot....
+    echo "Lo siento, parece que eres un Robot";
+  }
+
+
 }
