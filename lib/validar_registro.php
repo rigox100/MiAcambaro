@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
   $token= md5($email);
   $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
-  $estatus = 'Inactivo';
+  $estatus = 0;
   $idRol = 3;
   $usuario = new Usuario();
   $usuario->setNombre($nombre);
@@ -40,49 +40,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   if ($usuario->guardar()) {
 
-    //Mail
-$para  = $email;
+    $from = "admin@miacambaro.mx";
+    $to = $email;
+    $subject = "Confirmación de cuenta en MiAcámbaro";
+    $message = 
+    
+    '<h1>Bienvenido a Mi Acámbaro</h1>
+                <p> Para activar tu cuenta ingresa al siguiente enlace Activar mi cuenta</a></p>';
+    
+    
+    
+    $headers = "From: Mi Acambaro <admin@miacambaro.mx>";
+    mail($to,$subject,$message, $headers);
+    echo "The email message was sent.";
 
-// título
-$título = 'Activación de cuenta en Mi Acámbaro';
-
-// mensaje
-$mensaje = '
-<html>
-<head>
-  <title>Recordatorio de cumpleaños para Agosto</title>
-</head>
-<body>
-  <p>¡Estos son los cumpleaños para Agosto!</p>
-  <table>
-    <tr>
-      <th>Quien</th><th>Día</th><th>Mes</th><th>Año</th>
-    </tr>
-    <tr>
-      <td>Joe</td><td>3</td><td>Agosto</td><td>1970</td>
-    </tr>
-    <tr>
-      <td>Sally</td><td>17</td><td>Agosto</td><td>1973</td>
-    </tr>
-  </table>
-</body>
-</html>
-';
-
-// Para enviar un correo HTML, debe establecerse la cabecera Content-type
-$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-// Cabeceras adicionales
-//$cabeceras .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
-$cabeceras .= 'From: Mi Acámbaro <cumples@example.com>';
-
-// Enviarlo
-mail($para, $título, $mensaje, $cabeceras);
-
-    //-----
-  
-
-    header('Location: login.php?email=' . $email . '&message=success');
+    //header('Location: login.php?email=' . $email . '&message=success');
   } else {
 
     echo '<p class="aler alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';
@@ -90,7 +62,7 @@ mail($para, $título, $mensaje, $cabeceras);
 
   } else {
       // Si entra aqui, es un robot....
-    //echo "Lo siento, parece que eres un Robot";
+    echo "Lo siento, parece que eres un Robot";
   }
 
 
