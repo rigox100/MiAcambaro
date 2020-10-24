@@ -26,9 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : null;
   $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : null;
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
-  $token= md5($email);
   $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
-  $estatus = 0;
+  $estatus = 1;
   $idRol = 3;
   $usuario = new Usuario();
   $usuario->setNombre($nombre);
@@ -37,20 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $usuario->setPassword($password);
   $usuario->setEstatus($estatus);
   $usuario->setIdRol($idRol);
-  
   if ($usuario->guardar()) {
 
     $from = "admin@miacambaro.mx";
     $to = $email;
     $subject = "Confirmación de cuenta en MiAcámbaro";
-    $message = 
-    
-    '<h1>Bienvenido a Mi Acámbaro</h1>
-                <p> Para activar tu cuenta ingresa al siguiente enlace Activar mi cuenta</a></p>';
-    
-    
-    
-    $headers = "From: Mi Acambaro <admin@miacambaro.mx>";
+    $message = "";
+    $headers = "From: Mi Acámbaro";
     mail($to,$subject,$message, $headers);
     echo "The email message was sent.";
 
