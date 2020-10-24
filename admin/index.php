@@ -328,7 +328,7 @@ $total = array_values($num_solcitudes)[0];
       
     </div>
     <!-- Default to the left -->
-    <strong>Directorio Acámbaro &copy; 2020 </strong> Todos los derechos reservados
+    <strong>Directorio MiAcámbaro &copy; <?php echo date('Y')?>. </strong> Todos los derechos reservados.
   </footer>
 </div>
 <!-- ./wrapper -->

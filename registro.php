@@ -19,14 +19,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-
+    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
     <title>Registro</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-registrer">
     <div class="container">
-        <a class="navbar-brand" href="#">Directorio Acámbaro</a>
+        <a class="navbar-brand" href="#">Directorio MiAcámbaro</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +56,8 @@
                       require_once "lib/recaptcha.php";
                       include_once "lib/validar_registro.php";
                      ?>
-                        <form action="" method="post">
+                        <form action="registro.php" method="post" id="form">
+                        
                             <div class="form-group row">
                                 <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
                                 <div class="col-md-6">
@@ -89,14 +90,14 @@
                                 <div class="col-md-6 offset-md-4">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" name="suscribe" required> He leído y  acepto la <a href="#"> política de privacidad</a>
+                                            <input type="checkbox" name="politica_privacidad" required> He leído y  acepto la <a href="#"> política de privacidad</a>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                             <div class="col-md-6 offset-md-4">
-                            <div class="g-recaptcha" data-sitekey="CLAVE EJEMPLO"></div>
+                            <div class="g-recaptcha" data-sitekey="6LcN19oZAAAAADwL6pUcZ4oFwT79RU1QgfMo8rbE"></div>
                              </div>
                             </div>
                             <div class="col-md-6 offset-md-4">
@@ -109,6 +110,7 @@
                             </div>
                     </div>
                     </form>
+                    <script src="template/js/registro_validate.js"></script>
                 </div>
             </div>
         </div>

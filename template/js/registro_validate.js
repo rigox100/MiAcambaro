@@ -12,7 +12,7 @@ $(document).ready(function() {
     }, "Debe ingresar un email válido");
 
     $.validator.addMethod("password", function(value, element) {
-        var pattern3 = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+        var pattern3 = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,20}$/;
         return this.optional(element) || pattern3.test(value);
     }, "Debe ingresar un email válido");
 
@@ -47,15 +47,17 @@ $(document).ready(function() {
             },
             email: {
                 required: true,
+                maxlength: 50,
                 email: true
             },
             new_password: {
                 required: true,
+                maxlength: 20,
                 password: true
             },
 
             politica_privacidad:{
-                required: true,
+                required: true
             }
         },
 
@@ -75,16 +77,17 @@ $(document).ready(function() {
 
             email: {
                 required: "El campo es obligatorio.",
+                maxlength: "Solo se admite un máximo de 50 caracteres",
                 email: "Debe ingresar un email válido"
             },
 
             politica_privacidad: {
-                required: "El campo es obligatorio",
+                required: "El campo es obligatorio"
             },
 
             new_password: {
                 required: "El campo es obligatorio.",
-                password: "La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula."
+                password: "La contraseña debe tener al entre 8 y 20 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula."
             }
 
         },
