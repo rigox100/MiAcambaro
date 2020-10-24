@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
   $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
   $estatus = "Inactivo";
+  $token = md5($email);
   $idRol = 3;
   $usuario = new Usuario();
   $usuario->setNombre($nombre);
@@ -42,13 +43,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     error_reporting( E_ALL );
     $from = "admin@miacambaro.mx";
     $to = $email;
-    $subject = "Activación tu cuenta en Mi Acámbaro";
-    $message = "PHP mail works just fine";
-    $headers = "From:" . $from;
-    mail($to,$subject,$message, $headers);
-    echo "The email message was sent.";
+    $subject = "Confirma tu cuenta en Mi Ac&aacute;mbaro";
+    $message = '
+    <html>
+    <head>
+      <title>Activaci&oacute;n de cuenta en Mi Ac&aacute;mbaro</title>
+    </head>
+    <body>
+      <h1>¡Gracias por registrarte en Mi Ac&aacute;mbaro</h1>
+      <p> Para completar activar tu cuenta, ingresa al siguiente enlace <a href="https://miacambaro.mx/activation.php?token='.$token.'&activate=1">Activar mi cuenta</a> </p>
+    </body>
+    </html>
+    ';
 
-    //header('Location: login.php?email=' . $email . '&message=success');
+
+    $headers = "From: Mi Ac&aacute;mbaro";
+    mail($to,$subject,$message, $headers);
+    //echo "The email message was sent.";
+
+    header('Location: login.php?email=' . $email . '&message=success');
   } else {
 
     echo '<p class="aler alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';
