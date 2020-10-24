@@ -26,8 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : null;
   $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : null;
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
+  $token= md5($email);
   $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
-  $estatus = 1;
+  $estatus = 0;
   $idRol = 3;
   $usuario = new Usuario();
   $usuario->setNombre($nombre);
@@ -36,15 +37,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $usuario->setPassword($password);
   $usuario->setEstatus($estatus);
   $usuario->setIdRol($idRol);
+  
   if ($usuario->guardar()) {
 
-  
-    ini_set( 'display_errors', 1 );
-    error_reporting( E_ALL );
     $from = "admin@miacambaro.mx";
     $to = $email;
     $subject = "Confirmación de cuenta en MiAcámbaro";
-    $message = "PHP mail works just fine";
+    $message = '<h1>Bienvenido a Mi Acámbaro</h1>
+                <p> Para activar tu cuenta ingresa al siguiente enlace <a href="https://www.miacambaro.mx/activation.php?token='.$token.'&activation=1">Activar mi cuenta</a></p>';
     $headers = "De:" . $from;
     mail($to,$subject,$message, $headers);
     echo "The email message was sent.";
