@@ -15,11 +15,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeRAtsZAAAAAFPj_jVnUreuGCaI8Z09QCG3kz9d"></script>
     <title>Registro</title>
 </head>
 <body>
@@ -97,7 +97,7 @@
                             </div>
                             <div class="form-group">
                             <div class="col-md-6 offset-md-4">
-                            <div class="g-recaptcha" data-sitekey="6LcN19oZAAAAADwL6pUcZ4oFwT79RU1QgfMo8rbE"></div>
+                           
                              </div>
                             </div>
                             <div class="col-md-6 offset-md-4">
@@ -110,7 +110,21 @@
                             </div>
                     </div>
                     </form>
+                   
                     <script src="template/js/registro_validate.js"></script>
+                    <script>
+    $('#form').submit(function(event) {
+        event.preventDefault();
+        /*Cambia 6LcZu9QUAAAAACaj-WBiVIQUlr94vfCC8DUpIanS por tu clave de sitio web*/
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LeRAtsZAAAAAFPj_jVnUreuGCaI8Z09QCG3kz9d', {action: 'registro'}).then(function(token) {
+                $('#form').prepend('<input type="hidden" name="token" value="' + token + '">');
+                $('#form').prepend('<input type="hidden" name="action" value="registro">');
+                $('#form').unbind('submit').submit();
+            });;
+        });
+  });
+  </script>
                 </div>
             </div>
         </div>
