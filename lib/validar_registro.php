@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $to = $email;
     $subject = "Confirmar tu cuenta en MiAcambaro.mx";
     $message = "¡Gracias por registrarte en MiAcambaro.mx, 
-    Para completar activar tu cuenta, ingresa al siguiente enlace https://miacambaro.mx/activation.php?token='.$token ";
+    Para activar tu cuenta, ingresa al siguiente enlace https://miacambaro.mx/activation.php?token='.$token ";
 
     $headers = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
