@@ -61,21 +61,21 @@
                             <div class="form-group row">
                                 <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="nombre" class="form-control" name="nombre"  pattern="^[a-zA-Z0-9]([a-zA-Z ]*)[a-zA-Z0-9]$" value="<?php if(isset($_POST['nombre'])){ echo $_POST['nombre'];}?>" required autofocus>
+                                    <input type="text" id="nombre" class="form-control" name="nombre"  value="<?php if(isset($_POST['nombre'])){ echo $_POST['nombre'];}?>" required autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="apellido" class="col-md-4 col-form-label text-md-right">Apellido</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="apellido" class="form-control" pattern="^[a-zA-Z0-9]([a-zA-Z ]*)[a-zA-Z0-9]$" name="apellido" value="<?php if(isset($_POST['apellido'])){ echo $_POST['apellido'];}?>"required autofocus>
+                                    <input type="text" id="apellido" class="form-control" name="apellido" value="<?php if(isset($_POST['apellido'])){ echo $_POST['apellido'];}?>"required autofocus>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Correo electrónico</label>
                                 <div class="col-md-6">
-                                    <input type="email" id="email" class="form-control" name="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php if(isset($_POST['email'])){ echo $_POST['email'];}?>" required autofocus>
+                                    <input type="email" id="email" class="form-control" name="email"  value="<?php if(isset($_POST['email'])){ echo $_POST['email'];}?>" required autofocus>
                                 </div>
                             </div>
 
@@ -85,6 +85,15 @@
                                     <input type="password" id="new_password" class="form-control" name="new_password"  value="" required autofocus>
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="confirm_password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="confirm_password" class="form-control" name="confirm_password"  value="" required autofocus>
+                                </div>
+                            </div>
+
+                           
 
                             <div class="form-group row">
                                 <div class="col-md-6 offset-md-4">

@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
     $.validator.addMethod("formAlphanumeric", function(value, element) {
-        var pattern1 = /^[a-zA-Z0-9]([a-zA-Z ]*)[a-zA-Z0-9]$/;
+        var pattern1 = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
         return this.optional(element) || pattern1.test(value);
     }, "El campo debe tener un valor alfanumérico");
 
@@ -56,6 +56,14 @@ $(document).ready(function() {
                 password: true
             },
 
+            confirm_password: {
+                required: true,
+                maxlength: 20,
+                password: true,
+                equalTo: "#new_password"
+            },
+
+
             politica_privacidad:{
                 required: true
             }
@@ -64,31 +72,41 @@ $(document).ready(function() {
         messages: {
 
             nombre: {
-                required: 'El campo es obligatorio.',
-                formAlphanumeric: "No se admiten símbolos o espacios en blanco al inicio ni al final del campo",
+                required: 'Por favor introduzca su nombre',
+                formAlphanumeric: "El nombre solo puede contener letras",
                 maxlength: "Solo se admite un máximo de 25 caracteres"
             },
 
             apellido: {
-                required: "El campo es obligatorio.",
-                formAlphanumeric: "No se admiten símbolos o espacios en blanco al inicio ni al final del campo",
+                required: "Por favor introduzca su apellido.",
+                formAlphanumeric: "El apellido solo puede contener letras",
                 maxlength: "Solo se admite un máximo de 25 caracteres"
             },
 
             email: {
-                required: "El campo es obligatorio.",
+                required: "Por favor introduzca su email",
                 maxlength: "Solo se admite un máximo de 50 caracteres",
                 email: "Debe ingresar un email válido"
             },
 
             politica_privacidad: {
-                required: "El campo es obligatorio"
+                required: "Debe aceptar la política de privacidad"
             },
 
             new_password: {
-                required: "El campo es obligatorio.",
+                required: "Por favor introduzca una contraseña",
                 password: "La contraseña debe tener al entre 8 y 20 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula."
-            }
+            },
+
+            confirm_password: {
+                required: "Por favor introduzca una contraseña",
+                maxlength: 20,
+                password: "Por favor introduzca la misma contraseña que la anterior",
+                equalTo: "Por favor introduzca la misma contraseña que la anterior"
+            },
+
+            
+
 
         },
 
