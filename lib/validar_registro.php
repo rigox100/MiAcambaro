@@ -42,14 +42,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $from = "admin@miacambaro.mx";
     $to = $email;
-    $subject = "Confirmación de cuenta en MiAcámbaro";
-    $message = '<h1>Bienvenido a Mi Acámbaro</h1>
-                <p> Para activar tu cuenta ingresa al siguiente enlace <a href="https://www.miacambaro.mx/activation.php?token='.$token.'&activation=1">Activar mi cuenta</a></p>';
-    $headers = "De:" . $from;
+    $subject = "Activiación de cuenta en MiAcámbaro";
+    $message = 
+    '<html>'.
+    '<head><title>Mi Acámbaro</title></head>'.
+    '<body><h1>Activiación de Cuenta</h1>'.
+    'Gracias por registrarte en Mi Acámbaro'.
+    '<hr>'.
+    'Para activar tu cuenta por favor ingresa al siguiente enlace '.'<a href="https://www.miacambaro.mx/activation.php?token='.$token.'&activation=1">'.
+    '</body>'.
+    '</html>';
+ 
+    $headers = "From: Mi Acambaro";
     mail($to,$subject,$message, $headers);
-    echo "The email message was sent.";
+  
 
-    //header('Location: login.php?email=' . $email . '&message=success');
+    header('Location: login.php?email=' . $email . '&message=success');
   } else {
 
     echo '<p class="aler alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';
@@ -57,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   } else {
       // Si entra aqui, es un robot....
-    echo "Lo siento, parece que eres un Robot";
+    //echo "Lo siento, parece que eres un Robot";
   }
 
 
