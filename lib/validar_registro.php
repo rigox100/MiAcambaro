@@ -44,21 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $from = "admin@miacambaro.mx";
     $to = $email;
     $subject = "Confirmar tu cuenta en MiAcambaro.mx";
-    $message = '
-    <html>
-    <head>
-      <title>Confirmar tu cuenta en MiAcambaro.mx</title>
-    </head>
-    <body>
-      <h1>¡Gracias por registrarte en Mi Ac&aacute;mbaro</h1>
-      <p> Para completar activar tu cuenta, ingresa al siguiente enlace <a href="https://miacambaro.mx/activation.php?token='.$token.'&activate=1">Activar mi cuenta</a> </p>
-    </body>
-    </html>
-    ';
+    $message = "¡Gracias por registrarte en MiAcambaro.mx, 
+    Para completar activar tu cuenta, ingresa al siguiente enlace https://miacambaro.mx/activation.php?token='.$token ";
 
     $headers = "MIME-Version: 1.0\r\n"; 
     $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $headers = "From: MiAcambaro <admin@miacambaro,mx>";
+    $headers = "From: MiAcambaro <admin@miacambaro.mx>";
     mail($to,$subject,$message, $headers);
     //echo "The email message was sent.";
 
