@@ -4,7 +4,7 @@ require_once 'admin/class/Usuario.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $secret = "6LcN19oZAAAAAKMtrorLT1lhYqBwrCHl9Rw9pndn";
+  $secret = "6LfT2NoZAAAAAEHKVog_5nC7k3GF3cKu8wtsv-ea";
   $response = null;
   // comprueba la clave secreta
   $reCaptcha = new ReCaptcha($secret);

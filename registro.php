@@ -97,7 +97,7 @@
                             </div>
                             <div class="form-group">
                             <div class="col-md-6 offset-md-4">
-                            <div class="g-recaptcha" data-sitekey="6LcN19oZAAAAADwL6pUcZ4oFwT79RU1QgfMo8rbE"></div>
+                            <div class="g-recaptcha" data-sitekey="6LfT2NoZAAAAAFKEq3QkQPFaGeMv8L0I4BKz-w98"></div>
                              </div>
                             </div>
                             <div class="col-md-6 offset-md-4">
