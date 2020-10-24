@@ -56,8 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </html>
     ';
 
-
-    $headers = "From: MiAcambaro.mx";
+    $headers = "MIME-Version: 1.0\r\n"; 
+    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+    $headers = "From: MiAcambaro <admin@miacambaro,mx>";
     mail($to,$subject,$message, $headers);
     //echo "The email message was sent.";
 
