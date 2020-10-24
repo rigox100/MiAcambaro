@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
   $token= md5($email);
   $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
-  $estatus = 0;
+  $estatus = 'Inactivo';
   $idRol = 3;
   $usuario = new Usuario();
   $usuario->setNombre($nombre);
@@ -40,21 +40,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   if ($usuario->guardar()) {
 
-    $from = "admin@miacambaro.mx";
-    $to = $email;
-    $subject = "Activiación de cuenta en MiAcámbaro";
-    $message = 
-    '<html>'.
-    '<head><title>Mi Acámbaro</title></head>'.
-    '<body><h1>Activiación de Cuenta</h1>'.
-    'Gracias por registrarte en Mi Acámbaro'.
-    '<hr>'.
-    'Para activar tu cuenta por favor ingresa al siguiente enlace '.'<a href="https://www.miacambaro.mx/activation.php?token='.$token.'&activation=1">'.
-    '</body>'.
-    '</html>';
- 
-    $headers = "From: Mi Acambaro";
-    mail($to,$subject,$message, $headers);
+    //Mail
+$para  = $email;
+
+// título
+$título = 'Activación de cuenta en Mi Acámbaro';
+
+// mensaje
+$mensaje = '
+<html>
+<head>
+  <title>Recordatorio de cumpleaños para Agosto</title>
+</head>
+<body>
+  <p>¡Estos son los cumpleaños para Agosto!</p>
+  <table>
+    <tr>
+      <th>Quien</th><th>Día</th><th>Mes</th><th>Año</th>
+    </tr>
+    <tr>
+      <td>Joe</td><td>3</td><td>Agosto</td><td>1970</td>
+    </tr>
+    <tr>
+      <td>Sally</td><td>17</td><td>Agosto</td><td>1973</td>
+    </tr>
+  </table>
+</body>
+</html>
+';
+
+// Para enviar un correo HTML, debe establecerse la cabecera Content-type
+$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
+$cabeceras .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+// Cabeceras adicionales
+//$cabeceras .= 'To: Mary <mary@example.com>, Kelly <kelly@example.com>' . "\r\n";
+$cabeceras .= 'From: Mi Acámbaro <cumples@example.com>';
+
+// Enviarlo
+mail($para, $título, $mensaje, $cabeceras);
+
+    //-----
   
 
     header('Location: login.php?email=' . $email . '&message=success');
