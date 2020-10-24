@@ -40,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $from = "admin@miacambaro.mx";
     $to = $email;
-    $subject = "Confirmación de cuenta en MiAcámbaro";
-    $message = "";
-    $headers = "From: Mi Acámbaro";
+    $subject = "Activación de cuenta en MiAcámbaro";
+    $message = "Gracias por registrarte en Mi Acámbaro";
+    $headers = "From:". $from;
     mail($to,$subject,$message, $headers);
     echo "The email message was sent.";
 
