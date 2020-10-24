@@ -123,6 +123,9 @@
                     <script src="template/js/registro_validate.js"></script>
                     <script>
     $('#form').submit(function(event) {
+
+        
+        if($("#form").valid()) {
         event.preventDefault();
         /*Cambia 6LcZu9QUAAAAACaj-WBiVIQUlr94vfCC8DUpIanS por tu clave de sitio web*/
         grecaptcha.ready(function() {
@@ -132,6 +135,7 @@
                 $('#form').unbind('submit').submit();
             });;
         });
+    }
   });
   </script>
                 </div>
