@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : null;
   $email = (isset($_POST['email'])) ? $_POST['email'] : null;
   $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
-  $estatus = 1;
+  $estatus = "Inactivo";
   $idRol = 3;
   $usuario = new Usuario();
   $usuario->setNombre($nombre);
@@ -38,11 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $usuario->setIdRol($idRol);
   if ($usuario->guardar()) {
 
+    ini_set( 'display_errors', 1 );
+    error_reporting( E_ALL );
     $from = "admin@miacambaro.mx";
     $to = $email;
-    $subject = "Activación de cuenta en MiAcámbaro";
-    $message = "Gracias por registrarte en Mi Acámbaro";
-    $headers = "From:". $from;
+    $subject = "Activación tu cuenta en Mi Acámbaro";
+    $message = "PHP mail works just fine";
+    $headers = "From:" . $from;
     mail($to,$subject,$message, $headers);
     echo "The email message was sent.";
 
@@ -54,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   } else {
       // Si entra aqui, es un robot....
-    echo "Lo siento, parece que eres un Robot";
+    echo "Ha ocurrido un error, por favor vuelva a intentarlo";
   }
 
 
