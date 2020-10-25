@@ -3,9 +3,9 @@ class Conexion extends PDO {
 
     private $db_type = 'mysql';
     private $host = 'localhost';
-    private $db_name = 'u368817209_miacambaro';
-    private $user = 'u368817209_admin';
-    private $pass = 'Acambaro2020';
+    private $db_name = 'directorioacambaro';
+    private $user = 'root';
+    private $pass = '';
 
     public function __construct() {
         try {
