@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	define("DEMO", true); 
 
 	// set the location of the template file to be loaded
-	$template_file = "../template/email_templates/template_email_activation.php";
+	$template_file = "./email_templates/template_email_activation.php";
 
 	// set the email 'from' information
 	$email_from = "MiAcambaro <admin@miacambaro.mx>";
@@ -71,10 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// create a list of the variables to be swapped in the html template
 	$swap_var = array(
 		"{SITE_ADDR}" => "https://www.miacambaro.mx",
-		"{EMAIL_LOGO}" => "",
+		//"{EMAIL_LOGO}" => "",
 		"{EMAIL_TITLE}" => "Confirmar tu cuenta en MiAcambaro",
-		"{CUSTOM_URL}" => "https://www.miacambaro.mx/activation.php?token=$tokenId",
-		"{CUSTOM_IMG}" => "",
+		//"{CUSTOM_URL}" => "https://www.miacambaro.mx/activation.php?token=",
+		//"{CUSTOM_IMG}" => "",
 		"{TO_NAME}" => "Suscriptor"
 		//"{TO_EMAIL}" => "this_person@their_website.com"
 	);
