@@ -3,8 +3,8 @@
 		
 		<div id="wrapper" style="max-width: 600px; margin: auto auto; padding: 20px;">
 			
-			<div id="logo" style="">
-				<center><h1 style="margin: 0px;"><a href="{SITE_ADDR}" target="_blank"><img style="max-height: 75px;" src=""></a></h1></center>
+			<div id="logo">
+				<center><h1 style="margin: 0px;"><a href="{SITE_ADDR}" target="_blank"><img style="max-height: 75px;"></a></h1></center>
 			</div>
 				
 			<div id="content" style="font-size: 16px; padding: 25px; background-color: #fff;
