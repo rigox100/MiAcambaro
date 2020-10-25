@@ -20,7 +20,7 @@
 				<p>Para completar el registro por favor haga clic en el botón </p>
 
 				<p style="display: flex; justify-content: center; margin-top: 10px;"><center>
-					<a href="" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
+					<a href="https://www.miacambaro.mx" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
 					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Activar mi cuenta</a></div>
 				</center></p>
 				

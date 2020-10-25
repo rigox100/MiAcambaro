@@ -101,21 +101,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	// display the email template back to the user for final approval
-	echo $email_message;
+	//echo $email_message;
 
     // check if the email script is in demo mode, if it is then dont actually send an email
 	if (DEMO)
 		die("<hr /><center>Esto solo es una prueba </center>");
 
 	// send the email out to the user	
-	if ( mail($email_to, $email_subject, $email_message, $email_headers) )
-  
+	if ( mail($email_to, $email_subject, $email_message, $email_headers) ){ 
   header('Location: login.php?email=' . $email . '&message=success');
-	else
+  }else{
 		echo '<hr /><center> Ha ocurrido un error y no pudo enviarse el correo </center>';
+  }
 
-
-
+  header('Location: login.php?email=' . $email . '&message=success');
 
     
   } else {
