@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"{EMAIL_TITLE}" => "Confirmar tu cuenta en MiAcambaro",
 		"{CUSTOM_URL}" => $tokenId,
 		//"{CUSTOM_IMG}" => "",
-		"{TO_NAME}" => "Suscriptor"
+		"{TO_NAME}" => $nombre
 		//"{TO_EMAIL}" => "this_person@their_website.com"
 	);
 

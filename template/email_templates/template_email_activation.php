@@ -13,15 +13,15 @@
 
 				<h1 style="font-size: 22px;"><center>{EMAIL_TITLE}</center></h1>
 				
-				<p>Hola estimado {TO_NAME},</p>
+				<p>¡Hola {TO_NAME}!</p>
 
-				<p>Gracias por registrarse en MiAcambaro</p>
+				<p>Gracias por registrarse en MiAcambaro.</p>
 
-				<p>Para completar el registro por favor haga clic en el siguiente bot&oacute;n </p>
+				<p>Para completar el registro por favor haga clic en el siguiente bot&oacute;n.</p>
 
 				<p style="display: flex; justify-content: center; margin-top: 10px;">
 				<center>
-					<a href="https://www.miacambaro.mx/activation.php?token={CUSTOM_URL}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
+					<a href="https://www.miacambaro.mx/verification/activate.php?token={CUSTOM_URL}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
 					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Activar mi cuenta</a>
 				</center></p>
 				
