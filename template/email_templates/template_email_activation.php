@@ -17,17 +17,18 @@
 
 				<p>Gracias por registrarse en MiAcambaro</p>
 
-				<p>Para completar el registro por favor haga clic en el botón </p>
+				<p>Para completar el registro por favor haga clic en el siguiente bot&oacute;n </p>
 
-				<p style="display: flex; justify-content: center; margin-top: 10px;"><center>
-					<a href="https://www.miacambaro.mx" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
-					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Activar mi cuenta</a></div>
+				<p style="display: flex; justify-content: center; margin-top: 10px;">
+				<center>
+					<a href="https://www.miacambaro.mx/activation.php?token={CUSTOM_URL}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
+					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Activar mi cuenta</a>
 				</center></p>
 				
 			</div>
 
 			<div id="footer" style="margin-bottom: 20px; padding: 0px 8px; text-align: center;">
-				<a href="https://www.miacambaro.mx" target="_blank" style="text-decoration: none; color: #238CEA;">MiAcambaro</a> 
+				<p>Solo en <a href="https://www.miacambaro.mx" target="_blank" style="text-decoration: none; color: #238CEA;">MiAcambaro</a> "Todo lo que buscas lo encuentras... y lo que no también." </p>
 			</div>
 		</div>
 	</body>

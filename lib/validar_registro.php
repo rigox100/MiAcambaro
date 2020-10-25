@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"{SITE_ADDR}" => "https://www.miacambaro.mx",
 		//"{EMAIL_LOGO}" => "",
 		"{EMAIL_TITLE}" => "Confirmar tu cuenta en MiAcambaro",
-		//"{CUSTOM_URL}" => "https://www.miacambaro.mx/activation.php?token=",
+		"{CUSTOM_URL}" => $tokenId,
 		//"{CUSTOM_IMG}" => "",
 		"{TO_NAME}" => "Suscriptor"
 		//"{TO_EMAIL}" => "this_person@their_website.com"
