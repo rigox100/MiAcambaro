@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     
   // mail Sender
-	define("DEMO", true); 
+	define("DEMO", false); 
 
 	// set the location of the template file to be loaded
 	$template_file = "./template/email_templates/template_email_activation.php";
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // check if the email script is in demo mode, if it is then dont actually send an email
 	if (DEMO)
-		die("<hr /><center>This is a demo of the HTML email to be sent. No email was sent. </center>");
+		die("<hr /><center>Esto solo es una prueba </center>");
 
 	// send the email out to the user	
 	if ( mail($email_to, $email_subject, $email_message, $email_headers) )
