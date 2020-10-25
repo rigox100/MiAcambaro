@@ -39,36 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $usuario->setIdRol($idRol);
   if ($usuario->guardar()) {
 
-    /*ini_set( 'display_errors', 1 );
-    error_reporting( E_ALL );
-    
-    $headers = "MIME-Version: 1.0\r\n"; 
-    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $headers = "From: MiAcambaro <admin@miacambaro.mx>";
-
-    $from = "admin@miacambaro.mx";
-    $to = $email;
-    $subject = "Confirmar tu cuenta en MiAcambaro.mx";
-    $message = "¡Gracias por registrarte en MiAcambaro.mx, 
-    Para activar tu cuenta, ingresa al siguiente enlace https://miacambaro.mx/activation.php?token='.$token ";
-
-    
-    mail($to,$subject,$message, $headers);
-    //echo "The email message was sent.";
-
-    */
-
-    
-  // mail Sender
+    // Mail
 	define("DEMO", false); 
 
-	// set the location of the template file to be loaded
+
 	$template_file = "./template/email_templates/template_email_activation.php";
 
-	// set the email 'from' information
+
 	$email_from = "MiAcambaro <admin@miacambaro.mx>";
 
-	// create a list of the variables to be swapped in the html template
+
 	$swap_var = array(
 		"{SITE_ADDR}" => "https://www.miacambaro.mx",
 		//"{EMAIL_LOGO}" => "",
@@ -76,39 +56,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		"{CUSTOM_URL}" => $tokenId,
 		//"{CUSTOM_IMG}" => "",
 		"{TO_NAME}" => $nombre
-		//"{TO_EMAIL}" => "this_person@their_website.com"
+		//"{TO_EMAIL}" => "user@test.com"
 	);
 
-	// create the email headers to being the email
+
 	$email_headers = "From: ".$email_from."\r\nReply-To: ".$email_from."\r\n";
 	$email_headers .= "MIME-Version: 1.0\r\n";
 	$email_headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    // load the email to and subject from the $swap_var
-	$email_to = $email;
-	$email_subject = $swap_var['{EMAIL_TITLE}']; // you can add time() to get unique subjects for testing: time();
 
-	// load in the template file for processing (after we make sure it exists)
+	$email_to = $email;
+	$email_subject = $swap_var['{EMAIL_TITLE}']; 
+
+
 	if (file_exists($template_file))
 		$email_message = file_get_contents($template_file);
 	else
 		die ("Error al cargar el template");
 
-	// search and replace for predefined variables, like SITE_ADDR, {NAME}, {lOGO}, {CUSTOM_URL} etc
+	
 	foreach (array_keys($swap_var) as $key){
 		if (strlen($key) > 2 && trim($swap_var[$key]) != '')
 			$email_message = str_replace($key, $swap_var[$key], $email_message);
 	}
 
-	// display the email template back to the user for final approval
-	//echo $email_message;
-
-    // check if the email script is in demo mode, if it is then dont actually send an email
 	if (DEMO)
 		die("<hr /><center>Esto solo es una prueba </center>");
 
-	// send the email out to the user	
-	if ( mail($email_to, $email_subject, $email_message, $email_headers) ){ 
+
+	if (mail($email_to, $email_subject, $email_message, $email_headers) ){ 
   header('Location: login.php?email=' . $email . '&message=success');
   }else{
 		echo '<hr /><center> Ha ocurrido un error y no pudo enviarse el correo </center>';

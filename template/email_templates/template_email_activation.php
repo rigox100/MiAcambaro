@@ -13,7 +13,7 @@
 
 				<h1 style="font-size: 22px;"><center>{EMAIL_TITLE}</center></h1>
 				
-				<p>¡Hola {TO_NAME}!</p>
+				<p>&iexcl;Hola {TO_NAME}!</p>
 
 				<p>Gracias por registrarse en MiAcambaro.</p>
 
@@ -28,7 +28,7 @@
 			</div>
 
 			<div id="footer" style="margin-bottom: 20px; padding: 0px 8px; text-align: center;">
-				<p>Solo en <a href="https://www.miacambaro.mx" target="_blank" style="text-decoration: none; color: #238CEA;">MiAcambaro</a> "Todo lo que buscas lo encuentras... y lo que no también." </p>
+				<p>Solo en <a href="https://www.miacambaro.mx" target="_blank" style="text-decoration: none; color: #238CEA;">MiAcambaro</a> "Todo lo que buscas lo encuentras... y lo que no tambi&eacute;n." </p>
 			</div>
 		</div>
 	</body>

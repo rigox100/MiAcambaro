@@ -10,6 +10,7 @@ class Usuario {
     private $email;
     private $password;
     private $estatus;
+    private $token;
     private $idRol;
 
     const TABLA = 'usuarios';
@@ -174,10 +175,15 @@ class Usuario {
     }
 
 
-    public function validarEmail(){
+    public function verificar_token(){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE email = :email');
-
+        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE token = :token AND estatus = Inactivo');
+        $consulta->bindParam(':token', $this->email);
+        if($consulta->execute()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
