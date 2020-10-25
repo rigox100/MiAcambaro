@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	define("DEMO", true); 
 
 	// set the location of the template file to be loaded
-	$template_file = "email_templates/template_email_activation.php";
+	$template_file = "./template/email_templates/template_email_activation.php";
 
 	// set the email 'from' information
 	$email_from = "MiAcambaro <admin@miacambaro.mx>";
