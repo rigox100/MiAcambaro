@@ -187,13 +187,33 @@ class Usuario {
 
     public function verificar_token(){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE token = :token AND estatus = Inactivo');
-        $consulta->bindParam(':token', $this->email);
+        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE token = :token AND estatus = "Inactivo"');
+        $consulta->bindParam(':token', $this->token);
+        $consulta->execute();
+        $registro = $consulta->fetch();
+        $conexion = null;
+        if($registro){
+           $_SESSION['idUsuario'] = $registro[0];
+           $_SESSION['nombre'] = $registro[1];
+           $_SESSION['email'] = $registro[3];
+           $_SESSION['idRol'] = $registro[7];
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function actualizar_estatus(){
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('UPDATE '.self::TABLA. ' SET estatus="Activo" WHERE token = :token');
+        $consulta->bindParam(':token', $this->token);
         if($consulta->execute()){
             return true;
         }else{
             return false;
         }
     }
+
+
 
 }

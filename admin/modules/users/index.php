@@ -26,7 +26,7 @@ $usuario = Usuario::recuperarTodos();
   </thead>
   <tbody>
   <?php foreach ($usuario as $item): 
-      if($item[6]!=1):
+      if($item[7]!=1):
     ?>
 
     <tr>

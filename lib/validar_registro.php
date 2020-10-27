@@ -86,14 +86,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 	if (mail($email_to, $email_subject, $email_message, $email_headers) ){ 
-  header('Location: login.php?email=' . $email . '&message=success');
+
+    ?>
+<script>
+      $(document).ready(function()
+      {
+        $('#exampleModalCenter').modal({backdrop: 'static', keyboard: false}); 
+         $("#exampleModalCenter").modal("show");
+        
+      });
+</script>
+
+ <?php 
+  
   }else{
 		echo '<hr /><center> Ha ocurrido un error y no pudo enviarse el correo </center>';
   }
-
-  header('Location: login.php?email=' . $email . '&message=success');
-
-    
+  
   } else {
 
     echo '<p class="aler alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';

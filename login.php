@@ -50,9 +50,6 @@
             <div class="col-md-8">
             <?php
                         if(isset($_GET['message'])){
-                            if(isset($_GET['email']) && $_GET['message']=='success'){
-                        echo '<div class="alert alert-success"> ¡Tu registro realizado correctamente, <strong>por favor revisa tu correo electrónico para verificar tu cuenta</strong>!</div>';
-                            }
                             if($_GET['message']=='error'){
                                 echo '<div class="alert alert-danger"> Error al intentar iniciar sesión, verifica que tu correo o contraseña sean correctos</div>';    
                             }   
