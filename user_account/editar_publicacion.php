@@ -154,7 +154,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
            
 
             <div class="form-group">
-            <input class="form-control" type="hidden" name="estatus_anuncio" id="estatus_anuncio" value="Activo">
+            <input class="form-control" type="hidden" name="estatus_anuncio" id="estatus_anuncio" value="Publicado">
             </div>
            
             <div class="form-group">

@@ -82,12 +82,12 @@ foreach($solicitud as $item):
     <div class="form-group">
             <input class="form-control" type="hidden" name="descripcion" id="descripcion" value="<?php echo $item[13];?>" readonly >
     </div>
-
+<!--
     <div class="form-group">
       <label for="rfc">RFC</label>
-            <input class="form-control input-clean" type="text" name="rfc" id="rfc" value="<?php echo $item[4];?>" readonly >
+            <input class="form-control input-clean" type="text" name="rfc" id="rfc" value="" readonly >
     </div>
-  
+-->
 
     <div class="form-group">
       <label for="RFC">Nombre del solicitante</label>

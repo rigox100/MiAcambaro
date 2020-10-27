@@ -239,7 +239,7 @@ $anuncio= new Anuncio();
             </div> 
 
             <div class="form-group">
-            <input class="form-control" type="hidden" name="estatus_anuncio" id="estatus_anuncio" value="Activo">
+            <input class="form-control" type="hidden" name="estatus_anuncio" id="estatus_anuncio" value="Publicado">
             </div>
            
             <div class="form-group">

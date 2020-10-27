@@ -14,7 +14,7 @@ $(document).ready(function() {
     $.validator.addMethod("password", function(value, element) {
         var pattern3 = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,20}$/;
         return this.optional(element) || pattern3.test(value);
-    }, "Debe ingresar un email válido");
+    }, "Por favor introduzca una contraseña");
 
     $("#form").validate({
        

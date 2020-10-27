@@ -127,7 +127,6 @@
         
         if($("#form").valid()) {
         event.preventDefault();
-        /*Cambia 6LcZu9QUAAAAACaj-WBiVIQUlr94vfCC8DUpIanS por tu clave de sitio web*/
         grecaptcha.ready(function() {
             grecaptcha.execute('6LeRAtsZAAAAAFPj_jVnUreuGCaI8Z09QCG3kz9d', {action: 'registro'}).then(function(token) {
                 $('#form').prepend('<input type="hidden" name="token" value="' + token + '">');

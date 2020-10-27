@@ -15,13 +15,14 @@ class Usuario {
 
     const TABLA = 'usuarios';
 
-    public function __construct($nombre=null, $apellido=null, $email=null, $password=null, $estatus=null, $idRol=null, $idUsuario=null ) {
+    public function __construct($nombre=null, $apellido=null, $email=null, $password=null, $estatus=null, $token=null, $idRol=null, $idUsuario=null ) {
 
         $this->nombre = $nombre;
         $this->email = $email;
         $this->apellido = $apellido;
         $this->password = $password;
         $this->estatus = $estatus;
+        $this->token = $token;
         $this->idRol = $idRol;
         $this->idUsuario = $idUsuario;
 
@@ -49,6 +50,10 @@ class Usuario {
 
      public function getEstatus() {
         return $this->estatus;
+    }
+
+    public function getToken() {
+        return $this->token;
     }
 
     public function getIdRol() {
@@ -81,6 +86,10 @@ class Usuario {
         $this->estatus = $estatus;
     }
 
+    public function setToken($token) {
+        $this->token = $token;
+    }
+
     public function setIdRol($idRol) {
         $this->idRol = $idRol;
     }
@@ -99,12 +108,13 @@ class Usuario {
             $consulta->bindParam(':idRol', $this->idRol);
             $consulta->execute();
         } else /* Inserta */ {
-            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre, apellido, email, password, estatus, idRol) VALUES (:nombre, :apellido, :email, :password, :estatus, :idRol)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre, apellido, email, password, estatus, token, idRol) VALUES (:nombre, :apellido, :email, :password, :estatus, :token, :idRol)');
             $consulta->bindParam(':nombre', $this->nombre);
             $consulta->bindParam(':apellido', $this->apellido);
             $consulta->bindParam(':email', $this->email);
             $consulta->bindParam(':password', $this->password);
             $consulta->bindParam(':estatus', $this->estatus);
+            $consulta->bindParam(':token', $this->token);
             $consulta->bindParam(':idRol', $this->idRol);
             if($consulta->execute()){
                 $this->id = $conexion->lastInsertId();
@@ -129,14 +139,14 @@ class Usuario {
     public static function buscarPorId($idUsuario) {
 
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT  nombre, apellido, email, password, estatus, idRol FROM ' . self::TABLA . ' WHERE idUsuario = :idUsuario');
+        $consulta = $conexion->prepare('SELECT  nombre, apellido, email, password, estatus, token, idRol FROM ' . self::TABLA . ' WHERE idUsuario = :idUsuario');
         $consulta->bindParam(':idUsuario', $idUsuario);
         $consulta->execute();
         $registro = $consulta->fetch();
         //var_dump($registro);
         $conexion = null;
         if ($registro) {
-            return new self($registro['nombre'], $registro['apellido'], $registro['email'], $registro['password'], $registro['estatus'], $registro['idRol'], $idUsuario);
+            return new self($registro['nombre'], $registro['apellido'], $registro['email'], $registro['password'], $registro['estatus'], $registro['token'], $registro['idRol'], $idUsuario);
 
         } else {
             return false;
@@ -146,7 +156,7 @@ class Usuario {
 
     public static function recuperarTodos() {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM usuarios INNER JOIN roles ON roles.idRol = usuarios.idRol');
+        $consulta = $conexion->prepare('SELECT * FROM usuarios INNER JOIN roles ON roles.idRol = usuarios.idRol WHERE usuarios.idRol = 3');
         $consulta->execute();
         $registros = $consulta->fetchAll();
         $conexion = null;
@@ -167,7 +177,7 @@ class Usuario {
            $_SESSION['idUsuario'] = $registro[0];
            $_SESSION['nombre'] = $registro[1];
            $_SESSION['email'] = $registro[3];
-           $_SESSION['idRol'] = $registro[6];
+           $_SESSION['idRol'] = $registro[7];
             return true;
         } else {
             return false;

@@ -26,7 +26,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
               if($_GET['message']=="success"){
                 ?>
              <div class="alert alert-success alert-dismissible fade show" role="alert">
-  <small>Los información se han actualizado correctamente </small>
+  <small>Los información se ha actualizado correctamente. </small>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -100,7 +100,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
                     <?php 
                     if ($item[11] == 'Publicada') {
                       ?>
-                      <td class="text-center"><a href="" data-toggle="modal" data-target="#exampleModal2" class="btn btn-info fa fa-eye mr-2"></a></td>';
+                      <td class="text-center"><a href="" data-toggle="modal" data-target="#exampleModal2" class="btn btn-info fa fa-eye mr-2"></a></td>
                       <td class="text-center">
                         <form action="editar_publicacion.php" method="post">
                           <input type="hidden" name="idSolicitud" value="<?php echo $item[0] ?>">

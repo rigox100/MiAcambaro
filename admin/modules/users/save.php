@@ -17,6 +17,7 @@ $rol = Rol::recuperarTodos();
         $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : null;
         $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : null;
         $email = (isset($_POST['email'])) ? $_POST['email'] : null;
+        $token = md5($email);
         if($_POST['new_password']==null){
           $password = (isset($_POST['old_password'])) ? $_POST['old_password'] : null;
         }else{
@@ -29,6 +30,7 @@ $rol = Rol::recuperarTodos();
         $usuario->setEmail($email);
         $usuario->setPassword($password);
         $usuario->setEstatus($estatus);
+        $usuario->setToken($token);
         $usuario->setIdRol($idRol);
         $usuario->guardar();
         if($_SESSION['idRol']!=3){

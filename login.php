@@ -76,9 +76,6 @@
                                     <input type="password" id="password" class="form-control" name="password" required>
                                 </div>
                             </div>
-
-                           
-
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     Acceder
@@ -87,6 +84,7 @@
                             </div>
                     </div>
                     </form>
+                    <script src="template/js/login_validate.js"></script>
                 </div>
             </div>
         </div>

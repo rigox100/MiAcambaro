@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $usuario->setEmail($email);
   $usuario->setPassword($password);
   $usuario->setEstatus($estatus);
+  $usuario->setToken($tokenId);
   $usuario->setIdRol($idRol);
   if ($usuario->guardar()) {
 

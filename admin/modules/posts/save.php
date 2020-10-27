@@ -321,7 +321,8 @@ $categoria = Categoria::recuperarTodos();
             <div class="form-group">
               <label for="estatus_anuncio">Estatus Anuncio</label>
             <select name="estatus_anuncio" id="estatus_anuncio" class="form-control" style="width: 60%;">
-              <option value="Activo" <?php if($anuncio->getEstatusAnuncio()=='Activo'){ echo 'Selected';}?>>Activo</option>
+              <option value="Publicado" <?php if($anuncio->getEstatusAnuncio()=='Publicado'){ echo 'Selected';}?>>Publicado</option>
+              <option value="Borrador" <?php if($anuncio->getEstatusAnuncio()=='Borrador'){ echo 'Selected';}?>>Borrador</option>
               <option value="Inactivo"<?php if($anuncio->getEstatusAnuncio()=='Inactivo'){ echo 'Selected';}?>>Inactivo</option>
             </select> 
             </div>

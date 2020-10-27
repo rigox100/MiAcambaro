@@ -35,7 +35,7 @@ $usuario = Usuario::recuperarTodos();
       <td><?php echo $item[2] ?></td>
       <td><?php echo $item[3] ?></td>
       <td><?php  echo $item[5] ?></td>
-      <td><?php echo $item[8] ?></td>
+      <td><?php echo $item[9] ?></td>
       <td class="text-center"><a href="save.php?idUsuario=<?php echo $item[0];?>" class="btn btn-warning far fa-edit"></a></td>
       <td class="text-center"><a href="delete.php?idUsuario=<?php echo $item[0];?>" onclick="return confirm('¿Está seguro que desea eliminar este usuario?')" class="btn btn-danger far fa-trash-alt"></a></td> 
 
@@ -46,7 +46,7 @@ endforeach; ?>
   </tbody>
 </table> <br>
 <?php else: ?>
-            <p class="alert alert-info"> No hay usuarios agregados </p>
+            <p class="alert alert-info"> No hay usuarios registrados </p>
         <?php endif; ?>
             
           </div>

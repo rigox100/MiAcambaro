@@ -13,7 +13,16 @@ if($item[11]=="En proceso"){
 }elseif($item[11]=="Publicada"){
 
     $title1='Anuncio Publicado';
-    $content1 = 'El anuncio de su negocio ha sido publicado con éxito, usted puede ver su anuncio y/o modificar algunos detalles desde la sección <strong>Ajustes</strong> <i class="btn btn-warning fa fa-edit mr-2"></i>';
+    $content1 = 'El anuncio de su negocio ha sido publicado con éxito, ahora puede ver y/o modificar algunos <strong>Ajustes</strong> <span class="alert alert-warning fa fa-edit mr-2"></span> como: 
+    <ul style="margin-top:-30px;">
+        <li>Cambiar imagen de portada de su negocio</li>
+        <li>Incluir enlaces a sus redes sociales</li>
+        <li>Incluir enlace a su negocio en google maps</li>
+        <li>Horario de trabajo</li>
+        <li>Descripción del negocio</li>
+    </ul>
+    
+    Si tiene alguna duda no dude en enviarnos un mensaje en la sección de <a href="#" class="btn btn-primary fas fa-edit"> Contacto </a>';
 }else{
     $title1='Solicitud Rechazada';
     $content1 ='La solicitud para publicar su anuncio no ha podido ser validada,
