@@ -107,13 +107,10 @@
                            
                              </div>
                             </div>
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 w-100">
                                 <button type="submit" class="btn btn-primary">
                                     Registrar
                                 </button>
-                                <a href="#" class="btn btn-link">
-                                    ¿Olvidaste tu contraseña?
-                                </a>
                             </div>
                     </div>
                     </form>

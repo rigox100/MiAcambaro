@@ -11,10 +11,12 @@ $(document).ready(function() {
         return this.optional(element) || pattern2.test(value);
     }, "Debe ingresar un email válido");
 
+    /*
     $.validator.addMethod("password", function(value, element) {
         var pattern3 = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,20}$/;
         return this.optional(element) || pattern3.test(value);
     }, "Por favor introduzca una contraseña");
+    */
 
     $("#form").validate({
        
@@ -52,14 +54,13 @@ $(document).ready(function() {
             },
             new_password: {
                 required: true,
-                maxlength: 20,
-                password: true
+                minlength: 8,
+                maxlength: 20
+                
             },
 
             confirm_password: {
                 required: true,
-                maxlength: 20,
-                password: true,
                 equalTo: "#new_password"
             },
 
@@ -95,13 +96,13 @@ $(document).ready(function() {
 
             new_password: {
                 required: "Por favor introduzca una contraseña",
-                password: "La contraseña debe tener al entre 8 y 20 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula."
+                minlength: "La contraseña debe tener al menos 8 caracteres",
+                maxlength: "La contraseña solo admite un máximo de 20 caracteres"
+
             },
 
             confirm_password: {
                 required: "Por favor introduzca una contraseña",
-                maxlength: 20,
-                password: "Por favor introduzca la misma contraseña que la anterior",
                 equalTo: "Por favor introduzca la misma contraseña que la anterior"
             },
 

@@ -4,15 +4,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de cuenta</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button>-->
       </div>
       <div class="modal-body">
-        <p> ¡Tu registro realizado correctamente, <strong>por favor revisa tu correo electrónico para confirmar tu cuenta</strong>!</p>
+        <p> <strong> ¡Tu registro realizado correctamente! <strong> </p>
+        <P> Se te ha enviado un mensaje a tu correo electrónico, por favor revisa el mensaje y sigue las instrucciones para confirmar tu cuenta.</p>
       </div>
       <div class="modal-footer">
-        <a href="index.php" class="btn btn-primary">Cerrar </a>
+        <a href="index.php" class="btn btn-secondary">Cerrar </a>
       </div>
     </div>
   </div>

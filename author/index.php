@@ -19,9 +19,12 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2>Sitio web en mantenimiento</h2>
-                <p class="alert alert-info">El sitio web volverá a estar <strong> disponible el 5 de noviembre de 2020</strong></p>
-                <img src="images/mantenimiento.png" alt="Sitio en Mantenimiento" class="img-fluid" style="width: 38%; margin-left:30%">
+            <div class="jumbotron">
+  <h1 class="display-4">Desarrollado y mantenido por:</h1>
+  <p class="lead">Christian Emmanuel Lozano Hernández</p>
+  <p class="lead">José Rigoberto Rivera Hernández</p>
+ 
+</div>
 
             </div>
         </div>
