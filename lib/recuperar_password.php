@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	define("DEMO", false); 
 
 
-	$template_file = "./template/email_templates/template_email_recovery.php";
+	$template_file = "../template/email_templates/template_email_recovery.php";
 
 
 	$email_from = "MiAcambaro <admin@miacambaro.mx>";
