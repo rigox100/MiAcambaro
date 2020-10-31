@@ -24,7 +24,7 @@ if(isset($_REQUEST['token'])){
 
     require_once '../admin/class/Usuario.php';
 
-    $token = (isset($_REQUEST['token'])) ? $_REQUEST['token'] : null;
+    $token = (isset($_POST['token'])) ? $_REQUEST['POST'] : null;
 
     $registro = new Usuario;
     $registro->setToken($token);

@@ -55,6 +55,7 @@
                             }   
                     }
 
+
                         ?>
                 <div class="card">
                     <div class="card-header">Login</div>
@@ -77,13 +78,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     Acceder
                                 </button>
-                                <a href="" data-toggle="modal" data-target="#ModalEmailRecover" class="btn btn-link">
-                                    ¿Olvidaste tu contraseña?
-                                </a>
+                              
                                
                             </div>
                     </div>
                     </form>
+                    <a href="" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
+                                    ¿Olvidaste tu contraseña?
+                                </a>
                     <script src="template/js/login_validate.js"></script>
                     <?php
                     include_once 'template/partials/frm_modal_recuperar_email.php';
