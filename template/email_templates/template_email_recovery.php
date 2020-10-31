@@ -13,9 +13,9 @@
 
 				<h1 style="font-size: 22px;"><center>{EMAIL_TITLE}</center></h1>
 				
-				<p>&iexcl;Hola Suscriptor</p>
+				<p>&iexcl;Hola Suscriptor!</p>
 
-				<p>Este correo se ha enviado por una petici&oacute; para el reestablecimiento de su contrase&ntilde;a </p>
+				<p>Este correo se ha enviado por una petici&oacute;n, para el reestablecimiento de su contrase&ntilde;a </p>
 
 				<p>Para completar el reestablecimiento de su contrase&ntilde; por favor haga clic en el siguiente bot&oacute;n.</p>
 
@@ -28,6 +28,8 @@
 						</form>
 	
 				</center></p>
+
+				<small>*Si usted no realiz$oacute esta solicitud, favor de ignorar este correo.</small>
 				
 			</div>
 

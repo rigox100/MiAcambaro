@@ -20,7 +20,7 @@
 
 <?php
 
-if(isset($_REQUEST['token'])){
+if(isset($_POST['token'])){
 
     require_once '../admin/class/Usuario.php';
 
@@ -28,8 +28,8 @@ if(isset($_REQUEST['token'])){
 
     $registro = new Usuario;
     $registro->setToken($token);
-    if(false){
-        if(false){
+    if(true){
+        if(true){
             ?>
             <script>
       $(document).ready(function()

@@ -9,8 +9,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="lib/recuperar_password.php" method="post">
+        <form action="" method="post">
         <div class="form-group">
+          <input type="hidden" name="recovery" value="1">
         <label for="email">Ingrese el correo electrónico con el que registro su cuenta.</label>
           <input type="email" class="form-control" name="email" id="email" value="" required>
         </div>

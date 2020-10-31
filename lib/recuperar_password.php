@@ -2,6 +2,8 @@
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+    if($_POST['recovery']){
+
     $email = (isset($_POST['email'])) ? $_POST['email'] : null;
     $token = md5($email);
     $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
@@ -15,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	define("DEMO", false); 
 
 
-	$template_file = "../template/email_templates/template_email_recovery.php";
+	$template_file = "./template/email_templates/template_email_recovery.php";
 
 
 	$email_from = "MiAcambaro <admin@miacambaro.mx>";
@@ -73,30 +75,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }else{
 		echo '<hr /><center> Ha ocurrido un error y no pudo enviarse el correo </center>';
   }
-
+    }
 
 }
-?>
-<!-- Modal -->
-<div class="modal fade" id="MsjModalRecovery" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de cuenta</h5>
-        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>-->
-      </div>
-      <div class="modal-body">
-        <p> <strong> Reestablecimiento de contraseña <strong> </p>
-        <P> Se te ha enviado un mensaje a tu correo electrónico, por favor revisa el mensaje y sigue las instrucciones para reestablecer tu contraseña.</p>
-      </div>
-      <div class="modal-footer">
-        <a href="index.php" class="btn btn-secondary">Cerrar </a>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 

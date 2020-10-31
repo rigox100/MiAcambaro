@@ -54,7 +54,7 @@
                                 echo '<div class="alert alert-danger"> Error al intentar iniciar sesión, verifica que tu correo o contraseña sean correctos</div>';    
                             }   
                     }
-
+                    include_once 'lib/recuperar_password.php';
 
                         ?>
                 <div class="card">
@@ -88,6 +88,7 @@
                                 </a>
                     <script src="template/js/login_validate.js"></script>
                     <?php
+                     include_once 'template/partials/msj_modal_recovery.php';
                     include_once 'template/partials/frm_modal_recuperar_email.php';
                     ?>
                 </div>
