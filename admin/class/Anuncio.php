@@ -389,6 +389,17 @@ class Anuncio {
         return $registros;
     }
 
+
+    public static function recuperarTodos2() {
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('SELECT idAnuncio,titulo,estatus_anuncio FROM anuncios');
+        $consulta->execute();
+        $registros = $consulta->fetchAll();
+  
+        $conexion = null;
+        return $registros;
+    }
+
     public static function busqueda($search) {
         $conexion = new Conexion();
         $consulta = $conexion->prepare("SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( titulo LIKE '%$search%' OR municipio LIKE '%$search%' OR anuncios.descripcion LIKE '%$search%' OR categorias.nombre LIKE '%$search%' )");

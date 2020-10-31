@@ -1,8 +1,11 @@
 <?php
+ session_start();
 include_once 'admin/class/Anuncio.php';
 
 require_once 'admin/class/Categoria.php';
-$categoria = Categoria::recuperarTodos();
+$categoria = Categoria::getRandom();
+$categorias = Categoria::recuperarTodos();
+
 
 
 
@@ -14,7 +17,7 @@ $categoria = Categoria::recuperarTodos();
 			
             if(empty($search)){
 			
-					header("Location: index.php");
+					header("Location: index2.php");
 				
                 
 			}
@@ -77,9 +80,18 @@ $categoria = Categoria::recuperarTodos();
 		<meta charset="UTF-8">
 		<!-- Site Title -->
 		<title>::Busqueda::</title>
-		<!-- <link rel="shortcut icon" href="search/img/icon.ico"> -->
+		<link rel="shortcut icon" href="search/img/logo.png">
+		
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<link rel="stylesheet" href="search/css/jquery-ui.css">
+    		
+    		
 			<!--
 			CSS
 			============================================= -->
@@ -92,17 +104,20 @@ $categoria = Categoria::recuperarTodos();
 			<link rel="stylesheet" href="search/css/owl.carousel.css">
 			<link rel="stylesheet" href="search/css/main.css">
 
+
+
 	
 			
 		</head>
 		<body>
 
 			  <header id="header" id="home">
-			    <div class="container">
+			  <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
 				      <div id="logo">
 				        <a class="text-white" href="index.php">MiAcámbaro</a>
-				      </div>
+					  </div>
+					  
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.php">Inicio</a></li>
@@ -118,12 +133,12 @@ $categoria = Categoria::recuperarTodos();
 				            </ul>
 				          </li> 
 									<li><a href="#">Aviso de privacidad</a></li>
-				          <!-- <li><a class="ticker-btn" href="#">Iniciar Sesión</a></li>
-				          <li><a class="ticker-btn" href="#">Registro</a></li> -->
+				         
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
 			    	</div>
 			    </div>
+			
 			  </header><!-- #header -->
 
 			  
@@ -142,33 +157,14 @@ $categoria = Categoria::recuperarTodos();
 					
 							<form action="search.php" method="POST" class="serach-form-area" >
 								<div class="row justify-content-center form-wrap">
-									<div class="col-lg-4 form-cols">
+									<div class="col-lg-5 form-cols">
 										<input type="text" class="form-control" name="busqueda" value="<?php echo $search_original ?>">
 									</div>
 
-									<div class="col-lg-3 form-cols">
-										<div class="default-select" id="default-selects2">
-											<select>
-												<option value="1">Seleccionar Categoría</option>
-												<?php foreach ($categoria as $item): ?>
-                									<option value="<?php echo $item[0]; ?>" > <?php echo $item[1];?> </option>
-											<?php
-											endforeach;
-											?>
-
-											</select>
-										</div>
+									<div class="col-lg-5 form-cols">
+										<input id="cate" type="text" class="form-control" name="categorias" placeholder = "Escriba el nombre de una categoría" >
 									</div>
 
-									<div class="col-lg-3 form-cols">
-										<div class="default-select" id="default-selects">
-											<select>
-												<option value="1">Seleccionar subcategoría</option>
-												<option value="2">Subcategoría Uno</option>
-											
-											</select>
-										</div>
-									</div>
 							
 									<div class="col-lg-2 form-cols">
 									    <button type="submit"  class="btn btn-info">
@@ -196,42 +192,41 @@ $categoria = Categoria::recuperarTodos();
 						<div class="col-lg-8 post-list">
 						<?php foreach ($busqueda as $item): ?>
 							<div class="single-post d-flex flex-row">
+
 								<div class="thumb">
-									<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="150" height="80" class="img-fluid">
-									<ul class="tags">
-										<li>
-											<a href="#">Facebook</a>
-										</li>
-										<li>
-											<a href="#">Sitio Web</a>
-										</li>
-										<li>
-											<a href="#">Mapa</a>
-										</li>
-									</ul>
+									<a href="#" data-toggle="modal" data-target="#exampleModalCenter"><img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle"></a>
 								</div>
 
 								<div class="details">
 									<div class="title d-flex flex-row justify-content-between">
 										<div class="titles">
-											<a href="single.html"><h4><?php echo $item['titulo']; ?></h4></a>
-											<h6><?php echo $item['municipio']; ?></h6>
+											<a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h4><?php echo $item['titulo']; ?></h4></a>
 										</div>
-										<ul class="btns">
-											 <!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li> -->
-											<li><a href="#">Más Información</a></li>
-										</ul>
-									</div>
+								</div>
+
+								
+                                
+								<div class="starts">
+									<ul class="list-unstyled list-inline rating mb-0">
+										<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+										<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+										<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+										<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+										<li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+										<li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+									</ul>
+								</div>
+								
+								<div class="closed-ca ti-home"><?php echo $item['calle']; ?> &#x23; 30,&nbsp;&nbsp; <span class="fa fa-whatsapp closed-wa ">&nbsp;417-117-3020</span>  &nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span>  </div> 
+						
+								
+								
+								
+								<div class="closed-now">ABIERTO AHORA</div>
+
+								
 
 
-									<p>
-									
-									<!-- Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore. -->
-									<?php echo $item[11]; ?>
-									</p>
-									<h5>Horario: <?php echo $item['entrada']; ?> - <?php echo $item['cierre']; ?></h5>
-									<p class="address"><span class="lnr lnr-map"></span> Calle: <?php echo $item['calle']; ?>, <?php echo $item['colonia']; ?>, C.P. <?php echo $item['cp']; ?></p>
-									<p class="address"><span class="lnr lnr-database"></span> Tel: <?php echo $item['telefono']; ?></p>
 
 
 								</div>
@@ -243,154 +238,142 @@ $categoria = Categoria::recuperarTodos();
 							<?php else: ?>
 
 								<div class="container">
-					<div class="row justify-content-center d-flex">
-						<div class="col-lg-8 post-list">
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="search/img/post.png" alt="" width="150" height="80" class="img-fluid">
-									<ul class="tags">
-								
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Ups!! No hemos encontrado resultados para "<?php echo $search_original?>" </h4></a>
-									
-										</div>
-										<ul class="btns">
-											<!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li> -->
-										
-										</ul>
+										<div class="row justify-content-center d-flex">
+											<div class="col-lg-8 post-list">
+												<div class="single-post d-flex flex-row">
+													<div class="thumb">
+														<img src="search/img/post.png" alt="" width="150" height="80" class="img-fluid">
+														<ul class="tags">
+													
+														</ul>
+													</div>
+													<div class="details">
+														<div class="title d-flex flex-row justify-content-between">
+															<div class="titles">
+																<a href="single.html"><h4>Ups!! No hemos encontrado resultados para "<?php echo $search_original?>" </h4></a>
+														
+															</div>
+															<ul class="btns">
+																<!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li> -->
+															
+															</ul>
+														</div>
+
+
+
+													</div>
 									</div>
-
-
-
-								</div>
-							</div>
 							<?php endif; ?>
 
 						</div>
 						
 
 
+						<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Información</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 						<div class="col-lg-4 sidebar">
 
-							<div class="single-slidebar">
-								<h4>Mapa</h4>
-								<ul class="cat-list">
-						
-									<img src="search/img/thumbnail.jpg" alt="" width="300" height="200" class="img-fluid">
-								</ul>
-							</div>
+							
 
 							<div class="single-slidebar">
-								<h4>Contenidos Relacionados</h4>
+
+								<h4 class="text-center">Lugares Destacados</h4> 
+
+								<?php
+                    				include_once 'admin/class/Anuncio.php';
+                    				$anuncio = Anuncio::getRandom(3);
+
+                    					if (count($anuncio) > 0):
+                				?>
+
 								<div class="active-relatedjob-carusel">
+								<?php foreach ($anuncio as $item): ?>
+
 									<div class="single-rated">
-										<img class="img-fluid" src="search/img/r1.jpg" alt="">
-										<h4>Hotel Bugambilias</h4>
-										<h6>Premium Labels Limited</h6>
+									<a href="#">
+										<img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#" >
+										<h4><?php echo $item['titulo']; ?></h4>
+								   </a>	
+										   
+										<div class="starts">
+											<ul class="list-unstyled list-inline rating mb-0">
+												<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+												<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+												<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+												<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+												<li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+												<li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+											</ul>
+										</div>
+										<h6><span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span></h6>
 										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
+												<?php echo $item[11]; ?>
 										</p>
-										<h5>Job Nature: Full time</h5>
-										<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
+										<hr>
+
+										<div class="info">
+											<h5 class="far fa-address-book">&nbsp;<?php echo $item['calle']; ?> &#x23; 30</h5>
+										</div>
+
+										<div class="info">
+											<h5 class="fa fa-whatsapp">&nbsp;417-120-9696</h5>
+										</div>
+
+										<div class="info">
+											<h5 class="far fa-clock">&nbsp;<?php echo $item['entrada']; ?> - <?php echo $item['cierre']; ?></h5>
+										</div>
+
+
+
+
+										
 										<a href="#" class="btns text-uppercase">Ver más...</a>
 									</div>
-									<div class="single-rated">
-										<img class="img-fluid" src="search/img/r1.jpg" alt="">
-										<h4>Panificadora El Triunfo</h4>
-										<h6>Premium Labels Limited</h6>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-										</p>
-										<h5>Job Nature: Full time</h5>
-										<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-										<a href="#" class="btns text-uppercase">Ver más...</a>
-									</div>
-									<div class="single-rated">
-										<img class="img-fluid" src="search/img/r1.jpg" alt="">
-										<h4>Zapatería Flexi</h4>
-										<h6>Premium Labels Limited</h6>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-										</p>
-										<h5>Job Nature: Full time</h5>
-										<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-										<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-										<a href="#" class="btns text-uppercase">Ver más...</a>
-									</div>
+
+									<?php endforeach; ?>
+
+								
+
+
 								</div>
+								<?php else: ?>
+                        				<p class="alert alert-info"> No hay lugares destacados agregados </p>
+                     			<?php endif; ?>
 							</div>
 
 							<div class="single-slidebar">
-								<h4>Categorías</h4>
+								<h4 class="text-center">Categorías</h4>
 								<ul class="cat-list">
-									<li><a class="justify-content-between d-flex" href="#"><p>Hoteles</p><span>37</span></a></li>
-									<li><a class="justify-content-between d-flex" href="#"><p>Zapaterías</p><span>57</span></a></li>
-									<li><a class="justify-content-between d-flex" href="#"><p>Balnearios</p><span>33</span></a></li>
-									<li><a class="justify-content-between d-flex" href="#"><p>Ferreterías</p><span>36</span></a></li>
-									<li><a class="justify-content-between d-flex" href="#"><p>SuperMercados</p><span>47</span></a></li>
-									<li><a class="justify-content-between d-flex" href="#"><p>Veterinarias</p><span>27</span></a></li>
-									<li><a class="justify-content-between d-flex" href="#"><p>Hospitales</p><span>17</span></a></li>
+								<?php foreach ($categoria as $item): ?>
+									<li><a class="justify-content-between d-flex" href="#"><p><?php echo $item[1];?></p></a></li>
+									<?php
+									 endforeach;
+									?>
 								</ul>
 							</div>
 
-							<!-- <div class="single-slidebar">
-								<h4>Carrer Advice Blog</h4>
-								<div class="blog-list">
-									<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-										<a href="#"><h4>Home Audio Recording <br>
-										For Everyone</h4></a>
-										<div class="meta justify-content-between d-flex">
-											<p>
-												02 Hours ago
-											</p>
-											<p>
-												<span class="lnr lnr-heart"></span>
-												06
-												 <span class="lnr lnr-bubble"></span>
-												02
-											</p>
-										</div>
-									</div> -->
-									<!-- <div class="single-blog " style="background:#000 url(img/blog2.jpg);">
-										<a href="#"><h4>Home Audio Recording <br>
-										For Everyone</h4></a>
-										<div class="meta justify-content-between d-flex">
-											<p>
-												02 Hours ago
-											</p>
-											<p>
-												<span class="lnr lnr-heart"></span>
-												06
-												 <span class="lnr lnr-bubble"></span>
-												02
-											</p>
-										</div>
-									</div> -->
-									<!-- <div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-										<a href="#"><h4>Home Audio Recording <br>
-										For Everyone</h4></a>
-										<div class="meta justify-content-between d-flex">
-											<p>
-												02 Hours ago
-											</p>
-											<p>
-												<span class="lnr lnr-heart"></span>
-												06
-												 <span class="lnr lnr-bubble"></span>
-												02
-											</p>
-										</div>
-									</div>
-								</div>
-							</div> -->
+						
 
 						</div>
 					</div>
@@ -398,97 +381,60 @@ $categoria = Categoria::recuperarTodos();
 			</section>
 			<!-- End post Area -->
 
-			<!-- Start callto-action Area -->
-			<!-- <section class="callto-action-area section-gap">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content col-lg-9">
-							<div class="title text-center">
-								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
-								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-								<a class="primary-btn" href="#">I am a Candidate</a>
-								<a class="primary-btn" href="#">Request Free Demo</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> -->
-			<!-- End calto-action Area -->
+		
 
 			<!-- start footer Area -->
 			<footer class="footer-area section-gap">
 				<div class="container">
-					<!-- <div class="row">
-						<div class="col-lg-3  col-md-12">
-							<div class="single-footer-widget">
-								<h6>Top Products</h6>
-								<ul class="footer-nav">
-									<li><a href="#">Managed Website</a></li>
-									<li><a href="#">Manage Reputation</a></li>
-									<li><a href="#">Power Tools</a></li>
-									<li><a href="#">Marketing Service</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-6  col-md-12">
-							<div class="single-footer-widget newsletter">
-								<h6>Newsletter</h6>
-								<p>You can trust us. we only send promo offers, not a single spam.</p>
-								<div id="mc_embed_signup">
-									<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-
-										<div class="form-group row" style="width: 100%">
-											<div class="col-lg-8 col-md-12">
-												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
-												<div style="position: absolute; left: -5000px;">
-													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-												</div>
-											</div>
-
-											<div class="col-lg-4 col-md-12">
-												<button class="nw-btn primary-btn">Subscribe<span class="lnr lnr-arrow-right"></span></button>
-											</div>
-										</div>
-										<div class="info"></div>
-									</form>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3  col-md-12">
-							<div class="single-footer-widget mail-chimp">
-								<h6 class="mb-20">Instragram Feed</h6>
-								<ul class="instafeed d-flex flex-wrap">
-									<li><img src="img/i1.jpg" alt=""></li>
-									<li><img src="img/i2.jpg" alt=""></li>
-									<li><img src="img/i3.jpg" alt=""></li>
-									<li><img src="img/i4.jpg" alt=""></li>
-									<li><img src="img/i5.jpg" alt=""></li>
-									<li><img src="img/i6.jpg" alt=""></li>
-									<li><img src="img/i7.jpg" alt=""></li>
-									<li><img src="img/i8.jpg" alt=""></li>
-								</ul>
-							</div>
-						</div>
-					</div> -->
+				
 
 					<div class="row footer-bottom d-flex justify-content-between">
 						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | Gobierno Municipal de Acámbaro
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos los derechos reservados | miacambaro.mx
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
 						<div class="col-lg-4 col-sm-12 footer-social">
 							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-behance"></i></a>
+							
+							<a href="#"><i class="fa fa-whatsapp"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+							
 						</div>
 					</div>
 				</div>
 			</footer>
 			<!-- End footer Area -->
+		
+			 <script src="search/js/vendor/jquery-2.2.4.min.js"></script>
+			 <script src="https://code.jquery.com/jquery-2.1.3.min.js" integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+			 <script src="search/js/jquery-ui.min.js"></script>
 
-			<script src="search/js/vendor/jquery-2.2.4.min.js"></script>
+			 <script type = "text/javascript">
+
+					$(document).ready(function() {
+						
+						var colores =[
+
+							"Hoteles",
+							"Zapaterias",
+							"restaurantes",
+							"Ferreterias",
+							"Supermercados",
+							"Panaderias",
+							"Balnearios"
+							
+						];
+						$('#cate').autocomplete({
+
+							source: colores 
+
+						});
+					});
+
+				</script>
+
+
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="search/js/vendor/bootstrap.min.js"></script>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -503,6 +449,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 			<script src="search/js/parallax.min.js"></script>
 			<script src="search/js/mail-script.js"></script>
 			<script src="search/js/main.js"></script>
+
+			
 
 				
 		</body>

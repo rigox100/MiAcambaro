@@ -12,7 +12,7 @@
     <meta name="keywords" content="#">
     <!-- Page Title -->
     <title>::MiAcámbaro::</title>
-    <!-- <link rel="shortcut icon" href="images/icon.ico"> -->
+     <link rel="shortcut icon" href="images/logo.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -23,7 +23,13 @@
     <link rel="stylesheet" href="css/themify-icons.css">
     <!-- Hover Effects -->
     <link rel="stylesheet" href="css/set1.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    
+   
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link href="css/main.css" rel="stylesheet" />
@@ -37,7 +43,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.php">MiAcámbaro</a>
+                            <a class="navbar-brand" href="index.php">
+                               MiAcámbaro
+                             <!-- <img src="images/logo.png" width="120" height="42" class="d-inline-block align-top" alt=""> -->
+                            </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                                 aria-label="Toggle navigation">
@@ -137,8 +146,11 @@
                                                 class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
+                                <br>
 
-                           
+                                <a href="#"><p style="font-size: 20px;">Anunciate con nosotros | miacambaro.mx</p></a>
+
+                            
                         </div>
 
                             </div>
@@ -173,52 +185,80 @@
 
             <div class="row">
                 <?php foreach ($anuncio as $item): ?>
-                <div class="col-md-4 featured-responsive">
+                <div class="col-lg-4 col-md-6 col-12 featured-responsive ">
 
-                    <div class="featured-place-wrap">
+                    <div class="featured-place-wrap shadow-lg  rounded">
 
-                        <a href="#">
+                      
+                                <a href="#">
+                                    <img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#" >
+                           
+                              
+                                    <div class="featured-title-box">
+                                    <h4><?php echo $item['titulo']; ?></h4>
 
-                            <img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#" >
-                             <span class="featured-rating-orange">10</span> 
-                            <div class="featured-title-box">
-                                <h6><?php echo $item['titulo']; ?></h6>
-                                <p><?php echo $item['nombre']; ?></p> <span>• </span>
-                                <p><span><?php echo $item['municipio']; ?></span> </p>
-                               
+                                </a>
+
+                                <div class="closed-now">ABIERTO AHORA</div><br>
+                                
+                                <ul class="list-unstyled list-inline rating mb-0">
+                                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+                                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                                    <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+                                    <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+                                    <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+                                </ul>
+
+
+
+
+                                <div>
+                                    <p> &#x26ab;&#xfe0e; &nbsp;<?php echo $item['municipio']; ?>,</p> &nbsp;&nbsp;
+                                    <p><span><?php echo $item['nombre']; ?></span> </p>
+                                </div>
+                                <!-- <div><?php //echo $item['descripcion']; ?></div> -->
+                                <hr class="my-4">
+                                <h6> Información </h6>
                                 
                                 <ul>
-                                    <li><span class="icon-location-pin"></span>
-                                        <p><?php echo $item['calle']; ?>, <?php echo $item['colonia']; ?></p>
-                                    </li>
                                     <li><span class="ti-home"></span>
-                                        <p>C.P. <?php echo $item['cp']; ?></p>
+                                        <p><?php echo $item['calle']; ?> &#x23; 30, <?php echo $item['colonia']; ?></p>
                                     </li>
-                                    <li><span class="fa fa-whatsapp"></span>
-                                        <p><?php echo $item['telefono']; ?></p>
+                                    <li><span class=" ti-write"></span>
+                                        <p><?php echo $item['cp']; ?></p>
                                     </li>
-                                    <li><span class="ti-world"></span>
-                                        <p><?php echo $item['sitio']; ?></p>
-                                    </li>
+
+                                    <a href="#">
+                                        <li><span class="fa fa-whatsapp"></span>
+                                            <p><?php echo $item['telefono']; ?></p>
+                                        </li>
+                                    </a>
+
+                                    <a href="#">
+                                        <li><span class="ti-world"></span>
+                                            <p><?php echo $item['sitio']; ?></p>
+                                        </li>
+                                    </a>
                                     <li><span class="icon-clock"></span>
                                         <p><?php echo $item['entrada']; ?> - <?php echo $item['cierre']; ?></p>
                                     </li>
 
                                 </ul>
-                                <div class="bottom-icons">
-                                    <?php  
-                                        
-                                    ?>
-                                    <div class="closed-now">ABIERTO AHORA</div>
-                                    <span class="ti-instagram"></span>
-                                    <span class="icon-social-facebook"></span>
-                                    <span class="icon-like"></span>
-                                   
-                                    
-                                </div>
+                                <hr class="my-4">
+                                <div class="text-center">
+                                    <a href="#"><img src="images/face.png" width="50px" height="50px"></a>
+                                    <a href="#"><img src="images/what.png" width="50px" height="50px"></a>
+                                    <a href="#"><img src="images/insta.png" width="50px" height="50px"></a>
+                                    <a href="#"><img src="images/youtu.png" width="50px" height="50px"></a>
+                                 </div>
+
+
+
+
                             </div>
 
-                        </a>
+                     
 
                     </div>
 
@@ -234,10 +274,10 @@
 
 
 
-            <div class="row justify-content-center">
-                <div class="col-md-4">
-                    <div class="featured-btn-wrap">
-                        <a href="#" class="btn btn-danger">VER TODAS</a>
+                     <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="styled-heading">
+                        <h3></h3>
                     </div>
                 </div>
             </div>
@@ -620,7 +660,7 @@
                 <div class="col-md-12">
                     <div class="copyright">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright &copy; 2020. Todos los derechos reservados | Paco
+                        <p>Copyright &copy; 2020. Todos los derechos reservados | miacambaro.mx</p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <ul>
                             <li><a href="#"><span class="ti-facebook"></span></a></li>
@@ -646,6 +686,8 @@
     <script src="./js/main.js"></script>
     <script src="js/superplaceholder.min.js"></script>
     <script  src="js/script.js"></script>
+
+     
     
 
     <script>

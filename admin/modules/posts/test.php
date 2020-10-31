@@ -2,7 +2,7 @@
 include_once '../../assets/template/header.php';
 include_once '../../class/Anuncio.php';
 
-$anuncio = Anuncio::recuperarTodos();
+$anuncio = Anuncio::recuperarTodos2();
 require_once '../../class/Categoria.php';
 $categoria = Categoria::recuperarTodos();
 
@@ -29,11 +29,10 @@ $categoria = Categoria::recuperarTodos();
             <table class="table table-bordered" id="table-data">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Portada</th>
+     
       <th scope="col">Empresa</th>
-      <th scope="col">Clasificación</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">Fecha de Publicación</th>
+      
+      
       <th scope="col">Estatus</th>
       <th scope="col">Ver</th>
       <th scope="col">Editar</th>
@@ -44,11 +43,11 @@ $categoria = Categoria::recuperarTodos();
   <tbody>
   <?php foreach ($anuncio as $item): ?>
     <tr>
-      <td style="width:25%"><img src="<?php echo $item['url_imagen']; ?>" width="150" height="150" class="img-fluid"></td>
-      <td><?php if($item['idSolicitud']!=NULL){?><span class="far fa-user"></span> <?php } echo $item['titulo']; ?></td>
-      <td><?php echo $item['nombre']; ?></td>
-      <td><?php echo $item['telefono']; ?></td>
-      <td><?php echo $item[28]; ?></td>
+      
+      <td><?php  echo $item['titulo']; ?></td>
+      
+ 
+     
       <td class="text-center">
         <?php 
         if($item['estatus_anuncio']=='Publicado'){

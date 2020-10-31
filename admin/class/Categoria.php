@@ -110,32 +110,16 @@ class Categoria {
         return $registros;
     }
 
-
- /*    public function logIn(){
+    public static function getRandom() {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA . ' WHERE email = :email and password = :password');
-        $consulta->bindParam(':email', $this->email);
-        $consulta->bindParam(':password', $this->password);
+        $consulta = $conexion->prepare('SELECT * FROM categorias ORDER BY RAND() LIMIT 10');
         $consulta->execute();
-        $registro = $consulta->fetch();
+        $registros = $consulta->fetchAll();
         $conexion = null;
-        if ($registro) {
+        return $registros;
+    }
 
-           $_SESSION['idUsuario'] = $registro[0];
-           $_SESSION['nombre'] = $registro[1];
-           $_SESSION['email'] = $registro[3];
-           $_SESSION['idRol'] = $registro[6];
-            return true;
-        } else {
-            return false;
-        }
-    } */
 
-/* 
-    public function validarEmail(){
-        $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE email = :email');
 
-    } */
 
 }
