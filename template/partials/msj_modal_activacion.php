@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="Mjs_modal_recovery" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,8 +9,8 @@
         </button>-->
       </div>
       <div class="modal-body">
-        <p> <strong>  <strong> </p>
-        <P> Se te ha enviado un mensaje a tu correo electrónico, por favor revisa el mensaje y sigue las instrucciones para confirmar tu cuenta.</p>
+        <p> <strong> ¡Tu registro realizado correctamente! </strong> </p>
+        <P> Se ha enviado un mensaje a tu correo electrónico, por favor revisalo y sigue las instrucciones para confirmar tu cuenta.</p>
       </div>
       <div class="modal-footer">
         <a href="index.php" class="btn btn-secondary">Cerrar </a>

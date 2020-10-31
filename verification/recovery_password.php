@@ -20,11 +20,11 @@
 
 <?php
 
-if(isset($_POST['token'])){
+if(isset($_REQUEST['token'])){
 
     require_once '../admin/class/Usuario.php';
 
-    $token = (isset($_POST['token'])) ? $_REQUEST['POST'] : null;
+    $token = (isset($_REQUEST['token'])) ? $_REQUEST['token'] : null;
 
     $registro = new Usuario;
     $registro->setToken($token);

@@ -9,8 +9,8 @@
         </button>-->
       </div>
       <div class="modal-body">
-        <p> <strong> Reestablecimiento de contraseña <strong> </p>
-        <P> Se te ha enviado un mensaje a tu correo electrónico, por favor revisa el mensaje y sigue las instrucciones para reestablecer tu contraseña.</p>
+        <p> <strong> Reestablecimiento de contraseña </strong> </p>
+        <P> Se ha enviado un mensaje a tu correo electrónico con las instrucciones para reestablecer tu contraseña.</p>
       </div>
       <div class="modal-footer">
         <a href="index.php" class="btn btn-secondary">Cerrar </a>

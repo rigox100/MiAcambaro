@@ -21,15 +21,12 @@
 
 				<p style="display: flex; justify-content: center; margin-top: 10px;">
 				<center>
-						<form action="https://www.miacambaro.mx/verification/recovery_password.php" method="post">
-						<input type="text" name="token" value="{CUSTOM_URL}">
-						<button type="submit" style="border: 1px solid #0561B3; background-color: #238CEA; 
-					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Reestablecer contraseña</button>					
-						</form>
+				<a href="https://www.miacambaro.mx/verification/recovery_password.php?token={CUSTOM_URL}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
+					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Reestablecer mi contraseña</a>
 	
 				</center></p>
 
-				<small>*Si usted no realiz$oacute esta solicitud, favor de ignorar este correo.</small>
+				<small>*Si usted no realiz&oacute; esta solicitud, favor de ignorar este correo.</small>
 				
 			</div>
 
