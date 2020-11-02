@@ -402,7 +402,8 @@ class Anuncio {
 
     public static function busqueda($search) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare("SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( titulo LIKE '%$search%' OR municipio LIKE '%$search%' OR anuncios.descripcion LIKE '%$search%' OR categorias.nombre LIKE '%$search%' )");
+        $consulta = $conexion->prepare("SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( keywords LIKE '%$search%')");
+        //$consulta = $conexion->prepare("SELECT * from anuncios WHERE keywords LIKE '%$search%'");
         $consulta->execute();
         $registros = $consulta->fetchAll();
   
@@ -412,7 +413,7 @@ class Anuncio {
 
     public static function getRandom(){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria ORDER BY RAND() LIMIT 3');
+        $consulta = $conexion->prepare('SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria ORDER BY RAND() LIMIT 6');
         $consulta->execute();
         $registros = $consulta->fetchAll();
   

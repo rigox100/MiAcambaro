@@ -12,12 +12,29 @@ $categorias = Categoria::recuperarTodos();
 
 
 
+$idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
+
+  if($idAnuncio){        
+      $anuncioBuscado = Anuncio::buscarPorId($idAnuncio);  
+  }
+ 
+      
+
+
+
+
+
+
+
+
+
 
 			$search = (isset($_POST['busqueda'])) ? $_POST['busqueda'] : null;
 			
             if(empty($search)){
 			
 					header("Location: index2.php");
+					
 				
                 
 			}
@@ -25,13 +42,13 @@ $categorias = Categoria::recuperarTodos();
 
 			
 			$search_original = $search;
-			$array=["en", "de", "y", "sobre", "hasta"];
-			for($i=0; $i<count($array); $i++){
+			//$array=["en", "de", "y", "sobre", "hasta"];
+			/* for($i=0; $i<count($array); $i++){
 				$resultado = str_replace(" ".$array[$i]." ", " ", $search);
 				$search = $resultado;
-			}
+			} */
 			
-			$arreglo = explode(' ', $search);
+			//$arreglo = explode(' ', $search);
 
 			// if(!empty($arreglo[0])){
 			// 	$searchUno = $arreglo[0];
@@ -54,6 +71,7 @@ $categorias = Categoria::recuperarTodos();
 			// //echo $search;
 			//die();
 			$busqueda = Anuncio::busqueda($search);
+		
 			
 
             $total = count($busqueda);
@@ -183,10 +201,25 @@ $categorias = Categoria::recuperarTodos();
 
 			<!-- Start post Area -->
 			<section class="post-area section-gap">
-			<?php  if (count($busqueda) > 0): ?>
+		
 				
-				<div class="container">
-				<p class="text-black"><span class="text-orange"><?php echo $total ?> </span> resultados encontrados para <span class="text-orange">"<?php echo $search_original ?>"</span></p>
+			<div class="container">
+				<?php  if ($total > 0): ?>
+					<?php  
+					
+						if ($total == 1){
+							echo '<p class="text-black"><span class="text-orange">'.  $total. '</span> resultado encontrado para <span class="text-orange">'. $search_original.'</span></p>';
+						}else{
+							echo '<p class="text-black"><span class="text-orange">'.  $total. '</span> resultados encontrados para <span class="text-orange">'. $search_original.'</span></p>';
+						}
+						
+						
+					?>
+						
+				
+						
+					
+
 					<div class="row justify-content-center d-flex">
 					
 						<div class="col-lg-8 post-list">
@@ -194,13 +227,13 @@ $categorias = Categoria::recuperarTodos();
 							<div class="single-post d-flex flex-row">
 
 								<div class="thumb">
-									<a href="#" data-toggle="modal" data-target="#exampleModalCenter"><img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle"></a>
+									<a href="search.php?idAnuncio=<?php echo $item[0];?>" data-toggle="modal" data-target="#exampleModalCenter"><img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle"></a>
 								</div>
 
 								<div class="details">
 									<div class="title d-flex flex-row justify-content-between">
 										<div class="titles">
-											<a href="#" data-toggle="modal" data-target="#exampleModalCenter"><h4><?php echo $item['titulo']; ?></h4></a>
+											<a href="search.php?idAnuncio=<?php echo $item[0];?>" data-toggle="modal" data-target="#exampleModalCenter"><h4><?php echo $item['titulo']; ?></h4></a>
 										</div>
 								</div>
 
@@ -217,7 +250,7 @@ $categorias = Categoria::recuperarTodos();
 									</ul>
 								</div>
 								
-								<div class="closed-ca ti-home"><?php echo $item['calle']; ?> &#x23; 30,&nbsp;&nbsp; <span class="fa fa-whatsapp closed-wa ">&nbsp;417-117-3020</span>  &nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span>  </div> 
+								<div class="closed-ca ti-home"><?php echo $item['calle']; ?>,&nbsp;&nbsp; <span class="fa fa-whatsapp closed-wa ">&nbsp;417-117-3020</span>  &nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span>  </div> 
 						
 								
 								
@@ -270,18 +303,39 @@ $categorias = Categoria::recuperarTodos();
 
 
 						<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Información</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-	  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      </div>
+						
+					<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+
+
+
+
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalCenterTitle">Información de </h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+					</div>
+
+				<div class="modal-body">
+
+					<nav>
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
+							<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Opiniones</a>
+							<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Fotos</a>
+						</div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+						<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+						<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+				</div>
+			</div>
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
        

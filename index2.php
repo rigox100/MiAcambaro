@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     
     
@@ -36,6 +38,21 @@
 </head>
 
 <body>
+
+    
+		<div class="d-none d-md-block social-body">
+			<ul>
+				<li class="facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li class="twitter"><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+			
+				<li class="instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+			</ul>
+		</div>
+
+
+
+
     <!--============================= HEADER =============================-->
     <div class="nav-menu">
         <div class="bg transition">
@@ -135,7 +152,7 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
 
-                                <form  action="search.php" method="POST" class="form-wrap mt-4">
+                                <form  action="search.php" method="POST" class="form-wrap mt-4" id ="formulario">
                                     <div class="btn-group" role="group" aria-label="Basic example">
 
                                         <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1" >
@@ -146,9 +163,10 @@
                                                 class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
+                            
                                 <br>
 
-                                <a href="#"><p style="font-size: 20px;">Anunciate con nosotros | miacambaro.mx</p></a>
+                                <a href="#"><p style="font-size: 20px; color: #6ca2cb">Anunciate con nosotros | miacambaro.mx</p></a>
 
                             
                         </div>
@@ -217,13 +235,13 @@
                                     <p> &#x26ab;&#xfe0e; &nbsp;<?php echo $item['municipio']; ?>,</p> &nbsp;&nbsp;
                                     <p><span><?php echo $item['nombre']; ?></span> </p>
                                 </div>
-                                <!-- <div><?php //echo $item['descripcion']; ?></div> -->
+                                
                                 <hr class="my-4">
                                 <h6> Información </h6>
                                 
                                 <ul>
                                     <li><span class="ti-home"></span>
-                                        <p><?php echo $item['calle']; ?> &#x23; 30, <?php echo $item['colonia']; ?></p>
+                                        <p><?php echo $item['calle']; ?>, <?php echo $item['colonia']; ?></p>
                                     </li>
                                     <li><span class=" ti-write"></span>
                                         <p><?php echo $item['cp']; ?></p>
@@ -285,7 +303,7 @@
     </section>
     <!--//END FEATURED PLACES -->
     <!--============================= CATEGORÍAS =============================-->
-    <section class="main-block">
+   <!--  <section class="main-block">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-5">
@@ -650,7 +668,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--//END CATEGORIES -->
 
     <!--============================= FOOTER =============================-->
