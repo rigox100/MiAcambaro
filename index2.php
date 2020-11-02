@@ -74,9 +74,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Inicio</a>
                                     </li>
-                                    <li class="nav-item">
+                                 <!--    <li class="nav-item">
                                         <a class="nav-link" href="#">Categorías</a>
-                                    </li>
+                                    </li> -->
                                    
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Contacto</a>
@@ -213,7 +213,9 @@
                            
                               
                                     <div class="featured-title-box">
-                                    <h4><?php echo $item['titulo']; ?></h4>
+                                    <div style ="height: 45px; ">
+                                        <h4 ><?php echo $item['titulo']; ?></h4>
+                                    </div>
 
                                 </a>
 

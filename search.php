@@ -175,13 +175,13 @@ $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
 					
 							<form action="search.php" method="POST" class="serach-form-area" >
 								<div class="row justify-content-center form-wrap">
-									<div class="col-lg-5 form-cols">
+									<div class="col-lg-10 form-cols">
 										<input type="text" class="form-control" name="busqueda" value="<?php echo $search_original ?>">
 									</div>
 
-									<div class="col-lg-5 form-cols">
+								<!-- 	<div class="col-lg-5 form-cols">
 										<input id="cate" type="text" class="form-control" name="categorias" placeholder = "Escriba el nombre de una categoría" >
-									</div>
+									</div> -->
 
 							
 									<div class="col-lg-2 form-cols">
@@ -325,7 +325,7 @@ $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
 						<div class="nav nav-tabs" id="nav-tab" role="tablist">
 							<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
 							<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Opiniones</a>
-							<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Fotos</a>
+							<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Encuentranos</a>
 						</div>
 					</nav>
 					<div class="tab-content" id="nav-tabContent">
