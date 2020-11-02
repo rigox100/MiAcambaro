@@ -23,12 +23,13 @@
 if(isset($_REQUEST['token'])){
 
     require_once '../admin/class/Usuario.php';
+    
 
     $token = (isset($_REQUEST['token'])) ? $_REQUEST['token'] : null;
 
     $registro = new Usuario;
     $registro->setToken($token);
-    if(true){
+    if($registro->verificar_token_activo()){
         if(true){
             ?>
             <script>

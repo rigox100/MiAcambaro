@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <p> <strong> Reestablecimiento de contraseña </strong> </p>
-        <P> Se ha enviado un mensaje a tu correo electrónico con las instrucciones para reestablecer tu contraseña.</p>
+        <P> Si el correo proporcionado se encuentra registrado y activo en <strong>miacambaro.mx</strong>, recibirá un mensaje con las instrucciones para reestablecer tu contraseña.</p>
       </div>
       <div class="modal-footer">
         <a href="index.php" class="btn btn-secondary">Cerrar </a>

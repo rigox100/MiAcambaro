@@ -9,16 +9,23 @@
         </button>-->
       </div>
       <div class="modal-body">
-        <form action="#">
-
-          <div class="form-group">
-            <label for="new_passsword">Ingresa una nueva Contraseña</label>
-            <input type="password" name="new_pasword" id="new_password" class="form-control" value="">
+        <form action="../lib/validar_cambio_password.php" method="post">
+        <div class="form-group">
+           <input type="hidden" name="recovery" id="recovery" class="form-control" value="1">
+           <input type="hidden" name="token" id="token" class="form-control" value="<?php echo $token; ?>">
+            <label for="email">Correo electrónico</label>
+            <input type="email" name="email" id="email" class="form-control" value="" required>
           </div>
+          <div class="form-group">
+            <label for="new_passsword">Ingresa una nueva contraseña</label>
+            <input type="password" name="new_password" id="new_password" class="form-control" value="" required>
+          </div>
+          <!--
           <div class="form-group">
           <label for="new_passsword">Confirmar Contraseña</label>
             <input type="password" name="confirmar_pasword" id="confirmar_password" class="form-control" value="">
           </div>
+           -->
           <div class="form-group">
               <button type="submit" class="btn btn-primary w-100">Cambiar contraseña</button>
           </div>

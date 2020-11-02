@@ -203,6 +203,21 @@ class Usuario {
         }
     }
 
+
+    public function verificar_token_activo(){
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE token = :token AND estatus = "Activo"');
+        $consulta->bindParam(':token', $this->token);
+        $consulta->execute();
+        $registro = $consulta->fetch();
+        $conexion = null;
+        if($registro){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function actualizar_estatus(){
         $conexion = new Conexion();
         $consulta = $conexion->prepare('UPDATE '.self::TABLA. ' SET estatus="Activo" WHERE token = :token');
@@ -214,6 +229,36 @@ class Usuario {
         }
     }
 
+    public function verificar_email_registrado(){
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('SELECT email FROM '.self::TABLA. ' WHERE email = :email AND estatus = "Activo"');
+        $consulta->bindParam(':email', $this->email);
+        $consulta->execute();
+        $registro = $consulta->fetch();
+        $conexion = null;
+        if($registro){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
+
+    public function reestablecer_password(){
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('UPDATE '.self::TABLA. ' SET password=:password WHERE email=:email AND token=:token');
+        $consulta->bindParam(':email', $this->email);
+        $consulta->bindParam(':password', $this->password);
+        $consulta->bindParam(':token', $this->token);
+        $consulta->execute();
+        $registro = $consulta->rowCount();
+        $conexion = null;
+        echo $registro;
+        if($registro>0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }

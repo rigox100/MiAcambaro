@@ -1,18 +1,16 @@
 <?php
+require_once 'admin/class/Usuario.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($_POST['recovery']){
 
     $email = (isset($_POST['email'])) ? $_POST['email'] : null;
-    $token = md5($email);
-    $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
-    $password = "";
-    for($i=0;$i<8;$i++) {
-       $password .= substr($str,rand(0,62),1);
-    } 
-
-
+	$token = md5($email);   
+	$verificar_email = new Usuario();
+	$verificar_email->setEmail($email); 
+    //Verifica si el usuario que solicita se encuentra activo en la BD
+	if($verificar_email->verificar_email_registrado()){
      // Mail
 	define("DEMO", false); 
 
@@ -75,6 +73,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }else{
 		echo '<hr /><center> Ha ocurrido un error y no pudo enviarse el correo </center>';
   }
+
+}else{
+?>
+<script>
+      $(document).ready(function()
+      {
+        $('#MsjModalRecovery').modal({backdrop: 'static', keyboard: false}); 
+         $("#MsjModalRecovery").modal("show");
+        
+      });
+</script>
+
+<?php
+}
+
     }
 
 }

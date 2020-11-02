@@ -15,7 +15,7 @@
       
     </div>
     <!-- Default to the left -->
-    <strong>Directorio MiAcámbaro &copy; <?php echo date('Y')?>. </strong> Todos los derechos reservados.
+    <p>Copyright &copy; <?php echo date('Y') ?>. Todos los derechos reservados | miacambaro.mx</p>
   </footer>
 </div>
 <!-- ./wrapper -->

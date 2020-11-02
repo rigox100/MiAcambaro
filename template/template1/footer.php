@@ -7,7 +7,7 @@
       
     </div>
     <!-- Default to the left -->
-    <strong>Directorio Acámbaro &copy; 2020 </strong> Todos los derechos reservados
+    <p>Copyright &copy; <?php echo date('Y') ?>. Todos los derechos reservados | miacambaro.mx</p>
   </footer>
 </div>
 <!-- ./wrapper -->

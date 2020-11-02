@@ -17,12 +17,12 @@
 
 				<p>Este correo se ha enviado por una petici&oacute;n, para el reestablecimiento de su contrase&ntilde;a </p>
 
-				<p>Para completar el reestablecimiento de su contrase&ntilde; por favor haga clic en el siguiente bot&oacute;n.</p>
+				<p>Para completar el reestablecimiento de su contrase&ntilde;a por favor haga clic en el siguiente bot&oacute;n.</p>
 
 				<p style="display: flex; justify-content: center; margin-top: 10px;">
 				<center>
 				<a href="https://www.miacambaro.mx/verification/recovery_password.php?token={CUSTOM_URL}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
-					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Reestablecer mi contraseña</a>
+					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Reestablecer mi contrase&ntilde;a</a>
 	
 				</center></p>
 
