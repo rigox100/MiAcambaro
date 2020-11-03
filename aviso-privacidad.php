@@ -29,7 +29,7 @@ session_start();
 
 <body>
 
-	<header id="header" id="home">
+	<header id="header" id="home"style="background-color: #ff4a00;">
 		<div class="container">
 
 			<div class="row align-items-center justify-content-between d-flex">

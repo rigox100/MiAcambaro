@@ -56,7 +56,7 @@ if(isset($_SESSION['idRol'])){
         <div class="bg transition">
             <div class="container-fluid fixed" style="border:none;">
                 <div class="row">
-                    <div class="col-md-12" style="background-color: #FB7C49;">
+                    <div class="col-md-12" style="background-color: #ff4a00">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.php" style="color:white;">
                                 MiAcámbaro

@@ -139,18 +139,20 @@ $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.php">Inicio</a></li>
-				          <li><a href="#">Categorías</a></li>
+				         <!-- <li><a href="#">Categorías</a></li>-->
 				          
-				          <li><a href="#">Contacto</a></li>
+				         
 
 				           <li class="menu-has-children"><a href="">Login</a>
 				            <ul>
-											<li><a href="elements.html">Iniciar Sesión</a></li>
-											<li><a href="search.html">Registro</a></li>
+											<li><a href="login.php">Iniciar Sesión</a></li>
+											<li><a href="registro.php">Registro</a></li>
 
-				            </ul>
+							</ul>
+						
+							<li><a href="contacto.php">Contacto</a></li>
 				          </li> 
-									<li><a href="#">Aviso de privacidad</a></li>
+									<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
 				         
 				        </ul>
 				      </nav><!-- #nav-menu-container -->

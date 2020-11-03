@@ -2,7 +2,8 @@
 
 require_once 'Conexion.php';
 
-class Usuario {
+class Usuario
+{
 
     private $idUsuario;
     private $nombre;
@@ -15,7 +16,8 @@ class Usuario {
 
     const TABLA = 'usuarios';
 
-    public function __construct($nombre=null, $apellido=null, $email=null, $password=null, $estatus=null, $token=null, $idRol=null, $idUsuario=null ) {
+    public function __construct($nombre = null, $apellido = null, $email = null, $password = null, $estatus = null, $token = null, $idRol = null, $idUsuario = null)
+    {
 
         $this->nombre = $nombre;
         $this->email = $email;
@@ -25,77 +27,93 @@ class Usuario {
         $this->token = $token;
         $this->idRol = $idRol;
         $this->idUsuario = $idUsuario;
-
     }
 
-    public function getIdUsuario() {
+    public function getIdUsuario()
+    {
         return $this->idUsuario;
     }
 
-    public function getNombre() {
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    public function getApellido() {
+    public function getApellido()
+    {
         return $this->apellido;
     }
 
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
-    public function getPassword() {
+    public function getPassword()
+    {
         return $this->password;
     }
 
-     public function getEstatus() {
+    public function getEstatus()
+    {
         return $this->estatus;
     }
 
-    public function getToken() {
+    public function getToken()
+    {
         return $this->token;
     }
 
-    public function getIdRol() {
+    public function getIdRol()
+    {
         return $this->idRol;
     }
 
 
-    public function setIdUsuario($idUsuario) {
+    public function setIdUsuario($idUsuario)
+    {
         $this->id = $idUsuario;
     }
 
-    public function setNombre($nombre) {
+    public function setNombre($nombre)
+    {
         $this->nombre = $nombre;
     }
 
-    public function setApellido($apellido) {
+    public function setApellido($apellido)
+    {
         $this->apellido = $apellido;
     }
 
 
-    public function setEmail($email) {
+    public function setEmail($email)
+    {
         $this->email = $email;
     }
 
-    public function setPassword($password) {
+    public function setPassword($password)
+    {
         $this->password = $password;
     }
 
-    public function setEstatus($estatus) {
+    public function setEstatus($estatus)
+    {
         $this->estatus = $estatus;
     }
 
-    public function setToken($token) {
+    public function setToken($token)
+    {
         $this->token = $token;
     }
 
-    public function setIdRol($idRol) {
+    public function setIdRol($idRol)
+    {
         $this->idRol = $idRol;
     }
 
 
-    public function guardar() {
+    public function guardar()
+    {
         $conexion = new Conexion();
         if ($this->idUsuario) /* Modifica */ {
             $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET nombre = :nombre, apellido = :apellido, email = :email, password=:password, estatus = :estatus, idRol = :idRol WHERE idUsuario = :idUsuario');
@@ -116,18 +134,18 @@ class Usuario {
             $consulta->bindParam(':estatus', $this->estatus);
             $consulta->bindParam(':token', $this->token);
             $consulta->bindParam(':idRol', $this->idRol);
-            if($consulta->execute()){
+            if ($consulta->execute()) {
                 $this->id = $conexion->lastInsertId();
                 return true;
-            }else{
+            } else {
                 return false;
             }
-
         }
         $conexion = null;
     }
 
-    public function eliminar(){
+    public function eliminar()
+    {
         //echo $this->id;
         $conexion = new Conexion();
         $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA . ' WHERE idUsuario = :idUsuario');
@@ -136,7 +154,8 @@ class Usuario {
         $conexion = null;
     }
 
-    public static function buscarPorId($idUsuario) {
+    public static function buscarPorId($idUsuario)
+    {
 
         $conexion = new Conexion();
         $consulta = $conexion->prepare('SELECT  nombre, apellido, email, password, estatus, token, idRol FROM ' . self::TABLA . ' WHERE idUsuario = :idUsuario');
@@ -147,14 +166,13 @@ class Usuario {
         $conexion = null;
         if ($registro) {
             return new self($registro['nombre'], $registro['apellido'], $registro['email'], $registro['password'], $registro['estatus'], $registro['token'], $registro['idRol'], $idUsuario);
-
         } else {
             return false;
-
         }
     }
 
-    public static function recuperarTodos() {
+    public static function recuperarTodos()
+    {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('SELECT * FROM usuarios INNER JOIN roles ON roles.idRol = usuarios.idRol WHERE usuarios.idRol = 3');
         $consulta->execute();
@@ -164,7 +182,8 @@ class Usuario {
     }
 
 
-    public function logIn(){
+    public function logIn()
+    {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA . ' WHERE email = :email and password = :password');
         $consulta->bindParam(':email', $this->email);
@@ -174,10 +193,10 @@ class Usuario {
         $conexion = null;
         if ($registro) {
 
-           $_SESSION['idUsuario'] = $registro[0];
-           $_SESSION['nombre'] = $registro[1];
-           $_SESSION['email'] = $registro[3];
-           $_SESSION['idRol'] = $registro[7];
+            $_SESSION['idUsuario'] = $registro[0];
+            $_SESSION['nombre'] = $registro[1];
+            $_SESSION['email'] = $registro[3];
+            $_SESSION['idRol'] = $registro[7];
             return true;
         } else {
             return false;
@@ -185,68 +204,73 @@ class Usuario {
     }
 
 
-    public function verificar_token(){
+    public function verificar_token()
+    {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE token = :token AND estatus = "Inactivo"');
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA . ' WHERE token = :token AND estatus = "Inactivo"');
         $consulta->bindParam(':token', $this->token);
         $consulta->execute();
         $registro = $consulta->fetch();
         $conexion = null;
-        if($registro){
-           $_SESSION['idUsuario'] = $registro[0];
-           $_SESSION['nombre'] = $registro[1];
-           $_SESSION['email'] = $registro[3];
-           $_SESSION['idRol'] = $registro[7];
+        if ($registro) {
+            $_SESSION['idUsuario'] = $registro[0];
+            $_SESSION['nombre'] = $registro[1];
+            $_SESSION['email'] = $registro[3];
+            $_SESSION['idRol'] = $registro[7];
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
 
-    public function verificar_token_activo(){
+    public function verificar_token_activo()
+    {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM '.self::TABLA. ' WHERE token = :token AND estatus = "Activo"');
+        $consulta = $conexion->prepare('SELECT * FROM ' . self::TABLA . ' WHERE token = :token AND estatus = "Activo"');
         $consulta->bindParam(':token', $this->token);
         $consulta->execute();
         $registro = $consulta->fetch();
         $conexion = null;
-        if($registro){
+        if ($registro) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public function actualizar_estatus(){
+    public function actualizar_estatus()
+    {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('UPDATE '.self::TABLA. ' SET estatus="Activo" WHERE token = :token');
+        $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET estatus="Activo" WHERE token = :token');
         $consulta->bindParam(':token', $this->token);
-        if($consulta->execute()){
+        if ($consulta->execute()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public function verificar_email_registrado(){
+    public function verificar_email_registrado()
+    {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT email FROM '.self::TABLA. ' WHERE email = :email AND estatus = "Activo"');
+        $consulta = $conexion->prepare('SELECT email FROM ' . self::TABLA . ' WHERE email = :email AND estatus = "Activo"');
         $consulta->bindParam(':email', $this->email);
         $consulta->execute();
         $registro = $consulta->fetch();
         $conexion = null;
-        if($registro){
+        if ($registro) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
 
-    public function reestablecer_password(){
+    public function reestablecer_password()
+    {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('UPDATE '.self::TABLA. ' SET password=:password WHERE email=:email AND token=:token');
+        $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET password=:password WHERE email=:email AND token=:token');
         $consulta->bindParam(':email', $this->email);
         $consulta->bindParam(':password', $this->password);
         $consulta->bindParam(':token', $this->token);
@@ -254,11 +278,10 @@ class Usuario {
         $registro = $consulta->rowCount();
         $conexion = null;
         echo $registro;
-        if($registro>0){
+        if ($registro > 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-
 }
