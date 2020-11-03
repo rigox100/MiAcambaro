@@ -78,9 +78,7 @@
                                         <a class="nav-link" href="#">Categorías</a>
                                     </li> -->
                                    
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#">Contacto</a>
-                                    </li>
+                                   
                                     <?php
                                         if(isset($_SESSION['idUsuario'])){
                                     ?>
@@ -123,6 +121,9 @@
                                     <?php
                                         }
                                     ?>
+                                     <li class="nav-item">
+                                        <a class="nav-link" href="#">Contacto</a>
+                                    </li>
                                      <li class="nav-item">
                                         <a class="nav-link" href="#">Aviso de privacidad</a>
                                     </li>
