@@ -125,7 +125,7 @@
                                         <a class="nav-link" href="contacto.php">Contacto</a>
                                     </li>
                                      <li class="nav-item">
-                                        <a class="nav-link" href="aviso-privacidad.php">Aviso de privacidad</a>
+                                        <a class="nav-link" href="#">Aviso de privacidad</a>
                                     </li>
                                 </ul>
                             </div>
@@ -167,7 +167,7 @@
                             
                                 <br>
 
-                                <a href="#"><p style="font-size: 20px; color: #6ca2cb">Anunciate con nosotros | miacambaro.mx</p></a>
+                                <a href="contacto.php"><p style="font-size: 20px; color: #6ca2cb">Anunciate con nosotros | miacambaro.mx</p></a>
 
                             
                         </div>
