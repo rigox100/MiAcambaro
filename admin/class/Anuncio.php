@@ -381,7 +381,7 @@ class Anuncio {
 
     public static function recuperarTodos() {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria');
+        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE idAnuncio LIMIT 50');
         $consulta->execute();
         $registros = $consulta->fetchAll();
   
@@ -389,20 +389,42 @@ class Anuncio {
         return $registros;
     }
 
-
-    public static function recuperarTodos2() {
+    public static function recuperarPorCorte($rango1, $rango2) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT idAnuncio,titulo,estatus_anuncio FROM anuncios');
+        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE idAnuncio BETWEEN :rango1 AND :rango2 LIMIT 200');
+        $consulta->bindParam(':rango1', $rango1);
+        $consulta->bindParam(':rango2', $rango2);
         $consulta->execute();
         $registros = $consulta->fetchAll();
-  
         $conexion = null;
         return $registros;
+    }
+
+
+    public static function recuperarPorID($id_search) {
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE idAnuncio = :id_search LIMIT 1');
+        $consulta->bindParam(':id_search', $id_search);
+        $consulta->execute();
+        $registros = $consulta->fetchAll();
+        $conexion = null;
+        return $registros;
+    }
+
+
+
+    public static function recuperarTotal() {
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('SELECT idAnuncio FROM anuncios');
+        $consulta->execute();
+        $total = $consulta->rowCount();
+        $conexion = null;
+        return $total;
     }
 
     public static function busqueda($search) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare("SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( keywords LIKE '%$search%')");
+        $consulta = $conexion->prepare("SELECT *,DATE_FORMAT(fecha_publicacion, '%d-%m-%Y') FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( keywords LIKE '%$search%')");
         //$consulta = $conexion->prepare("SELECT * from anuncios WHERE keywords LIKE '%$search%'");
         $consulta->execute();
         $registros = $consulta->fetchAll();
