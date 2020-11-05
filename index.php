@@ -15,6 +15,7 @@
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
     <!-- Page Title -->
     <title> Inicio | MiAcámbaro</title>
+    <!--Icon-->
      <link rel="shortcut icon" href="images/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -157,7 +158,7 @@
                                 <form  action="search.php" method="POST" class="form-wrap mt-4" id ="formulario">
                                     <div class="btn-group" role="group" aria-label="Basic example">
 
-                                        <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1"  >
+                                        <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1">
                                         
 
                                         <button type="submit" class="btn-form"><span

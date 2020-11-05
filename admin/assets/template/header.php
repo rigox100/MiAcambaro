@@ -28,6 +28,8 @@ $total = array_values($num_solcitudes)[0];
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!--Icon-->
+    <link rel="shortcut icon" href="../../assets/img/favicon.png">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

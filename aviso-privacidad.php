@@ -7,7 +7,6 @@ session_start();
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 	<!-- Author Meta -->
 	<meta name="author" content="MiAcambaro">
 	 <!-- Meta Keyword -->
@@ -17,13 +16,15 @@ session_start();
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
-	<!-- Site Title -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link rel="dns-prefetch" href="https://fonts.gstatic.com">
 	<link rel="stylesheet" href="css/main1.css">
+	<!-- Icon -->
+	<link rel="shortcut icon" href="images/favicon.png">
+	<!-- Site Title -->
 	<title>Aviso Privacidad | Mi Acámbaro</title>
 
 </head>

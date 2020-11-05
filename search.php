@@ -81,21 +81,13 @@ $paginas = ceil($total / $articulosPagina);
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
+	<!--Icon-->
+	<link rel="shortcut icon" href="images/favicon.png">
 	<!-- Site Title -->
-	
-	<link rel="shortcut icon" href="search/img/logo.png">
-
-
+	<title>Buscar negocios | Mi Acámbaro</title>
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-
-
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
-
-
-	<!--
-			CSS
-			============================================= -->
+	<!--CSS============================================= -->
 	<link rel="stylesheet" href="search/css/linearicons.css">
 	<link rel="stylesheet" href="search/css/font-awesome.min.css">
 	<link rel="stylesheet" href="search/css/bootstrap.css">
@@ -105,12 +97,6 @@ $paginas = ceil($total / $articulosPagina);
 	<link rel="stylesheet" href="search/css/owl.carousel.css">
 	<link rel="stylesheet" href="search/css/main.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-	
-
-	<title>Buscar negocios | Mi Acámbaro</title>
-
-
-
 
 </head>
 
@@ -147,9 +133,6 @@ $paginas = ceil($total / $articulosPagina);
 		</div>
 
 	</header><!-- #header -->
-
-
-
 
 	<!-- start banner Area -->
 	<section class="banner-area relative" id="home">
@@ -204,10 +187,6 @@ $paginas = ceil($total / $articulosPagina);
 
 
 				?>
-
-
-
-
 
 				<div class="row justify-content-center d-flex">
 
