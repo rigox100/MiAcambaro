@@ -156,7 +156,7 @@
                                 <form  action="search.php" method="POST" class="form-wrap mt-4" id ="formulario">
                                     <div class="btn-group" role="group" aria-label="Basic example">
 
-                                        <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1" >
+                                        <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1" style ="input:focus:border-bottom-left-radius:34px, border-top-left-radius:34px" >
                                         
 
                                         <button type="submit" class="btn-form"><span
