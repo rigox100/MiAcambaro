@@ -1,5 +1,7 @@
 <?php 
-session_start(); 
+session_start(); if($_SESSION['idRol']== null || $_SESSION['idRol']==3){
+  header('Location: ../index.php');
+}
 require_once '../../class/Solicitud.php';
 $solicitudes_recientes = Solicitud::buscarRecientes();
 //var_dump($solicitudes_recientes);

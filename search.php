@@ -8,10 +8,6 @@ $categorias = Categoria::recuperarTodos();
 
 
 
-
-
-
-
 $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
 
 if ($idAnuncio) {
@@ -20,20 +16,11 @@ if ($idAnuncio) {
 
 
 
-
-
-
-
-
-
-
-
-
 $search = (isset($_POST['busqueda'])) ? $_POST['busqueda'] : null;
 
 if (empty($search)) {
 
-	header("Location: index2.php");
+	header("Location: index.php");
 }
 
 
@@ -78,27 +65,24 @@ $paginas = ceil($total / $articulosPagina);
 ?>
 
 
-
-
-
-
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="es">
 
 <head>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Author Meta -->
-	<meta name="author" content="codepixer">
-	<!-- Meta Description -->
-	<meta name="description" content="">
-	<!-- Meta Keyword -->
-	<meta name="keywords" content="">
+<!-- Author Meta -->
+<meta name="author" content="MiAcambaro">
+	 <!-- Meta Keyword -->
+     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+    <!-- Meta Description -->
+    <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
+     miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>::Busqueda::</title>
+	
 	<link rel="shortcut icon" href="search/img/logo.png">
 
 
@@ -121,11 +105,9 @@ $paginas = ceil($total / $articulosPagina);
 	<link rel="stylesheet" href="search/css/owl.carousel.css">
 	<link rel="stylesheet" href="search/css/main.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<script src="js/data.js"></script>
+	
 
-
+	<title>Buscar negocios | Mi Acámbaro</title>
 
 
 
@@ -177,7 +159,7 @@ $paginas = ceil($total / $articulosPagina);
 				<div class="banner-content col-lg-12">
 					<h1 class="text-black">
 
-						Resultados de busqueda
+						Resultados de búsqueda
 					</h1>
 
 					<form action="search.php" method="POST" class="serach-form-area">
@@ -230,7 +212,13 @@ $paginas = ceil($total / $articulosPagina);
 				<div class="row justify-content-center d-flex">
 
 					<div class="col-lg-8 post-list">
-						<table class="table table-bordered" id="table-data">
+						<table class="table" id="table-data" style="border:none;">
+							<thead>
+								<tr>
+									<th>Resultados</th>
+								</tr>
+
+							</thead>
 							<tbody>
 								<?php foreach ($busqueda as $item) : ?>
 									<tr>
@@ -289,10 +277,10 @@ $paginas = ceil($total / $articulosPagina);
 
 
 
-												<div class="modal-dialog modal-dialog-centered" role="document">
+												<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 													<div class="modal-content">
 														<div class="modal-header">
-															<h5 class="text-center modal-title" id="exampleModalCenterTitle"><?php echo $item['titulo']; ?></h5>
+															<h5 class="text-center modal-title" id="exampleModalCenterTitle" style="font-size: calc(0.5em + 1vw);"><?php echo $item['titulo']; ?></h5>
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
@@ -302,15 +290,16 @@ $paginas = ceil($total / $articulosPagina);
 
 															<nav>
 																<div class="nav nav-tabs" id="nav-tab" role="tablist">
-																	<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
-																	<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Encuentranos</a>
-																	<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Opiniones</a>
+																	<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home<?php echo $item[0]; ?>" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
+																	<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile<?php echo $item[0]; ?>" role="tab" aria-controls="nav-profile" aria-selected="false">Encuentranos</a>
+																	<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact<?php echo $item[0]; ?>" role="tab" aria-controls="nav-contact" aria-selected="false">Opiniones</a>
 																</div>
 															</nav>
 															<div class="tab-content" id="nav-tabContent">
-																<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-																	<div>
-																		<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="95%" height="200">
+																<div class="tab-pane fade show active" id="nav-home<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-home-tab">
+																<br>	
+																<div>
+																		<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" class="img-fluid d-block m-auto" style="width: 85%; height:300px;">
 																	</div>
 																	<div>
 																		<br>
@@ -345,7 +334,6 @@ $paginas = ceil($total / $articulosPagina);
 																		<hr>
 
 																		<h6 class="closed-ca  fa fa-phone">&nbsp;417-117-36-69</h6> <br>
-
 																		<h6 class="closed-ca  fa fa-envelope">&nbsp;minegocio@miacambaro.mx</h6><br>
 																		<h6 class="closed-ca  fa fa-facebook-square">&nbsp;www.facebook.com/minegocio</h6>
 
@@ -353,13 +341,20 @@ $paginas = ceil($total / $articulosPagina);
 																</div>
 
 
-																<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-																	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.4946196625824!2d-100.7175894848515!3d20.02971482650514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cd6735f901b2f%3A0x9d62286fb596538d!2sMelchor%20Ocampo%20661%2C%20Zona%20Centro%2C%2038600%20Ac%C3%A1mbaro%2C%20Gto.!5e0!3m2!1ses-419!2smx!4v1604547700518!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+																<div class="tab-pane fade" id="nav-profile<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-profile-tab">
+																	<br>
+																<?php if($item['google_maps']!=""){ 
+																?>
+																<iframe src="<?php echo $item['google_maps'] ?>" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+																	<?php 
+																}else{
+																	echo '<p><small class="alert alert-info">Aún no se ha registrado una ubicación en Google Maps para este negocio</small></p>';
+																}			
+																	?>
 
 																</div>
 
-
-																<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+																<div class="tab-pane fade" id="nav-contact<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-contact-tab">
 																	 <div class="single-post d-flex flex-row">
 
 																		<div class="thumb">
@@ -589,7 +584,9 @@ $paginas = ceil($total / $articulosPagina);
 		<script src="search/js/parallax.min.js"></script>
 		<script src="search/js/mail-script.js"></script>
 		<script src="search/js/main.js"></script>
-
+		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+	<script src="js/data.js"></script>
 
 
 

@@ -3,9 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+ <!-- Author Meta -->
+ <meta name="author" content="MiAcambaro">
+	 <!-- Meta Keyword -->
+	 <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+    <!-- Meta Description -->
+    <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
+     miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
 
-  <title>Mi cuenta</title>
+  <title>Mi cuenta | Mi Acámbaro</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../template/plugins/fontawesome-free/css/all.min.css">
