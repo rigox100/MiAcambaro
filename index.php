@@ -1,7 +1,6 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,7 +15,7 @@
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
     <!-- Page Title -->
     <title> Inicio | MiAcámbaro</title>
-     <link rel="shortcut icon" href="images/logo.png">
+     <link rel="shortcut icon" href="images/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -33,12 +32,10 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 
-    
-    
-   
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link href="css/main.css" rel="stylesheet" />
+   
 </head>
 
 <body>
@@ -53,6 +50,9 @@
 				<li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
 			</ul>
 		</div>
+
+
+
 
     <!--============================= HEADER =============================-->
     <div class="nav-menu">
@@ -157,7 +157,7 @@
                                 <form  action="search.php" method="POST" class="form-wrap mt-4" id ="formulario">
                                     <div class="btn-group" role="group" aria-label="Basic example">
 
-                                        <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1" style ="input:focus:border-bottom-left-radius:34px, border-top-left-radius:34px" >
+                                        <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1"  >
                                         
 
                                         <button type="submit" class="btn-form"><span
@@ -199,6 +199,8 @@
 
                     if (count($anuncio) > 0):
                 ?>
+
+
 
 
             <div class="row">
