@@ -226,7 +226,7 @@
 
                                     <div class="featured-title-box">
                                         <div style="height: 50px; ">
-                                            <h4 style="font-size: calc(0.5em + 1vw);"><?php echo $item['titulo']; ?></h4>
+                                            <h4 style="font-size: calc(0.4em + 1vw);"><?php echo $item['titulo']; ?></h4>
                                         </div>
 
                                 </a>
@@ -253,7 +253,7 @@
                                 </div>
 
                                 <hr class="my-4">
-                                <h6> Información </h6>
+                                <h6 style="font-size: calc(0.4em + 1vw);"> Información </h6>
 
                                 <ul>
                                     <li><span class="ti-home"></span>
