@@ -225,8 +225,8 @@
 
 
                                     <div class="featured-title-box">
-                                        <div style="height: 45px; ">
-                                            <h4><?php echo $item['titulo']; ?></h4>
+                                        <div style="height: 50px; ">
+                                            <h4 style="font-size: calc(0.5em + 1vw);"><?php echo $item['titulo']; ?></h4>
                                         </div>
 
                                 </a>
