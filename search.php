@@ -298,23 +298,28 @@ $paginas = ceil($total / $articulosPagina);
 																		</div>
 
 																		<div class="">
-																			<h6 class="closed-ca  fa fa-map-marker">&nbsp;<?php echo $item['calle']; ?>&nbsp;<?php echo $item['cp']; ?> &nbsp;<span class="closed-mun"><?php echo $item['municipio']; ?>&nbsp; Guanajuato </span></h6>
+																			<h6 class="fa fa-map-marker">&nbsp;<span class="model"><?php echo $item['calle']; ?>&nbsp;<?php echo $item['cp']; ?> &nbsp;<?php echo $item['municipio']; ?> - Guanajuato </span></h6>
 																		</div>
 
 																		<br>
 																		<h4>Horario</h4>
 																		<hr>
 
-																		<div class="closed-now">ABIERTO AHORA</div><br>
-																		<h5 class="closed-ca fa fa-clock-o">&nbsp;8:00 AM - 11:00 PM</h5>
+																		<div class="closed-now2">ABIERTO AHORA</div><br>
+																		<h6 class="fa fa-clock-o">&nbsp;<span class="model">&nbsp;8:00 AM - 11:00 PM </span></h6>
+																	
 
 																		<br><br>
 																		<h4>Información de Contacto</h4>
 																		<hr>
 
-																		<h6 class="closed-ca  fa fa-phone">&nbsp;417-117-36-69</h6> <br>
-																		<h6 class="closed-ca  fa fa-envelope">&nbsp;minegocio@miacambaro.mx</h6><br>
-																		<h6 class="closed-ca  fa fa-facebook-square">&nbsp;www.facebook.com/minegocio</h6>
+																		<a href="#"><h6 class="fa fa-whatsapp">&nbsp;<span class="model">&nbsp;417-117-8956</span></h6> </a><br>
+																		<a href="#"><h6 class="fa fa-envelope">&nbsp;<span class="model">&nbsp;minegocio@miacambaro.mx</span></h6></a><br>
+																		<a href="#"><h6 class="fa fa-facebook-square">&nbsp;<span class="model">&nbsp;www.facebook.com/minegocio</span></h6></a><br>
+																		<a href="#"><h6 class="fa fa-instagram">&nbsp;<span class="model">&nbsp;https://www.instagram.com/minegocio</span></a></h6>
+																		
+																		
+																	
 
 																	</div>
 																</div>
@@ -458,24 +463,25 @@ $paginas = ceil($total / $articulosPagina);
 													<?php echo $item[11]; ?>
 												</p>
 												<hr>
-
-												<div class="info">
-													<h5 class="far fa-address-book">&nbsp;<?php echo $item['calle']; ?> &#x23; 30</h5>
+												<h4>Información</h4>
+												<div>
+													<h5 class="direc"> &#x1f3e0;&#xfe0e; &nbsp;<?php echo $item['calle']; ?></h5>
 												</div>
 
-												<div class="info">
-													<h5 class="fa fa-whatsapp">&nbsp;417-120-9696</h5>
+												<div>
+													<h5 class="direc"> &#x260e; &nbsp;417-117-5025</h5>
 												</div>
 
-												<div class="info">
-													<h5 class="far fa-clock">&nbsp;<?php echo $item['entrada']; ?> - <?php echo $item['cierre']; ?></h5>
+												<div>
+													<h5 class="direc">&#x23f0;&#xfe0e;&nbsp;<?php echo $item['entrada']; ?> 7:00 - 20:00 <?php echo $item['cierre']; ?></h5>
 												</div>
 
+												<hr>
 
-
-
-
+												<br><br><br><br>
+												<div class="justify-content-center">
 												<a href="#" class="btns text-uppercase">Ver más...</a>
+												</div>
 											</div>
 
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,14 +6,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Author Meta -->
-	<meta name="author" content="MiAcambaro">
-	 <!-- Meta Keyword -->
-     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+    <meta name="author" content="MiAcambaro">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
     <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
-     <link rel="shortcut icon" href="images/favicon.png">
-     <!-- Fonts -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/registrer_form.css">
@@ -127,63 +126,61 @@
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="cotainer">
             <div class="row justify-content-center">
-            <div class="row">
-                        <div class="col display-4 mb-3">Iniciar sesión</div>
-                    </div>
+                <div class="row">
+                    <div class="col display-4 mb-3">Contáctanos</div>
+                </div>
                 <div class="col-md-10">
-                    <?php
-                    if (isset($_GET['message'])) {
-                        if ($_GET['message'] == 'error') {
-                            echo '<div class="alert alert-danger"> Error al intentar iniciar sesión, verifica que tu correo o contraseña sean correctos</div>';
-                        }
-                        if ($_GET['message'] == 'recovery-success') {
-                            echo '<div class="alert alert-success">Tu contraseña se ha reestablecido éxitosamente</div>';
-                        }
-                    }
-                    include_once 'lib/recuperar_password.php';
 
-                    ?>
-                    
+
                     <div class="card" style="border: none;">
                         <div class="card-body">
-                            <form action="lib/validar_login.php" method="post" id="form">
-                                <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="email" class="form-control" name="email" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'"  value="" required>
-                                    </div>
-                                </div>
 
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
-                                    <div class="col-md-6">
-                                        <input type="password" id="password" class="form-control" name="password" placeholder="&#xf023" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf023'" value="" required>
-                                    </div>
+                            <div class="form-group row">
+                                <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="nombre" class="form-control" name="nombrte" placeholder="&#x1f935;&#xfe0e;" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#x1f935;&#xfe0e;'" value="" required>
                                 </div>
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-dark w-100">
-                                        Acceder
-                                    </button>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="telefono" class="col-md-4 col-form-label text-md-right">Teléfono</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="telefono" class="form-control" name="telefono" placeholder="&#x1f57f;" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#x1f57f;'" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="email" class="form-control" name="email" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="mensaje" class="col-md-4 col-form-label text-md-right">Mensaje</label>
+                                <div class="col-md-6">
+                                <textarea class="form-control" id="mensaje" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-dark w-100">
+                                    Enviar
+                                </button>
 
 
-                                </div>
+                            </div>
                         </div>
                         </form>
                         <div class="text-center">
 
-                        <a href="" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
-                            ¿Olvidaste tu contraseña?
-                        </a>
-                        <hr>
-                        <p>¿Aún no tienes una cuenta en MiAcambaro?</p>
-                        <a href="registro.php" class="btn btn-primary">Registrate</a>
+                            <a href="#" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
+                                MiAcambaro.mx
+                            </a>
+                            <hr>
+                         
                         </div>
-                       
-                        <script src="template/js/login_validate.js"></script>
-                        <?php
-                        include_once 'template/partials/msj_modal_recovery.php';
-                        include_once 'template/partials/frm_modal_recuperar_email.php';
-                        ?>
+
+                        
                     </div>
                 </div>
             </div>

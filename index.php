@@ -64,7 +64,7 @@
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="index.php">
                                MiAcámbaro
-                             <!-- <img src="images/logo.png" width="120" height="42" class="d-inline-block align-top" alt=""> -->
+                             <!--  <img src="images/logo.png" width="145" height="100" class="d-inline-block align-top" alt="">  -->
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
