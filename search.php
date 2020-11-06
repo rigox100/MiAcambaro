@@ -69,15 +69,27 @@ $paginas = ceil($total / $articulosPagina);
 <html lang="es">
 
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-NSY7H1BK2G');
+	</script>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Author Meta -->
-<meta name="author" content="MiAcambaro">
-	 <!-- Meta Keyword -->
-     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
-    <!-- Meta Description -->
-    <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
+	<!-- Author Meta -->
+	<meta name="author" content="MiAcambaro">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+	<!-- Meta Description -->
+	<meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
@@ -276,8 +288,8 @@ $paginas = ceil($total / $articulosPagina);
 															</nav>
 															<div class="tab-content" id="nav-tabContent">
 																<div class="tab-pane fade show active" id="nav-home<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-home-tab">
-																<br>	
-																<div>
+																	<br>
+																	<div>
 																		<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" class="img-fluid d-block m-auto" style="width: 85%; height:300px;">
 																	</div>
 																	<div>
@@ -307,19 +319,27 @@ $paginas = ceil($total / $articulosPagina);
 
 																		<div class="closed-now2">ABIERTO AHORA</div><br>
 																		<h6 class="fa fa-clock-o">&nbsp;<span class="model">&nbsp;8:00 AM - 11:00 PM </span></h6>
-																	
+
 
 																		<br><br>
 																		<h4>Información de Contacto</h4>
 																		<hr>
 
-																		<a href="#"><h6 class="fa fa-whatsapp">&nbsp;<span class="model">&nbsp;417-117-8956</span></h6> </a><br>
-																		<a href="#"><h6 class="fa fa-envelope">&nbsp;<span class="model">&nbsp;minegocio@miacambaro.mx</span></h6></a><br>
-																		<a href="#"><h6 class="fa fa-facebook-square">&nbsp;<span class="model">&nbsp;www.facebook.com/minegocio</span></h6></a><br>
-																		<a href="#"><h6 class="fa fa-instagram">&nbsp;<span class="model">&nbsp;https://www.instagram.com/minegocio</span></a></h6>
-																		
-																		
-																	
+																		<a href="#">
+																			<h6 class="fa fa-whatsapp">&nbsp;<span class="model">&nbsp;417-117-8956</span></h6>
+																		</a><br>
+																		<a href="#">
+																			<h6 class="fa fa-envelope">&nbsp;<span class="model">&nbsp;minegocio@miacambaro.mx</span></h6>
+																		</a><br>
+																		<a href="#">
+																			<h6 class="fa fa-facebook-square">&nbsp;<span class="model">&nbsp;www.facebook.com/minegocio</span></h6>
+																		</a><br>
+																		<a href="#">
+																			<h6 class="fa fa-instagram">&nbsp;<span class="model">&nbsp;https://www.instagram.com/minegocio</span>
+																		</a></h6>
+
+
+
 
 																	</div>
 																</div>
@@ -327,85 +347,187 @@ $paginas = ceil($total / $articulosPagina);
 
 																<div class="tab-pane fade" id="nav-profile<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-profile-tab">
 																	<br>
-																<?php if($item['google_maps']!=""){ 
-																?>
-																<iframe src="<?php echo $item['google_maps'] ?>" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-																	<?php 
-																}else{
-																	echo '<p><small class="alert alert-info">Aún no se ha registrado una ubicación en Google Maps para este negocio</small></p>';
-																}			
+																	<?php if ($item['google_maps'] != "") {
+																	?>
+																		<iframe src="<?php echo $item['google_maps'] ?>" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+																	<?php
+																	} else {
+																		echo '<p><small class="alert alert-info">Aún no se ha registrado una ubicación en Google Maps para este negocio</small></p>';
+																	}
 																	?>
 
 																</div>
 
 																<div class="tab-pane fade" id="nav-contact<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-contact-tab">
-																	 <div class="single-post d-flex flex-row">
+																	<div class="single-post d-flex flex-row">
 
 																		<div class="thumb">
-																			<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt=""  width="70" height="70" class="rounded-circle">
+																			<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle">
 																		</div>
 
 																		<div class="details">
 																			<div class="title d-flex flex-row justify-content-between">
 																				<div class="titles">
 																					<br>
-																						<h4>José Hernández</h4>
-																					
+																					<h4>José Hernández</h4>
+
 																				</div>
 																			</div>
 
 																			<div class="closed-ca"> Excelente lugar, muy recomendado.</div>
-																	
+
 																		</div>
 
-																		
+
+
+																	</div>
 
 																</div>
-
 															</div>
+														</div>
+
+
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+										</td>
+									</tr>
+								<?php endforeach; ?>
+							</tbody>
+						</table>
+
+
+					<?php else : ?>
+
+						<div class="container">
+							<div class="row justify-content-center d-flex">
+								<div class="col-lg-8 post-list">
+									<div class="single-post d-flex flex-row">
+										<div class="thumb">
+											<img src="search/img/post.png" alt="" width="150" height="80" class="img-fluid">
+											<ul class="tags">
+
+											</ul>
+										</div>
+										<div class="details">
+											<div class="title d-flex flex-row justify-content-between">
+												<div class="titles">
+													<a href="single.html">
+														<h4>Ups!! No hemos encontrado resultados para "<?php echo $search_original ?>" </h4>
+													</a>
+
+												</div>
+												<ul class="btns">
+													<!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li> -->
+
+												</ul>
+											</div>
+
+
+
+										</div>
+									</div>
+								<?php endif; ?>
+
+								</div>
+
+
+
+
+
+
+								<div class="col-lg-4 sidebar">
+
+
+
+									<div class="single-slidebar">
+
+										<h4 class="text-center">Lugares Destacados</h4>
+
+										<?php
+										include_once 'admin/class/Anuncio.php';
+										$anuncio = Anuncio::getRandom();
+
+										if (count($anuncio) > 0) :
+										?>
+
+											<div class="active-relatedjob-carusel">
+												<?php foreach ($anuncio as $item) : ?>
+
+													<div class="single-rated">
+														<a href="#">
+															<img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#">
+															<h4><?php echo $item['titulo']; ?></h4>
+														</a>
+
+														<div class="starts">
+															<ul class="list-unstyled list-inline rating mb-0">
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+																<li class="list-inline-item">
+																	<p class="text-muted">4.5 (413)</p>
+																</li>
+															</ul>
+														</div>
+														<h6><span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span></h6>
+														<p>
+															<?php echo $item[11]; ?>
+														</p>
+														<hr>
+														<h4>Información</h4>
+														<div>
+															<h5 class="direc"> &#x1f3e0;&#xfe0e; &nbsp;<?php echo $item['calle']; ?></h5>
+														</div>
+
+														<div>
+															<h5 class="direc"> &#x260e; &nbsp;417-117-5025</h5>
+														</div>
+
+														<div>
+															<h5 class="direc">&#x23f0;&#xfe0e;&nbsp;<?php echo $item['entrada']; ?> 7:00 - 20:00 <?php echo $item['cierre']; ?></h5>
+														</div>
+
+														<hr>
+
+														<br><br><br><br>
+														<div class="justify-content-center">
+															<a href="#" class="btns text-uppercase">Ver más...</a>
 														</div>
 													</div>
 
 
-													<div class="modal-footer">
-														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
-													</div>
-												</div>
+
+												<?php endforeach; ?>
+
+
+
+
 											</div>
-					</div>
+										<?php else : ?>
+											<p class="alert alert-info"> No hay lugares destacados agregados </p>
+										<?php endif; ?>
+									</div>
 
-
-					</td>
-					</tr>
-				<?php endforeach; ?>
-				</tbody>
-				</table>
-
-
-			<?php else : ?>
-
-				<div class="container">
-					<div class="row justify-content-center d-flex">
-						<div class="col-lg-8 post-list">
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="search/img/post.png" alt="" width="150" height="80" class="img-fluid">
-									<ul class="tags">
-
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html">
-												<h4>Ups!! No hemos encontrado resultados para "<?php echo $search_original ?>" </h4>
-											</a>
-
-										</div>
-										<ul class="btns">
-											<!-- <li><a href="#"><span class="lnr lnr-heart"></span></a></li> -->
-
+									<div class="single-slidebar">
+										<h4 class="text-center">Categorías</h4>
+										<ul class="cat-list">
+											<?php foreach ($categoria as $item) : ?>
+												<li><a class="justify-content-between d-flex" href="#">
+														<p><?php echo $item[1]; ?></p>
+													</a></li>
+											<?php
+											endforeach;
+											?>
 										</ul>
 									</div>
 
@@ -413,109 +535,7 @@ $paginas = ceil($total / $articulosPagina);
 
 								</div>
 							</div>
-						<?php endif; ?>
-
 						</div>
-
-
-
-
-
-
-						<div class="col-lg-4 sidebar">
-
-
-
-							<div class="single-slidebar">
-
-								<h4 class="text-center">Lugares Destacados</h4>
-
-								<?php
-								include_once 'admin/class/Anuncio.php';
-								$anuncio = Anuncio::getRandom();
-
-								if (count($anuncio) > 0) :
-								?>
-
-									<div class="active-relatedjob-carusel">
-										<?php foreach ($anuncio as $item) : ?>
-
-											<div class="single-rated">
-												<a href="#">
-													<img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#">
-													<h4><?php echo $item['titulo']; ?></h4>
-												</a>
-
-												<div class="starts">
-													<ul class="list-unstyled list-inline rating mb-0">
-														<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-														<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-														<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-														<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-														<li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-														<li class="list-inline-item">
-															<p class="text-muted">4.5 (413)</p>
-														</li>
-													</ul>
-												</div>
-												<h6><span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span></h6>
-												<p>
-													<?php echo $item[11]; ?>
-												</p>
-												<hr>
-												<h4>Información</h4>
-												<div>
-													<h5 class="direc"> &#x1f3e0;&#xfe0e; &nbsp;<?php echo $item['calle']; ?></h5>
-												</div>
-
-												<div>
-													<h5 class="direc"> &#x260e; &nbsp;417-117-5025</h5>
-												</div>
-
-												<div>
-													<h5 class="direc">&#x23f0;&#xfe0e;&nbsp;<?php echo $item['entrada']; ?> 7:00 - 20:00 <?php echo $item['cierre']; ?></h5>
-												</div>
-
-												<hr>
-
-												<br><br><br><br>
-												<div class="justify-content-center">
-												<a href="#" class="btns text-uppercase">Ver más...</a>
-												</div>
-											</div>
-
-
-
-
-										<?php endforeach; ?>
-
-
-
-
-									</div>
-								<?php else : ?>
-									<p class="alert alert-info"> No hay lugares destacados agregados </p>
-								<?php endif; ?>
-							</div>
-
-							<div class="single-slidebar">
-								<h4 class="text-center">Categorías</h4>
-								<ul class="cat-list">
-									<?php foreach ($categoria as $item) : ?>
-										<li><a class="justify-content-between d-flex" href="#">
-												<p><?php echo $item[1]; ?></p>
-											</a></li>
-									<?php
-									endforeach;
-									?>
-								</ul>
-							</div>
-
-
-
-						</div>
-					</div>
-				</div>
 	</section>
 	<!-- End post Area -->
 
@@ -570,8 +590,8 @@ $paginas = ceil($total / $articulosPagina);
 		<script src="search/js/mail-script.js"></script>
 		<script src="search/js/main.js"></script>
 		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-	<script src="js/data.js"></script>
+		<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+		<script src="js/data.js"></script>
 
 
 

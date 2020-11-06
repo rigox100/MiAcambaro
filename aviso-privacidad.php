@@ -5,14 +5,26 @@ session_start();
 <html lang="es">
 
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-NSY7H1BK2G');
+	</script>
 	<!-- Mobile Specific Meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Author Meta -->
 	<meta name="author" content="MiAcambaro">
-	 <!-- Meta Keyword -->
-	 <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
-    <!-- Meta Description -->
-    <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+	<!-- Meta Description -->
+	<meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
 	<!-- meta character set -->
 	<meta charset="UTF-8">
@@ -31,7 +43,7 @@ session_start();
 
 <body>
 
-	<header id="header" id="home"style="background-color: #ff4a00;">
+	<header id="header" id="home" style="background-color: #ff4a00;">
 		<div class="container">
 
 			<div class="row align-items-center justify-content-between d-flex">
@@ -52,7 +64,7 @@ session_start();
 									<?php
 									if ($_SESSION['idRol'] != 3) {
 										echo '<li><a href="admin/index.php">CPANEL</a>';
-									} else {	
+									} else {
 										echo '<li><a href="user_account/perfil.php">Mi cuenta</a></li>';
 									}
 									?>

@@ -2,6 +2,18 @@
 <html lang="es">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NSY7H1BK2G');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -159,7 +171,7 @@
                             <div class="form-group row">
                                 <label for="mensaje" class="col-md-4 col-form-label text-md-right">Mensaje</label>
                                 <div class="col-md-6">
-                                <textarea class="form-control" id="mensaje" rows="10"></textarea>
+                                    <textarea class="form-control" id="mensaje" rows="10"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6 offset-md-4">
@@ -171,9 +183,9 @@
                             </div>
                         </div>
                         </form>
-                   
 
-                        
+
+
                     </div>
                 </div>
             </div>
