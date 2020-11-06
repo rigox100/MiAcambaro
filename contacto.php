@@ -171,14 +171,7 @@
                             </div>
                         </div>
                         </form>
-                        <div class="text-center">
-
-                            <a href="#" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
-                                MiAcambaro.mx
-                            </a>
-                            <hr>
-                         
-                        </div>
+                   
 
                         
                     </div>
