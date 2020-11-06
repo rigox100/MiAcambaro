@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['idRol'])){
+if (isset($_SESSION['idRol'])) {
     header('Location: index.php');
 }
 ?>
@@ -8,28 +8,31 @@ if(isset($_SESSION['idRol'])){
 <html lang="es">
 
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-NSY7H1BK2G');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NSY7H1BK2G');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Author Meta -->
     <meta name="author" content="MiAcambaro">
-     <!-- Meta Keyword -->
-     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
     <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
     <!-- Icon -->
     <link rel="shortcut icon" href="images/favicon.png">
-     <!-- Fonts -->
+    <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/registrer_form.css">
@@ -160,8 +163,8 @@ if(isset($_SESSION['idRol'])){
                                     <div class="col-md-6">
 
                                         <input type="text" id="nombre" class="form-control" name="nombre" placeholder="&#xf007" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf007'" value="<?php if (isset($_POST['nombre'])) {
-                                                                                                                                                                echo $_POST['nombre'];
-                                                                                                                                                            } ?>" required>
+                                                                                                                                                                                                                    echo $_POST['nombre'];
+                                                                                                                                                                                                                } ?>" required>
                                     </div>
                                 </div>
 
@@ -169,17 +172,17 @@ if(isset($_SESSION['idRol'])){
                                     <label for="apellido" class="col-md-4 col-form-label text-md-right">Apellido</label>
                                     <div class="col-md-6">
                                         <input type="text" id="apellido" class="form-control" name="apellido" placeholder="&#xf007" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf007'" value="<?php if (isset($_POST['apellido'])) {
-                                                                                                                            echo $_POST['apellido'];
-                                                                                                                        } ?>" required>
+                                                                                                                                                                                                                        echo $_POST['apellido'];
+                                                                                                                                                                                                                    } ?>" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                     <label for="email" class="col-md-4 col-form-label text-md-right">Correo electrónico</label>
                                     <div class="col-md-6">
-                                        <input type="email" id="email" class="form-control" name="email"  class="form-control" name="confirm_password" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="<?php if (isset($_POST['email'])) {
-                                                                                                                    echo $_POST['email'];
-                                                                                                                } ?>" required>
+                                        <input type="email" id="email" class="form-control" name="email" class="form-control" name="confirm_password" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="<?php if (isset($_POST['email'])) {
+                                                                                                                                                                                                                                                                echo $_POST['email'];
+                                                                                                                                                                                                                                                            } ?>" required>
                                     </div>
                                 </div>
 

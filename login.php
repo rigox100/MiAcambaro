@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['idRol'])){
+if (isset($_SESSION['idRol'])) {
     header('Location: index.php');
 }
 ?>
@@ -9,27 +9,30 @@ if(isset($_SESSION['idRol'])){
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-NSY7H1BK2G');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NSY7H1BK2G');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Author Meta -->
-	<meta name="author" content="MiAcambaro">
-	 <!-- Meta Keyword -->
-     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+    <meta name="author" content="MiAcambaro">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
     <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
     <!-- Icon -->
     <link rel="shortcut icon" href="images/favicon.png">
-     <!-- Fonts -->
+    <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/registrer_form.css">
@@ -143,9 +146,9 @@ if(isset($_SESSION['idRol'])){
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="cotainer">
             <div class="row justify-content-center">
-            <div class="row">
-                        <div class="col display-4 mb-3">Iniciar sesión</div>
-                    </div>
+                <div class="row">
+                    <div class="col display-4 mb-3">Iniciar sesión</div>
+                </div>
                 <div class="col-md-10">
                     <?php
                     if (isset($_GET['message'])) {
@@ -159,14 +162,14 @@ if(isset($_SESSION['idRol'])){
                     include_once 'lib/recuperar_password.php';
 
                     ?>
-                    
+
                     <div class="card" style="border: none;">
                         <div class="card-body">
                             <form action="lib/validar_login.php" method="post" id="form">
                                 <div class="form-group row">
                                     <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email" class="form-control" name="email" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'"  value="" required>
+                                        <input type="text" id="email" class="form-control" name="email" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="" required>
                                     </div>
                                 </div>
 
@@ -187,14 +190,14 @@ if(isset($_SESSION['idRol'])){
                         </form>
                         <div class="text-center">
 
-                        <a href="" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
-                            ¿Olvidaste tu contraseña?
-                        </a>
-                        <hr>
-                        <p>¿Aún no tienes una cuenta en MiAcambaro?</p>
-                        <a href="registro.php" class="btn btn-primary">Registrate</a>
+                            <a href="" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
+                                ¿Olvidaste tu contraseña?
+                            </a>
+                            <hr>
+                            <p>¿Aún no tienes una cuenta en MiAcambaro?</p>
+                            <a href="registro.php" class="btn btn-primary">Registrate</a>
                         </div>
-                       
+
                         <script src="template/js/login_validate.js"></script>
                         <?php
                         include_once 'template/partials/msj_modal_recovery.php';
@@ -209,7 +212,7 @@ if(isset($_SESSION['idRol'])){
     </main>
 
 
-    <footer class="main-block dark-bg" >
+    <footer class="main-block dark-bg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

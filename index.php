@@ -1,31 +1,35 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-   <!-- Global site tag (gtag.js) - Google Analytics -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
-   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-NSY7H1BK2G');
-   </script>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NSY7H1BK2G');
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Author Meta -->
-	<meta name="author" content="MiAcambaro">
-	 <!-- Meta Keyword -->
-	 <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
+    <meta name="author" content="MiAcambaro">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
     <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
      miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
     <!-- Page Title -->
     <title> Inicio | MiAcámbaro</title>
     <!--Icon-->
-     <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Google Fonts -->
@@ -45,21 +49,21 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link href="css/main.css" rel="stylesheet" />
-   
+
 </head>
 
 <body>
 
-    
-		<div class="d-none d-md-block social-body">
-			<ul>
-				<li class="facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				<li class="twitter"><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-			
-				<li class="instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-				<li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-			</ul>
-		</div>
+
+    <div class="d-none d-md-block social-body">
+        <ul>
+            <li class="facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            <li class="twitter"><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+
+            <li class="instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+    </div>
 
 
 
@@ -72,12 +76,10 @@
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <a class="navbar-brand" href="index.php">
-                               MiAcámbaro
-                             <!--  <img src="images/logo.png" width="145" height="100" class="d-inline-block align-top" alt="">  -->
+                                MiAcámbaro
+                                <!--  <img src="images/logo.png" width="145" height="100" class="d-inline-block align-top" alt="">  -->
                             </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                                aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
                             </button>
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -85,57 +87,54 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Inicio</a>
                                     </li>
-                                 <!--    <li class="nav-item">
+                                    <!--    <li class="nav-item">
                                         <a class="nav-link" href="#">Categorías</a>
                                     </li> -->
-                                   
-                                   
-                                    <?php
-                                        if(isset($_SESSION['idUsuario'])){
-                                    ?>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <?php echo $_SESSION['nombre'] ?>
-                                            <span class="icon-arrow-down"></span>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                                            <?php
-                                            if($_SESSION['idRol']!= 3) {
-
-                                                echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
-
-                                            }else{
-                                            ?>
-                                            <a class="dropdown-item" href="user_account/perfil.php">Mi cuenta</a>
-
-                                            <?php } ?>
-                                            <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
-                                        </div>
-                                    </li>
 
                                     <?php
-                                        }else{
+                                    if (isset($_SESSION['idUsuario'])) {
                                     ?>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            Login
-                                            <span class="icon-arrow-down"></span>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                            <a class="dropdown-item" href="login.php">Iniciar Sesión</a>
-                                            <a class="dropdown-item" href="registro.php">Registro</a>
-                                        </div>
-                                    </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <?php echo $_SESSION['nombre'] ?>
+                                                <span class="icon-arrow-down"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                                                <?php
+                                                if ($_SESSION['idRol'] != 3) {
+
+                                                    echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
+                                                } else {
+                                                ?>
+                                                    <a class="dropdown-item" href="user_account/perfil.php">Mi cuenta</a>
+
+                                                <?php } ?>
+                                                <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
+                                            </div>
+                                        </li>
+
                                     <?php
-                                        }
+                                    } else {
                                     ?>
-                                     <li class="nav-item">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Login
+                                                <span class="icon-arrow-down"></span>
+                                            </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="login.php">Iniciar Sesión</a>
+                                                <a class="dropdown-item" href="registro.php">Registro</a>
+                                            </div>
+                                        </li>
+                                    <?php
+                                    }
+                                    ?>
+                                    <li class="nav-item">
                                         <a class="nav-link" href="contacto.php">Contacto</a>
                                     </li>
-                                     <li class="nav-item">
+                                    <li class="nav-item">
                                         <a class="nav-link" href="aviso-privacidad.php">Aviso de privacidad</a>
                                     </li>
                                 </ul>
@@ -156,7 +155,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap contenedor-texto">
-                                    <h1 class="tam">Descubre lugares en Acámbaro </h1> <h1><span class="typed"></span></h1>
+                                    <h1 class="tam">Descubre lugares en Acámbaro </h1>
+                                    <h1><span class="typed"></span></h1>
                                     <!-- <h5><span class="typed"></span></h5> -->
                                 </div>
                             </div>
@@ -164,30 +164,30 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
 
-                                <form  action="search.php" method="POST" class="form-wrap mt-4" id ="formulario">
+                                <form action="search.php" method="POST" class="form-wrap mt-4" id="formulario">
                                     <div class="btn-group" role="group" aria-label="Basic example">
 
                                         <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1">
-                                        
 
-                                        <button type="submit" class="btn-form"><span
-                                                class="icon-magnifier search-icon"></span>BUSCAR<i
-                                                class="pe-7s-angle-right"></i></button>
+
+                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>BUSCAR<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
-                            
+
                                 <br>
 
-                                <a href="contacto.php"><p style="font-size: 20px; color: #6ca2cb">Anunciate con nosotros | miacambaro.mx</p></a>
+                                <a href="contacto.php">
+                                    <p style="font-size: 20px; color: #6ca2cb">Anunciate con nosotros | miacambaro.mx</p>
+                                </a>
 
-                            
-                        </div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!--// SLIDER -->
@@ -203,43 +203,45 @@
                     </div>
                 </div>
             </div>
-                <?php
-                    include_once 'admin/class/Anuncio.php';
-                    $anuncio = Anuncio::getRandom(3);
+            <?php
+            include_once 'admin/class/Anuncio.php';
+            $anuncio = Anuncio::getRandom(3);
 
-                    if (count($anuncio) > 0):
-                ?>
-
-
+            if (count($anuncio) > 0) :
+            ?>
 
 
-            <div class="row">
-                <?php foreach ($anuncio as $item): ?>
-                <div class="col-lg-4 col-md-6 col-12 featured-responsive ">
 
-                    <div class="featured-place-wrap shadow-lg  rounded">
 
-                      
+                <div class="row">
+                    <?php foreach ($anuncio as $item) : ?>
+                        <div class="col-lg-4 col-md-6 col-12 featured-responsive ">
+
+                            <div class="featured-place-wrap shadow-lg  rounded">
+
+
                                 <a href="#">
-                                    <img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#" >
-                           
-                              
+                                    <img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#">
+
+
                                     <div class="featured-title-box">
-                                    <div style ="height: 45px; ">
-                                        <h4 ><?php echo $item['titulo']; ?></h4>
-                                    </div>
+                                        <div style="height: 45px; ">
+                                            <h4><?php echo $item['titulo']; ?></h4>
+                                        </div>
 
                                 </a>
 
                                 <div class="closed-now">ABIERTO AHORA</div><br>
-                                
+
                                 <ul class="list-unstyled list-inline rating mb-0">
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                                     <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-                                    <li class="list-inline-item"><p class="text-muted">4.5 (413)</p></li>
+                                    <li class="list-inline-item">
+                                        <p class="text-muted">4.5 (413)</p>
+                                    </li>
                                 </ul>
 
 
@@ -249,10 +251,10 @@
                                     <p> &#x26ab;&#xfe0e; &nbsp;<?php echo $item['municipio']; ?>,</p> &nbsp;&nbsp;
                                     <p><span><?php echo $item['nombre']; ?></span> </p>
                                 </div>
-                                
+
                                 <hr class="my-4">
                                 <h6> Información </h6>
-                                
+
                                 <ul>
                                     <li><span class="ti-home"></span>
                                         <p><?php echo $item['calle']; ?>, <?php echo $item['colonia']; ?></p>
@@ -283,41 +285,41 @@
                                     <a href="#"><img src="images/what.png" width="50px" height="50px"></a>
                                     <a href="#"><img src="images/insta.png" width="50px" height="50px"></a>
                                     <a href="#"><img src="images/youtu.png" width="50px" height="50px"></a>
-                                 </div>
+                                </div>
 
 
 
 
                             </div>
 
-                     
 
-                    </div>
+
+                        </div>
 
                 </div>
-                  <?php endforeach; ?>
+            <?php endforeach; ?>
 
-              </div>
+        </div>
 
-                    <?php else: ?>
-                        <p class="alert alert-info"> No hay lugares destacados agregados </p>
-                     <?php endif; ?>
-
-
+    <?php else : ?>
+        <p class="alert alert-info"> No hay lugares destacados agregados </p>
+    <?php endif; ?>
 
 
-                     <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <div class="styled-heading">
-                        <h3></h3>
-                    </div>
-                </div>
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="styled-heading">
+                <h3></h3>
             </div>
         </div>
+    </div>
+    </div>
     </section>
     <!--//END FEATURED PLACES -->
     <!--============================= CATEGORÍAS =============================-->
-   <!--  <section class="main-block">
+    <!--  <section class="main-block">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-5">
@@ -717,13 +719,13 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="./js/main.js"></script>
     <script src="js/superplaceholder.min.js"></script>
-    <script  src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
-     
-    
+
+
 
     <script>
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             // 100 = The point you would like to fade the nav in.
 
             if ($(window).scrollTop() > 100) {
