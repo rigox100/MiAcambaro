@@ -77,7 +77,7 @@ session_start();
 						}
 						?>
 						<!--End Menu Session-->
-						<li><a href="#">Contacto</a></li>
+						<li><a href="contacto.php">Contacto</a></li>
 						<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
 
 					</ul>

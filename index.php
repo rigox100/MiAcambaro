@@ -127,7 +127,7 @@
                                         <a class="nav-link" href="contacto.php">Contacto</a>
                                     </li>
                                      <li class="nav-item">
-                                        <a class="nav-link" href="#">Aviso de privacidad</a>
+                                        <a class="nav-link" href="aviso-privacidad.php">Aviso de privacidad</a>
                                     </li>
                                 </ul>
                             </div>
