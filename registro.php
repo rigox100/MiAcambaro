@@ -28,8 +28,7 @@ if (isset($_SESSION['idRol'])) {
     <!-- Meta Keyword -->
     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
-    <meta name="description" content="Entra y descubre lugares en Acámbaro, aquí todo lo que buscas lo encuentras y lo que no tambien, animate y anuncia tu negocio.
-     miacambaro.mx es un proyecto creado con el objetivo de apoyar a reactivar la economía de la región de Acámabro, Guanajuato por medio de la publicación y publicidad de los negocios, profesionistas y oficios con el fin de darlos a conocer">
+    <meta name="description" content="Entra y descubre lugares en Acámbaro de una manera rápida y sencilla. En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta aplicación ha sido creada con el objetivo de apoyar a los negocios, profesionistas y personas que tienen algún oficio a darse a conocer por medio de la publicación de sus productos y servicios.">
     <!-- Icon -->
     <link rel="shortcut icon" href="images/favicon.png">
     <!-- Fonts -->
