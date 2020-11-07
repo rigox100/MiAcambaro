@@ -51,7 +51,6 @@
 </head>
 
 <body>
-    <div class="loader"></div>
 
     <div class="d-none d-md-block social-body">
         <ul>
@@ -719,10 +718,6 @@
     <script src="js/superplaceholder.min.js"></script>
     <script src="js/script.js"></script>
     <script>
-        $(window).load(function() {
-            $(".loader").fadeOut("slow");
-        });
-
         $(window).scroll(function() {
             // 100 = The point you would like to fade the nav in.
 
