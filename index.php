@@ -47,12 +47,11 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link href="css/main.css" rel="stylesheet" />
 
 </head>
 
 <body>
-
+    <div class="loader"></div>
 
     <div class="d-none d-md-block social-body">
         <ul>
@@ -712,18 +711,18 @@
 
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
     <script src="./js/main.js"></script>
     <script src="js/superplaceholder.min.js"></script>
     <script src="js/script.js"></script>
-
-
-
-
     <script>
+        $(window).load(function() {
+            $(".loader").fadeOut("slow");
+        });
+
         $(window).scroll(function() {
             // 100 = The point you would like to fade the nav in.
 
@@ -738,6 +737,8 @@
             };
         });
     </script>
+
+
 </body>
 
 </html>

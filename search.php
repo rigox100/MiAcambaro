@@ -108,10 +108,10 @@ $paginas = ceil($total / $articulosPagina);
 	<link rel="stylesheet" href="search/css/owl.carousel.css">
 	<link rel="stylesheet" href="search/css/main.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-
 </head>
 
 <body>
+	<div class="loader"></div>
 
 	<header id="header" id="home">
 		<div class="container">
@@ -576,7 +576,6 @@ $paginas = ceil($total / $articulosPagina);
 
 
 		<script src="search/js/vendor/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
 		<script src="search/js/easing.min.js"></script>
 		<script src="search/js/hoverIntent.js"></script>
 		<script src="search/js/superfish.min.js"></script>
@@ -592,10 +591,11 @@ $paginas = ceil($total / $articulosPagina);
 		<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 		<script src="js/data.js"></script>
 
-
-
-
-
+		<script type="text/javascript">
+			$(window).load(function() {
+				$(".loader").fadeOut("slow");
+			});
+		</script>
 
 </body>
 
