@@ -74,7 +74,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand" href="index.php">
+                            <a class="navbar-brand " style="text-shadow: black 0.1em 0.1em 0.2em;" href="index.php">
                                 MiAcámbaro
                                 <!--  <img src="images/logo.png" width="145" height="100" class="d-inline-block align-top" alt="">  -->
                             </a>
@@ -82,7 +82,7 @@
                                 <span class="icon-menu"></span>
                             </button>
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
+                                <ul class="navbar-nav" style="text-shadow: black 0.1em 0.1em 0.2em;">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Inicio</a>
                                     </li>
@@ -176,7 +176,7 @@
                                 <br>
 
                                 <a href="contacto.php">
-                                    <p style="font-size: 20px; color: #6ca2cb">Anunciate con nosotros | miacambaro.mx</p>
+                                    <p style="font-size: 20px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate con nosotros | miacambaro.mx</p>
                                 </a>
 
 
