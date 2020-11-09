@@ -143,7 +143,10 @@ if (isset($_SESSION['idRol'])) {
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="cotainer">
             <div class="row justify-content-center">
-                
+            
+           
+            <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
+
             <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Registrate</div>
                 
                 <div class="col-md-10">
