@@ -1,5 +1,13 @@
 <?php
+
+
 session_start();
+
+if(!isset($_POST['busqueda'])){
+	header("Location: index.php");
+}
+
+
 include_once 'admin/class/Anuncio.php';
 
 require_once 'admin/class/Categoria.php';
@@ -14,13 +22,11 @@ if ($idAnuncio) {
 	$anuncioBuscado = Anuncio::buscarPorId($idAnuncio);
 }
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+	$search = (isset($_POST['busqueda'])) ? $_POST['busqueda'] : null;
 
 
-$search = (isset($_POST['busqueda'])) ? $_POST['busqueda'] : null;
-
-if (empty($search)) {
-
-	header("Location: index.php");
 }
 
 
@@ -127,7 +133,7 @@ $paginas = ceil($total / $articulosPagina);
 
 
 
-						<li class="menu-has-children"><a href="">Login</a>
+						<li class="menu-has-children"><a href="#">Login</a>
 							<ul>
 								<li><a href="login.php">Iniciar Sesión</a></li>
 								<li><a href="registro.php">Registro</a></li>
@@ -151,16 +157,18 @@ $paginas = ceil($total / $articulosPagina);
 		<div class="container">
 			<div class="row search-page-top d-flex align-items-center justify-content-center">
 				<div class="banner-content col-lg-12">
-					<h1 class="text-black">
+					<h1 class="text-blacki" style="font-size: calc(1em + 1vw);">
 
 						Resultados de búsqueda
 					</h1>
 
-					<form action="search.php" method="POST" class="serach-form-area">
+					<form action="search.php" method="POST" class="serach-form-area" id="formulario">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-10 form-cols">
 								<input type="text" class="form-control" name="busqueda" value="<?php echo $search_original ?>">
+
 							</div>
+
 
 							<!-- 	<div class="col-lg-5 form-cols">
 										<input id="cate" type="text" class="form-control" name="categorias" placeholder = "Escriba el nombre de una categoría" >
@@ -173,6 +181,7 @@ $paginas = ceil($total / $articulosPagina);
 								</button>
 							</div>
 						</div>
+						<div id="errores"></div>
 					</form>
 
 
@@ -588,12 +597,54 @@ $paginas = ceil($total / $articulosPagina);
 		<script src="search/js/mail-script.js"></script>
 		<script src="search/js/main.js"></script>
 		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 		<script src="js/data.js"></script>
 
 		<script type="text/javascript">
 			$(window).load(function() {
 				$(".loader").fadeOut("slow");
+			});
+		</script>
+
+
+		<script>
+			$(document).ready(function() {
+				$.validator.addMethod("formAlphanumeric", function(value, element) {
+					var pattern1 = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
+					return this.optional(element) || pattern1.test(value);
+				}, "El campo debe tener un valor alfanumérico");
+
+
+				$("#formulario").validate({
+
+					rules: {
+
+						busqueda: {
+							required: true,
+							formAlphanumeric: true,
+							maxlength: 30,
+
+						}
+
+					},
+
+					messages: {
+
+						busqueda: {
+							required: "Por favor introduzca una palabra",
+							formAlphanumeric: "La busqueda solo puede contener letras",
+							maxlength: "Solo se admite un máximo de 30 caracteres"
+
+						},
+
+					},
+
+					errorLabelContainer: "#errores"
+
+
+				});
+
 			});
 		</script>
 

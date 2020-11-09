@@ -47,6 +47,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+   
 
 </head>
 
@@ -152,29 +153,29 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap contenedor-texto">
-                                    <h1 class="tam">Descubre lugares en Acámbaro </h1>
-                                    <h1><span class="typed"></span></h1>
+                                    <h1 class="tam" style="font-size: calc(1em + 1vw);">Descubre lugares en Acámbaro </h1>
+                                    <h1 style="font-size: calc(1.4em + 1vw); margin-bottom:8px;"><span class="typed"></span></h1>
                                     <!-- <h5><span class="typed"></span></h5> -->
                                 </div>
                             </div>
                         </div>
                         <div class="row d-flex justify-content-center">
                             <div class="col-md-10">
-
+                            <div hidden id="errores"></div>
                                 <form action="search.php" method="POST" class="form-wrap mt-4" id="formulario">
                                     <div class="btn-group" role="group" aria-label="Basic example">
 
                                         <input type="text" name="busqueda" id="busqueda" class="text1 btn-group1">
 
 
-                                        <button type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>BUSCAR<i class="pe-7s-angle-right"></i></button>
+                                        <button  type="submit" class="btn-form"><span class="icon-magnifier search-icon"></span>BUSCAR<i class="pe-7s-angle-right"></i></button>
                                     </div>
                                 </form>
 
                                 <br>
 
-                                <a href="contacto.php">
-                                    <p style="font-size: 20px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate con nosotros | miacambaro.mx</p>
+                                <a href="registro.php">
+                                    <p style="font-size: 17px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate con nosotros | miacambaro.mx</p>
                                 </a>
 
 
@@ -711,6 +712,7 @@
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
@@ -731,6 +733,46 @@
 
             };
         });
+    </script>
+
+    <script>
+   $(document).ready(function() {
+				$.validator.addMethod("formAlphanumeric", function(value, element) {
+					var pattern1 = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
+					return this.optional(element) || pattern1.test(value);
+				}, "El campo debe tener un valor alfanumérico");
+
+
+				$("#formulario").validate({
+
+					rules: {
+
+						busqueda: {
+							required: true,
+							formAlphanumeric: true,
+							maxlength: 30,
+
+						}
+
+					},
+
+					messages: {
+
+						busqueda: {
+							required: "Por favor introduzca una palabra",
+							formAlphanumeric: "La busqueda solo puede contener letras",
+							maxlength: "Solo se admite un máximo de 30 caracteres"
+
+						},
+
+					},
+
+					errorLabelContainer: "#errores"
+
+
+				});
+
+			});
     </script>
 
 

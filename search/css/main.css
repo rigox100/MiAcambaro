@@ -599,6 +599,14 @@ th {
   text-align: center;
 }
 
+.text-blacki {
+  font-size: 36px;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
 .text-orange {
   color: #ff4a00;
   font-weight: bold;

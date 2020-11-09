@@ -128,7 +128,7 @@ En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta
                                     }
                                     ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" style="color:white;">Contacto</a>
+                                        <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -144,7 +144,7 @@ En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta
     </div>
 
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
-        <div class="cotainer">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="row">
                     <div class="col display-4 mb-3">Iniciar sesión</div>

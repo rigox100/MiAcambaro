@@ -125,7 +125,7 @@ if (isset($_SESSION['idRol'])) {
                                     }
                                     ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" style="color:white;">Contacto</a>
+                                        <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -143,9 +143,9 @@ if (isset($_SESSION['idRol'])) {
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="cotainer">
             <div class="row justify-content-center">
-                <div class="row">
-                    <div class="col display-4 mb-3">Registrate</div>
-                </div>
+                
+                    <div class="col-12 display-4 mb-3 text-center">Registrate</div>
+                
                 <div class="col-md-10">
 
                     <div class="card" style="border: none;">
@@ -218,8 +218,9 @@ if (isset($_SESSION['idRol'])) {
                                         Registrarme
                                     </button>
                                 </div>
-                        </div>
+                       
                         </form>
+                        </div>
 
                         <script src="template/js/registro_validate.js"></script>
                         <script>
@@ -247,7 +248,7 @@ if (isset($_SESSION['idRol'])) {
                 </div>
             </div>
         </div>
-        </div>
+       
 
     </main>
 
