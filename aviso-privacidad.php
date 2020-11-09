@@ -139,7 +139,8 @@ session_start();
     <main style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
             <div class="row chida ">
-                <div class="col display-4 mb-3 text-center" style="color:black;">Aviso de privacidad</div>
+
+            <div class="col-12 display-4 mb-3 mt-4 text-center" style="font-size: calc(1.2em + 1vw);">Aviso de privacidad</div>
 
                 <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta plataforma está creada como apoyo para los comercios que buscan darse a conocer,
                     así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento y mejora se basan en cooperaciones o aportaciones de los negocios afilidos.</p>

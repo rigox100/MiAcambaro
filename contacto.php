@@ -94,7 +94,7 @@ session_start();
                                                 <?php
                                                 if ($_SESSION['idRol'] != 3) {
 
-                                                    echo '<a class="dropdown-item" href="admin/index.php" style="color: white;">CPANEL</a>';
+                                                    echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
                                                 } else {
                                                 ?>
                                                     <a class="dropdown-item" href="user_account/perfil.php">Mi cuenta</a>
@@ -139,9 +139,9 @@ session_start();
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="cotainer">
             <div class="row justify-content-center">
-                <div class="row">
-                    <div class="col display-4 mb-3">Contáctanos</div>
-                </div>
+                
+                    <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Contáctanos</div>
+                
                 <div class="col-md-10">
 
 

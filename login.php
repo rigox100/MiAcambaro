@@ -146,9 +146,7 @@ En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="row">
-                    <div class="col display-4 mb-3">Iniciar sesión</div>
-                </div>
+            <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Login</div>
                 <div class="col-md-10">
                     <?php
                     if (isset($_GET['message'])) {
