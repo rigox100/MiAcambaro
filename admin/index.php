@@ -46,11 +46,11 @@ $total = array_values($num_solcitudes)[0];
         <a href="../index.php" class="nav-link">Ver sitio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Email</a>
+        <a href="	https://webmail.hostinger.mx" target="_blank" class="nav-link">Email</a>
       </li>
     </ul>
 
-    <!-- SEARCH FORM -->
+    <!-- SEARCH FORM 
     <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
@@ -61,6 +61,7 @@ $total = array_values($num_solcitudes)[0];
         </div>
       </div>
     </form>
+    -->
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -141,7 +142,7 @@ $total = array_values($num_solcitudes)[0];
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="assets/img/gears.png" alt="Directorio Acámbaro" class="brand-image img-circle elevation-3"
+      <img src="assets/img/gears.png" alt="Mi Acámbaro" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">CPANEL</span><br>
       

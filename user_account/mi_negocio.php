@@ -59,7 +59,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
                   <th scope="col">Observaciones</th>
                   <?php 
                     if ($item[11] == 'Publicada') {
-                      echo '<th scope="col">Ver</th>';
+                      //echo '<th scope="col">Ver</th>';
                       echo '<th scope="col">Ajustes</th>';
                     }
                   ?>
@@ -100,7 +100,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
                     <?php 
                     if ($item[11] == 'Publicada') {
                       ?>
-                      <td class="text-center"><a href="" data-toggle="modal" data-target="#exampleModal2" class="btn btn-info fa fa-eye mr-2"></a></td>
+                     <!-- <td class="text-center"><a href="" data-toggle="modal" data-target="#exampleModal2" class="btn btn-info fa fa-eye mr-2"></a></td>-->
                       <td class="text-center">
                         <form action="editar_publicacion.php" method="post">
                           <input type="hidden" name="idSolicitud" value="<?php echo $item[0] ?>">
@@ -110,7 +110,7 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
                   <?php
                     }
                   ?>
-                    <td class="text-center"><a href="../admin/modules/ad_request/delete.php?idSolicitud=<?php echo $item[0]; ?>&redirect=user_account" onclick="return confirm('¿Está seguro que desea cancelar esta solicitud?')" class="btn btn-danger far fa-trash-alt"></a></td>
+                    <td class="text-center"><a href="../admin/modules/ad_request/delete.php?idSolicitud=<?php echo $item[0]; ?>&redirect=user_account" onclick="return confirm('¿Está seguro que desea cancelar su solicitud, toda la información de su negocio será eliminada por completo?')" class="btn btn-danger far fa-trash-alt"></a></td>
 
                   </tr>
                 <?php endforeach; ?>

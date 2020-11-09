@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -83,7 +86,7 @@
                                     if (isset($_SESSION['idUsuario'])) {
                                     ?>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
                                                 <?php echo $_SESSION['nombre'] ?>
                                                 <span class="icon-arrow-down"></span>
                                             </a>
@@ -95,10 +98,10 @@
                                                     echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
                                                 } else {
                                                 ?>
-                                                    <a class="dropdown-item" href="user_account/perfil.php" style="color:white;">Mi cuenta</a>
+                                                    <a class="dropdown-item" href="user_account/perfil.php">Mi cuenta</a>
 
                                                 <?php } ?>
-                                                <a class="dropdown-item" href="logout.php" style="color:white;">Cerrar sesión</a>
+                                                <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
                                             </div>
                                         </li>
 
@@ -133,36 +136,34 @@
             </div>
         </div>
     </div>
-    <main  style="margin-top: 7%; margin-bottom:1%;">
+    <main style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
             <div class="row chida ">
-            <div class="col display-4 mb-3 text-center" style="color:black;">Aviso de privacidad</div>
+                <div class="col display-4 mb-3 text-center" style="color:black;">Aviso de privacidad</div>
 
-                        <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta plataforma está creada como apoyo para los comercios que buscan darse a conocer,
-                            así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento y mejora se basan en cooperaciones o aportaciones de los negocios afilidos.</p>
-                        <p> Esta plataforma es la responsable del uso y protección de sus datos personales, y al respecto le informamos a continuación.</p>
-                        <p>Su información personal puede ser utilizada para las siguientes finalidades secundarias que no son necesarias para el servicio solicitado, pero que nos permiten y facilitan brindarle una mejor atención: </p>
-                        <ul>
-                            <li>Verificar la identidad de los suscriptores</li>
-                            <li>Obtener los datos necesarios para dar a conocer su negocio en la plataforma.</li>
-                        </ul>
-                        <br>
-                        <p> En caso de que no desee que sus datos personales sean tratados para estos fines secundarios, desde este momento usted nos puede comunicar lo anterior a través del siguiente mecanismo: </p>
-                        <ul>
-                            <li>Enviar un mensaje al administrador de la plataforma por medio de la sección <a href="Contacto.php">Contacto</a></li>
-                            <li>Enviar un correo electrónico directamente al Administrador a la dirección <a href="mailto:admin@miacambaro.mx" target="_blank"> admin@miacambaro.mx </a></li>
-                        </ul>
-                        <br>
-                        <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
+                <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta plataforma está creada como apoyo para los comercios que buscan darse a conocer,
+                    así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento y mejora se basan en cooperaciones o aportaciones de los negocios afilidos.</p>
+                <p> Esta plataforma es la responsable del uso y protección de sus datos personales, y al respecto le informamos a continuación.</p>
+                <p>Su información personal puede ser utilizada para las siguientes finalidades secundarias que no son necesarias para el servicio solicitado, pero que nos permiten y facilitan brindarle una mejor atención: </p>
+                <ul>
+                    <li>Verificar la identidad de los suscriptores</li>
+                    <li>Obtener los datos necesarios para dar a conocer su negocio en la plataforma.</li>
+                </ul>
+                <br>
+                <p> En caso de que no desee que sus datos personales sean tratados para estos fines secundarios, desde este momento usted nos puede comunicar lo anterior a través del siguiente mecanismo: </p>
+                <ul>
+                    <li>Enviar un mensaje al administrador de la plataforma por medio de la sección <a href="Contacto.php">Contacto</a></li>
+                    <li>Enviar un correo electrónico directamente al Administrador a la dirección <a href="mailto:admin@miacambaro.mx" target="_blank"> admin@miacambaro.mx </a></li>
+                </ul>
+                <br>
+                <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
 
-                
+
             </div>
 
 
         </div>
-
-                                </main>
-
+    </main>
 
     <footer class="main-block dark-bg">
         <div class="container">

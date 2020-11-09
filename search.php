@@ -1,9 +1,7 @@
 <?php
-
-
 session_start();
 
-if(!isset($_POST['busqueda'])){
+if (!isset($_POST['busqueda'])) {
 	header("Location: index.php");
 }
 
@@ -25,8 +23,6 @@ if ($idAnuncio) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$search = (isset($_POST['busqueda'])) ? $_POST['busqueda'] : null;
-
-
 }
 
 
@@ -129,20 +125,37 @@ $paginas = ceil($total / $articulosPagina);
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="index.php">Inicio</a></li>
-						<!-- <li><a href="#">Categorías</a></li>-->
+						<?php
+						if (isset($_SESSION['idUsuario'])) {
+						?>
+							<li class="menu-has-children"><a href="#"><?php echo $_SESSION['nombre']; ?></a>
+								<ul>
+									<?php 
+									if($_SESSION['idRol']==1){ 
+									echo '<li><a href="admin/index.php">CPANEL</a></li>';
+									}else{
+										echo '<li><a href="user_account/perfil.php">Mi cuenta</a></li>';
+									}
+									?>
+									<li><a href="logout.php">Cerrar sesión</a></li>
 
+								</ul>
+							<?php
+						} else {
+							?>
+							<li class="menu-has-children"><a href="#">Login</a>
+								<ul>
+									<li><a href="login.php">Iniciar Sesión</a></li>
+									<li><a href="registro.php">Registro</a></li>
 
+								</ul>
+							<?php
+						}
+							?>
 
-						<li class="menu-has-children"><a href="#">Login</a>
-							<ul>
-								<li><a href="login.php">Iniciar Sesión</a></li>
-								<li><a href="registro.php">Registro</a></li>
-
-							</ul>
-
-						<li><a href="contacto.php">Contacto</a></li>
-						</li>
-						<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
+							<li><a href="contacto.php">Contacto</a></li>
+							</li>
+							<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
 
 					</ul>
 				</nav><!-- #nav-menu-container -->

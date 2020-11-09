@@ -13,7 +13,7 @@ if($item[11]=="En proceso"){
 }elseif($item[11]=="Publicada"){
 
     $title1='Anuncio Publicado';
-    $content1 = 'El anuncio de su negocio ha sido publicado con éxito, ahora puede ver y/o modificar algunos <strong>Ajustes</strong> <span class="alert alert-warning fa fa-edit mr-2"></span> como: 
+    $content1 = 'El anuncio de su negocio ha sido publicado con éxito, se recomienda revise y edite algunos <strong>Ajustes</strong> <span class="alert alert-warning fa fa-edit mr-2"></span> como: 
     <ul style="margin-top:-30px;">
         <li>Cambiar imagen de portada de su negocio</li>
         <li>Incluir enlaces a sus redes sociales</li>

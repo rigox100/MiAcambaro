@@ -39,7 +39,7 @@
         </li>
       </ul>
 
-      <!-- SEARCH FORM -->
+      <!-- SEARCH FORM 
       <form class="form-inline ml-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
@@ -50,6 +50,7 @@
           </div>
         </div>
       </form>
+    -->
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
@@ -80,7 +81,7 @@
             <img src="../template/img/avatar.png" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block"><?php echo $_SESSION['nombre']; ?></a>
+            <a href="perfil.php" class="d-block"><?php echo $_SESSION['nombre']; ?></a>
           </div>
         </div>
 
@@ -104,13 +105,14 @@
                     <p>Perfil</p>
                   </a>
                 </li>
+                <!--
                 <li class="nav-item">
                   <a href="favoritos.php" class="nav-link">
                     <i class="fa fa-user-circle"></i>
                     <p>Mis favoritos</p>
                   </a>
                 </li>
-
+                 -->
                 <li class="nav-item">
                   <a href="mi_negocio.php" class="nav-link">
                     <i class="fa fa-cog"></i>

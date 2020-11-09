@@ -143,6 +143,10 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
             <div class="form-group">
             <input class="form-control" type="hidden" name="estatus_cambios" id="estatus_cambios" value="1">
             </div>
+
+            <div class="form-group">
+            <input class="form-control" type="hidden" name="google_maps" id="google_maps"  value="<?php print_r($registro['google_maps']) ?>">
+            </div>
             
             <div class="form-group">
             <input class="form-control" type="hidden" name="idAnuncio" id="idAnuncio" value="<?php print_r($registro[0]) ?>">
@@ -242,14 +246,8 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] == 3) {
             <label for="nombre">Sitio Web</label>
             <input class="form-control" type="text" name="sitio" id="sitio" value="<?php print_r($registro["sitio"]) ?>">
             </div>
-
-            <div class="form-group">
-            <label for="google_maps">Google Maps <small>(Opcional)</small></label>
-            <input class="form-control" type="text" name="google_maps" id="google_maps" placeholder="Ingresa enlace del negocio en Google Maps" value="<?php print_r($registro['google_maps']) ?>">
-            </div>
-
-
-
+            
+          
             <div class="form-group">
             <label for="descripcion">Descripción</label>
            <textarea class="form-control" name="descripcion" id="descripcion" rows="5" ><?php print_r($registro["descripcion"])?></textarea>

@@ -1,6 +1,8 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
@@ -83,7 +85,7 @@
                                     if (isset($_SESSION['idUsuario'])) {
                                     ?>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
                                                 <?php echo $_SESSION['nombre'] ?>
                                                 <span class="icon-arrow-down"></span>
                                             </a>
@@ -92,13 +94,13 @@
                                                 <?php
                                                 if ($_SESSION['idRol'] != 3) {
 
-                                                    echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
+                                                    echo '<a class="dropdown-item" href="admin/index.php" style="color: white;">CPANEL</a>';
                                                 } else {
                                                 ?>
-                                                    <a class="dropdown-item" href="user_account/perfil.php" style="color:white;">Mi cuenta</a>
+                                                    <a class="dropdown-item" href="user_account/perfil.php">Mi cuenta</a>
 
                                                 <?php } ?>
-                                                <a class="dropdown-item" href="logout.php" style="color:white;">Cerrar sesión</a>
+                                                <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
                                             </div>
                                         </li>
 
