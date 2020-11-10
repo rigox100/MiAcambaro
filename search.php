@@ -170,11 +170,12 @@ $paginas = ceil($total / $articulosPagina);
 		<div class="container">
 			<div class="row search-page-top d-flex align-items-center justify-content-center">
 				<div class="banner-content col-lg-12">
+				<img src="images/logo.png" width="65%" height="500" class="img-fluid" alt="">
 					<h1 class="text-blacki" style="font-size: calc(1em + 1vw);">
 
 						Resultados de búsqueda
 					</h1>
-
+					
 					<form action="search.php" method="POST" class="serach-form-area" id="formulario">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-10 form-cols">

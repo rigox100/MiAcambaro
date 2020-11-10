@@ -176,7 +176,9 @@
 
                                 <a href="registro.php">
                                     <p style="font-size: 17px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate con nosotros | miacambaro.mx</p>
+                                    
                                 </a>
+                             
 
 
                             </div>
