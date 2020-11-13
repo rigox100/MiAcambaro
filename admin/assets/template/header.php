@@ -45,7 +45,10 @@ $total = array_values($num_solcitudes)[0];
         <a href="../../../index.php" class="nav-link">Ver sitio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="	https://webmail.hostinger.mx" target="_blank" class="nav-link">Email</a>
+        <a href="	https://webmail.hostinger.mx" target="_blank" class="nav-link">Webmail</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="	https://analytics.google.com/analytics/web" target="_blank" class="nav-link">Analytics</a>
       </li>
     </ul>
 
