@@ -25,9 +25,9 @@
 
 			<p> Informaci&oacute;n de contacto: </p>
 
-			<table style=" border: 1px solid black"">
+			<table style="width:90%; margin-left:5%; border: 1px solid black"">
 
-				<tr style="width:90%; margin-left:5%; background-color: #000; color:#fff;">
+				<tr style="background-color: #000; color:#fff;">
 				    <th>Fecha</th>	
 				    <th>Tel</th>
 					<th>Calle</th>
