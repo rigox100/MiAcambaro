@@ -7,7 +7,7 @@
 
 		<div id="logo">
 			<center>
-				<h1 style="margin: 0px;"><a href="{SITE_ADDR}" target="_blank"><img style="max-height: 75px;" src="https://miacambaro.mx/images/logo.png"></a></h1>
+				<h1 style="margin: 0px;"><a href="{SITE_ADDR}" target="_blank"><img style="width:500px; height:auto;" src="https://miacambaro.mx/images/logo.png"></a></h1>
 			</center>
 		</div>
 
@@ -19,11 +19,11 @@
 				<center>{EMAIL_TITLE}</center>
 			</h1>
 
-			<p>&iexcl;Representante de Ventas</p>
+			<p>Representante de Ventas:</p>
 
-			<p>Se ha recibido una solicitud de registro de <strong>{NOMBRE_NEGOCIO}</strong></p>
+			<p>Usted ha recibido una solicitud de registro de <strong>{NOMBRE_NEGOCIO}</strong></p>
 
-			<p> Información de contacto: </p>
+			<p> Informaci&oacute;n de contacto: </p>
 
 			<table style=" border: 1px solid black"">
 
@@ -33,20 +33,20 @@
 					<th>Calle</th>
 					<th>Colonia</th>
 					<th>CP</th>
-					<th>Municipio/Localidad</th>
+					<th>Municipio</th>
 				</tr>
 				<tr>
-					<td>{{FECHA}}</td>
-					<td>{{TEL}}</td>
-					<td>{{CALLE}}</td>
-					<td>{{COLONIA}}</td>
-					<td>{{CP}}</td>
-					<td>{{MUNICIPIO}}</td>
+					<td>{FECHA}</td>
+					<td>{TEL}</td>
+					<td>{CALLE}</td>
+					<td>{COLONIA}</td>
+					<td>{CP}</td>
+					<td>Ac&aacute;mbaro</td>
 				</tr>
 			</table>
 
-				<p>Descripción del negocio:</p>
-				<p>{{DESCRIPCION}}</p>
+				<p>Descripci&oacute;n del negocio:</p>
+				<p>{DESCRIPCION}</p>
 
 		</div>
 			<hr>

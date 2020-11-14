@@ -115,7 +115,7 @@ session_start();
                 <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
 
                 <button type="button" class="btn btn-primary btn-lg w-50 d-block m-auto" data-toggle="modal" data-target="#exampleModal">
-                    ¡Registra ahora mi negocio!
+                    ¡Registrar mi negocio ahora!
                 </button>
 
             </div>
@@ -184,7 +184,7 @@ session_start();
 
                                                 <div class="form-group row">
                                                     <label for="municipio">Localidad/Municipio</label>
-                                                    <input type="text" name="municipio" id="municipio" class="form-control">
+                                                    <input type="text" name="municipio" id="municipio" class="form-control" value="Acámbaro" readonly>
                                                 </div>
 
                                                 <div class="form-group row">

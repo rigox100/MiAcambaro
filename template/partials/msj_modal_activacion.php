@@ -9,9 +9,8 @@
         </button>-->
       </div>
       <div class="modal-body">
-        <p> <strong> ¡El registro de tu negocio se ha realizado correctamente! </strong> </p>
-        <p>El registro será revisado a la brevedad posible y un asesor de ventas se pondrá en contacto con usted.</p>
-        <P>También puede comunicarse al <strong>417 106 34 00</strong> para más detalles.</p>
+      <p> <strong> ¡Tu registro realizado correctamente! </strong> </p>
+        <P> Se ha enviado un mensaje a tu correo electrónico, por favor revisalo y sigue las instrucciones para confirmar tu cuenta.</p>
       </div>
       <div class="modal-footer">
         <a href="index.php" class="btn btn-secondary">Cerrar </a>

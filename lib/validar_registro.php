@@ -63,13 +63,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$swap_var = array(
 		"{SITE_ADDR}" => "https://www.miacambaro.mx",
-		"{EMAIL_TITLE}" => "Ha recibido una Solicitud de ".$nombre_negocio,
+		"{EMAIL_TITLE}" => "Ha recibido una solicitud de ".$nombre_negocio,
 		"{NOMBRE_NEGOCIO}" => $nombre_negocio,
     "{TEL}" => $tel,
     "{CALLE}" => $calle,
     "{COLONIA}" => $colonia,
     "{CP}" => $cp,
-    "{MUNICIPIO}" => $municipio,
     "{FECHA}" => date('d-m-Y'),
     "{DESCRIPCION}" => $descripcion
 		//"{TO_EMAIL}" => "user@test.com"
