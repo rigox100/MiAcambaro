@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 	$email_headers = "From: ".$email_from."\r\nReply-To: ".$email_from."\r\n";
 	$email_headers .= "MIME-Version: 1.0\r\n";
-	$email_headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+	$email_headers .= "Content-Type: text/html; charset=UTF-8 \r\n";
 
 
 	$email_to = $email;
