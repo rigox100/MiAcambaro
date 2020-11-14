@@ -35,12 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $municipio = (isset($_POST['municipio'])) ? $_POST['municipio'] : null;
     $fecha_solicitud = date('Y-m-d');
     $estatus_solicitud = "En Proceso";
-    $observaciones = NULL;
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
     $solicitud = new Solicitud();
     $solicitud->setNombreNegocio($nombre_negocio);
-    $solicitud->setUrlImagen($url_imagen1);
+    $solicitud->setUrlImagen($url_imagen);
     $solicitud->setRFC($rfc);
     $solicitud->setTel($tel);
     $solicitud->setCalle($calle);
@@ -50,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setFechaSolicitud($fecha_solicitud);
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
-    $solicitud->setObservaciones($observaciones); 
+   
     
     echo '<script>
     

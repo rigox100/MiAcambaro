@@ -169,7 +169,7 @@ class Solicitud {
             $consulta->execute();
             //var_dump($consulta);
         } else /* Inserta */ {
-            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:idUsuario, :nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
             $consulta->bindParam(':nombre_negocio', $this->nombre_negocio);
             $consulta->bindParam(':url_imagen', $this->url_imagen);
             $consulta->bindParam(':rfc', $this->rfc);
