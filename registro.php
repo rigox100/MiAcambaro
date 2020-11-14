@@ -114,7 +114,7 @@ session_start();
                 <hr>
                 <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
 
-                <button type="button" class="btn btn-primary btn-lg w-50 d-block m-auto" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary btn-lg w-100" data-toggle="modal" data-target="#exampleModal">
                     ¡Registrar mi negocio ahora!
                 </button>
 
