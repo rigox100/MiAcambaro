@@ -25,7 +25,7 @@ session_start();
     <!-- Meta Keyword -->
     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
-    <meta name="description" content="Registra tu negocio de una manera rápida y sencilla">
+    <meta name="description" content="Registra tu negocio de una manera rápida y sencilla y llega a más personas. En miacambaro.mx">
     <!-- Icon -->
     <link rel="shortcut icon" href="images/favicon.png">
     <!-- Fonts -->

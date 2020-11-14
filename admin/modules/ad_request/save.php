@@ -123,7 +123,7 @@ include_once '../../assets/template/header.php';
                 } elseif ($item[10] == 'Publicada') {
                   echo '<p class="alert alert-success text-center w-50">' . $item[10] . '</p>';
                 } else {
-                  echo '<p class="alert alert-danger text-center w-50">' . $item[11] . '</p>';
+                  echo '<p class="alert alert-danger text-center w-50">' . $item[10] . '</p>';
                 }
                 ?>
               </div>
