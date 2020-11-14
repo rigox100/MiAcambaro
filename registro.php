@@ -109,8 +109,8 @@ session_start();
                         <h4 class="display-4" style="font-size: calc(1em + 1vw);">Si tienes un negocio, eres un profesionista o te dedicas a algún oficio y quieres anunciarte para llegar a más personas.</h4>
                         <p class="lead font-weight-bold"> Es muy sencillo, solo sigue los siguientes pasos:</p>
                         <p class="lead"> 1.- Registra los datos en el formulario de solicitud.</p>
-                        <p class="lead"> 2.- Espera a que el administrador revise tu información y revise tus datos.</p>
-                        <p class="lead"> 3.- Una vez verificados tus datos un asesor se pondrá en contacto contigo.</p>
+                        <p class="lead"> 2.- Espera a que el administrador revise tus datos.</p>
+                        <p class="lead"> 3.- Una vez verificados tus datos el administrador se pondrá en contacto contigo.</p>
                         <p class="lead"> 4.- ¡Listo! Tu negocio será publicado en miacambaro.mx</p>
                         <hr>
                         <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
