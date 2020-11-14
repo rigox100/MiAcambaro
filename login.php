@@ -87,46 +87,9 @@ if (isset($_SESSION['idRol'])) {
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="index.php">Inicio</a>
                                     </li>
-
-                                    <?php
-                                    if (isset($_SESSION['idUsuario'])) {
-                                    ?>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <?php echo $_SESSION['nombre'] ?>
-                                                <span class="icon-arrow-down"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-                                                <?php
-                                                if ($_SESSION['idRol'] != 3) {
-
-                                                    echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
-                                                } else {
-                                                ?>
-                                                    <a class="dropdown-item" href="user_account/perfil.php" style="color:white;">Mi cuenta</a>
-
-                                                <?php } ?>
-                                                <a class="dropdown-item" href="logout.php" style="color:white;">Cerrar sesión</a>
-                                            </div>
-                                        </li>
-
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
-                                                Login
-                                                <span class="icon-arrow-down"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                <a class="dropdown-item" href="login.php">Iniciar Sesión</a>
-                                                <a class="dropdown-item" href="registro.php">Registro</a>
-                                            </div>
-                                        </li>
-                                    <?php
-                                    }
-                                    ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>

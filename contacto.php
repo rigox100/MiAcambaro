@@ -84,7 +84,7 @@ session_start();
                                         <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
                                     </li>       
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#" style="color:white;">Contacto</a>
+                                        <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
 
                                     <li class="nav-item">
