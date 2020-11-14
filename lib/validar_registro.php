@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$template_file = "./template/email_templates/template_solicitud.php";
 
 
-	$email_from = "Solicitud de registro <user@mmiacambaro.mx>";
+	$email_from = "Solicitud de registro <user@miacambaro.mx>";
 
 
 	$swap_var = array(
