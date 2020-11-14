@@ -22,7 +22,7 @@ $solicitudes = Solicitud::recuperarTodos();
           }
         }
         ?>
-        <h3>Solicitudes de anuncio</h3> <br>
+        <h3>Solicitudes de anuncios</h3> <br>
         <?php if (count($solicitudes) > 0) : ?>
           <table class="table table-bordered" id="table-data">
             <thead class="thead-dark">
