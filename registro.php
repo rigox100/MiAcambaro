@@ -103,23 +103,24 @@ session_start();
 
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="jumbotron">
+                        <h4 class="display-4" style="font-size: calc(1em + 1vw);">Si tienes un negocio, eres un profesionista o te dedicas a algún oficio y quieres anunciarte para llegar a más personas.</h4>
+                        <p class="lead font-weight-bold"> Es muy sencillo, solo sigue los siguientes pasos:</p>
+                        <p class="lead"> 1.- Registra los datos en el formulario de solicitud.</p>
+                        <p class="lead"> 2.- Espera a que el administrador revise tu información y revise tus datos.</p>
+                        <p class="lead"> 3.- Una vez verificados tus datos un asesor se pondrá en contacto contigo.</p>
+                        <p class="lead"> 4.- ¡Listo! Tu negocio será publicado en miacambaro.mx</p>
+                        <hr>
+                        <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
 
-            <div class="jumbotron">
-                <h4 class="display-4" style="font-size: calc(1em + 1vw);">Si tienes un negocio, eres un profesionista o te dedicas a algún oficio y quieres anunciarte para llegar a más personas.</h4>
-                <p class="lead font-weight-bold"> Es muy sencillo, solo sigue los siguientes pasos:</p>
-                <p class="lead"> 1.- Registra los datos en el formulario de solicitud.</p>
-                <p class="lead"> 2.- Espera a que el administrador revise tu información y revise tus datos.</p>
-                <p class="lead"> 3.- Una vez verificados tus datos un asesor se pondrá en contacto contigo.</p>
-                <p class="lead"> 4.- ¡Listo! Tu negocio será publicado en miacambaro.mx</p>
-                <hr>
-                <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
-
-                <button type="button" class="btn btn-primary btn-lg w-100" data-toggle="modal" data-target="#exampleModal">
-                    ¡Registrar mi negocio ahora!
-                </button>
-
+                        <button type="button" class="btn btn-primary btn-lg w-100" data-toggle="modal" data-target="#exampleModal">
+                            ¡Registrar mi negocio ahora!
+                        </button>
+                    </div>
+                </div>
             </div>
-
             <?php
             require_once "lib/recaptcha.php";
             include_once "lib/validar_registro.php";
@@ -145,116 +146,116 @@ session_start();
                                         <div class="modal-body">
                                             <form action="registro.php" method="post" id="form">
 
-                                            <div style="padding: 20px;">
+                                                <div style="padding: 20px;">
 
-                                                <div class="form-group row">
-                                                    <label for="nombre_negocio">Nombre del Negocio</label>
-                                                    <input class="form-control" type="text" name="nombre_negocio" id="nombre_negocio" value="">
-                                                </div>
-                                                <!--
+                                                    <div class="form-group row">
+                                                        <label for="nombre_negocio">Nombre del Negocio</label>
+                                                        <input class="form-control" type="text" name="nombre_negocio" id="nombre_negocio" value="">
+                                                    </div>
+                                                    <!--
                                                 <div class="form-group">
                                                     <label for="url_imagen">Imagen <small class="text-info ml-2">Seleccione la imagen que desea mostrar de su negocio Ejem: Portada, Logotipo.</small></label>
                                                     <input class="form-control" type="file" name="url_imagen" id="url_imagen">
                                                 </div>
                                                 -->
 
-                                                <div class="form-group row">
-                                                    <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="tel">Télefono de contacto</label>
-                                                    <input class="form-control" type="text" name="tel" id="tel" value="">
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="tel">Télefono de contacto</label>
+                                                        <input class="form-control" type="text" name="tel" id="tel" value="">
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="calle">Calle</label>
-                                                    <input class="form-control" type="text" name="calle" id="calle" value="">
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="calle">Calle</label>
+                                                        <input class="form-control" type="text" name="calle" id="calle" value="">
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="colonia">Colonia</label>
-                                                    <input class="form-control" type="text" name="colonia" id="colonia" value="">
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="colonia">Colonia</label>
+                                                        <input class="form-control" type="text" name="colonia" id="colonia" value="">
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="cp">Código Postal</label>
-                                                    <input class="form-control" type="text" name="cp" id="cp" value="">
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="cp">Código Postal</label>
+                                                        <input class="form-control" type="text" name="cp" id="cp" value="">
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="municipio">Localidad/Municipio</label>
-                                                    <input type="text" name="municipio" id="municipio" class="form-control" value="Acámbaro" readonly>
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="municipio">Localidad/Municipio</label>
+                                                        <input type="text" name="municipio" id="municipio" class="form-control" value="Acámbaro" readonly>
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="tel">Estado</label>
-                                                    <input class="form-control" type="text" name="estado" id="estado" value="Guanajuato" readonly>
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="tel">Estado</label>
+                                                        <input class="form-control" type="text" name="estado" id="estado" value="Guanajuato" readonly>
+                                                    </div>
 
-                                                <div class="form-group row">
-                                                    <label for="descripcion">Cuentanos un poco de tu negocio</label>
-                                                    <textarea name="descripcion" id="descripcion" rows="4" class="form-control"></textarea>
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="descripcion">Cuentanos un poco de tu negocio</label>
+                                                        <textarea name="descripcion" id="descripcion" rows="4" class="form-control"></textarea>
+                                                    </div>
 
 
-                                                <div class="form-group row">
-                                                    
+                                                    <div class="form-group row">
+
                                                         <div class="checkbox">
                                                             <label>
                                                                 <input type="checkbox" name="politica_privacidad" required> He leído el <a href="aviso-privacidad.php" target="_blank"> aviso de privacidad</a>
                                                             </label>
                                                         </div>
-                                                    
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-md-6 offset-md-4">
 
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    <button type="submit" class="btn btn-lg btn-dark w-100">
-                                                        Registrar mi negocio
-                                                    </button>
-                                                </div>
+                                                    <div class="form-group">
+                                                        <div class="col-md-6 offset-md-4">
+
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <button type="submit" class="btn btn-lg btn-dark w-100">
+                                                            Registrar mi negocio
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
-                                    
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- <script src="template/js/registro_validate.js"></script>-->
+                            <script>
+                                $('#form').submit(function(event) {
+
+
+                                    if ($("#form").valid()) {
+                                        event.preventDefault();
+                                        grecaptcha.ready(function() {
+                                            grecaptcha.execute('6LeRAtsZAAAAAFPj_jVnUreuGCaI8Z09QCG3kz9d', {
+                                                action: 'registro'
+                                            }).then(function(token) {
+                                                $('#form').prepend('<input type="hidden" name="token" value="' + token + '">');
+                                                $('#form').prepend('<input type="hidden" name="action" value="registro">');
+                                                $('#form').unbind('submit').submit();
+                                            });;
+                                        });
+                                    }
+                                });
+                            </script>
                         </div>
-
-                       <!-- <script src="template/js/registro_validate.js"></script>-->
-                        <script>
-                            $('#form').submit(function(event) {
-
-
-                                if ($("#form").valid()) {
-                                    event.preventDefault();
-                                    grecaptcha.ready(function() {
-                                        grecaptcha.execute('6LeRAtsZAAAAAFPj_jVnUreuGCaI8Z09QCG3kz9d', {
-                                            action: 'registro'
-                                        }).then(function(token) {
-                                            $('#form').prepend('<input type="hidden" name="token" value="' + token + '">');
-                                            $('#form').prepend('<input type="hidden" name="action" value="registro">');
-                                            $('#form').unbind('submit').submit();
-                                        });;
-                                    });
-                                }
-                            });
-                        </script>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <?php 
+            <?php
             include_once 'template/partials/msj_modal_registro_solicitud.php';
-        ?>
+            ?>
 
 
     </main>
