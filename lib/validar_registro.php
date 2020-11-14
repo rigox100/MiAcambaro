@@ -39,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
     $solicitud = new Solicitud();
-    $solicitud->setIdUsuario($idUsuario);
     $solicitud->setNombreNegocio($nombre_negocio);
     $solicitud->setUrlImagen($url_imagen1);
     $solicitud->setRFC($rfc);
