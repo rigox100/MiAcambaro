@@ -28,12 +28,12 @@
 			<table style=" border: 1px solid black"">
 
 				<tr style="background-color: #000; color:#fff;">
-				    <th>Fecha</th>	
-				    <th>Tel</th>
-					<th>Calle</th>
-					<th>Colonia</th>
-					<th>CP</th>
-					<th>Municipio</th>
+				    <th style="margin:10px;">Fecha</th>	
+				    <th style="margin:10px;">Tel</th>
+					<th style="margin:10px;">Calle</th>
+					<th style="margin:10px;">Colonia</th>
+					<th style="margin:10px;">CP</th>
+					<th style="margin:10px;">Municipio</th>
 				</tr>
 				<tr>
 					<td>{FECHA}</td>
