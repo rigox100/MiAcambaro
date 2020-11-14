@@ -49,14 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setFechaSolicitud($fecha_solicitud);
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
-   
-    
-    echo '<script>
-    
-      alert("Hola");
-</script>';
-
-  if ($usuario->guardar()) {
+  if ($solicitud->guardar()) {
 
     // Mail
 	define("DEMO", false); 
