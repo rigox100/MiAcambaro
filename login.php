@@ -146,20 +146,15 @@ En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
             <div class="row justify-content-center">
-            <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
-            <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Login</div>
+                <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
+                <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Login</div>
                 <div class="col-md-10">
                     <?php
                     if (isset($_GET['message'])) {
                         if ($_GET['message'] == 'error') {
                             echo '<div class="alert alert-danger"> Error al intentar iniciar sesión, verifica que tu correo o contraseña sean correctos</div>';
                         }
-                        if ($_GET['message'] == 'recovery-success') {
-                            echo '<div class="alert alert-success">Tu contraseña se ha reestablecido éxitosamente</div>';
-                        }
                     }
-                    include_once 'lib/recuperar_password.php';
-
                     ?>
 
                     <div class="card" style="border: none;">
@@ -187,30 +182,12 @@ En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta
                                 </div>
                         </div>
                         </form>
-                        <div class="text-center">
-
-                            <a href="" data-toggle="modal" data-target="#ModalEmailRecovery" class="btn btn-link">
-                                ¿Olvidaste tu contraseña?
-                            </a>
-                            <hr>
-                            <p>¿Aún no tienes una cuenta en MiAcambaro?</p>
-                            <a href="registro.php" class="btn btn-primary">Registrate</a>
-                        </div>
-
-                        <script src="template/js/login_validate.js"></script>
-                        <?php
-                        include_once 'template/partials/msj_modal_recovery.php';
-                        include_once 'template/partials/frm_modal_recuperar_email.php';
-                        ?>
                     </div>
                 </div>
             </div>
         </div>
         </div>
-
     </main>
-
-
     <footer class="main-block dark-bg">
         <div class="container">
             <div class="row">

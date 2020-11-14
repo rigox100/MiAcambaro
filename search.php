@@ -12,8 +12,6 @@ require_once 'admin/class/Categoria.php';
 $categoria = Categoria::getRandom();
 $categorias = Categoria::recuperarTodos();
 
-
-
 $idAnuncio = (isset($_REQUEST['idAnuncio'])) ? $_REQUEST['idAnuncio'] : null;
 
 if ($idAnuncio) {
@@ -25,41 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$search = (isset($_POST['busqueda'])) ? $_POST['busqueda'] : null;
 }
 
-
-
 $search_original = $search;
-//$array=["en", "de", "y", "sobre", "hasta"];
-/* for($i=0; $i<count($array); $i++){
-				$resultado = str_replace(" ".$array[$i]." ", " ", $search);
-				$search = $resultado;
-			} */
-
-//$arreglo = explode(' ', $search);
-
-// if(!empty($arreglo[0])){
-// 	$searchUno = $arreglo[0];
-// }else{
-// 	$searchUno = null;
-// }
-
-// if(!empty($arreglo[1])){
-// 	$searchDos = $arreglo[1];
-// }else{
-// 	$searchDos = null;
-// }
-
-
-
-
-//  echo $searchUno ."<br>";
-//  echo $searchDos;
-
-// //echo $search;
-//die();
 $busqueda = Anuncio::busqueda($search);
-
-
-
 $total = count($busqueda);
 
 $articulosPagina = 10;
@@ -68,7 +33,7 @@ $paginas = ceil($total / $articulosPagina);
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -124,39 +89,10 @@ $paginas = ceil($total / $articulosPagina);
 
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
-						<li class="menu-active"><a href="index.php">Inicio</a></li>
-						<?php
-						if (isset($_SESSION['idUsuario'])) {
-						?>
-							<li class="menu-has-children"><a href="#"><?php echo $_SESSION['nombre']; ?></a>
-								<ul>
-									<?php 
-									if($_SESSION['idRol']==1){ 
-									echo '<li><a href="admin/index.php">CPANEL</a></li>';
-									}else{
-										echo '<li><a href="user_account/perfil.php">Mi cuenta</a></li>';
-									}
-									?>
-									<li><a href="logout.php">Cerrar sesión</a></li>
-
-								</ul>
-							<?php
-						} else {
-							?>
-							<li class="menu-has-children"><a href="#">Login</a>
-								<ul>
-									<li><a href="login.php">Iniciar Sesión</a></li>
-									<li><a href="registro.php">Registro</a></li>
-
-								</ul>
-							<?php
-						}
-							?>
-
-							<li><a href="contacto.php">Contacto</a></li>
-							</li>
-							<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
-
+						<li><a href="index.php">Inicio</a></li>
+						<li><a href="registro.php">Registra tu negocio</a></li>
+						<li><a href="contacto.php">Contacto</a></li>
+						<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
 					</ul>
 				</nav><!-- #nav-menu-container -->
 			</div>
@@ -170,12 +106,12 @@ $paginas = ceil($total / $articulosPagina);
 		<div class="container">
 			<div class="row search-page-top d-flex align-items-center justify-content-center">
 				<div class="banner-content col-lg-12">
-				<img src="images/logo.png" width="65%" height="500" class="img-fluid" alt="">
+					<img src="images/logo.png" width="65%" height="500" class="img-fluid" alt="">
 					<h1 class="text-blacki" style="font-size: calc(1em + 1vw);">
 
 						Resultados de búsqueda
 					</h1>
-					
+
 					<form action="search.php" method="POST" class="serach-form-area" id="formulario">
 						<div class="row justify-content-center form-wrap">
 							<div class="col-lg-10 form-cols">

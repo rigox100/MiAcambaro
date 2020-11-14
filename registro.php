@@ -1,11 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['idRol'])) {
-    header('Location: index.php');
-}
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,7 +25,7 @@ if (isset($_SESSION['idRol'])) {
     <!-- Meta Keyword -->
     <meta name="keywords" content="MiAcambaro, Todo lo que buscas, encuentras, negocios, Acámbaro">
     <!-- Meta Description -->
-    <meta name="description" content="Entra y descubre lugares en Acámbaro de una manera rápida y sencilla. En Mi Acámbaro... ¡Todo lo que buscas lo encuentras y lo que no también! Esta aplicación ha sido creada con el objetivo de apoyar a los negocios, profesionistas y personas que tienen algún oficio a darse a conocer por medio de la publicación de sus productos y servicios.">
+    <meta name="description" content="Registra tu negocio de una manera rápida y sencilla">
     <!-- Icon -->
     <link rel="shortcut icon" href="images/favicon.png">
     <!-- Fonts -->
@@ -52,7 +49,7 @@ if (isset($_SESSION['idRol'])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LeRAtsZAAAAAFPj_jVnUreuGCaI8Z09QCG3kz9d"></script>
-    <title>Registro | Mi Acámbaro</title>
+    <title>Registra tu negocio | Mi Acámbaro</title>
     <style>
         input {
             font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
@@ -74,7 +71,7 @@ if (isset($_SESSION['idRol'])) {
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.php" style="color:white;">
                                 MiAcámbaro
-                                <!-- <img src="images/logo.png" width="120" height="42" class="d-inline-block align-top" alt=""> -->
+
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
@@ -84,46 +81,10 @@ if (isset($_SESSION['idRol'])) {
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="index.php">Inicio</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
+                                    </li>
 
-                                    <?php
-                                    if (isset($_SESSION['idUsuario'])) {
-                                    ?>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <?php echo $_SESSION['nombre'] ?>
-                                                <span class="icon-arrow-down"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-                                                <?php
-                                                if ($_SESSION['idRol'] != 3) {
-
-                                                    echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
-                                                } else {
-                                                ?>
-                                                    <a class="dropdown-item" href="user_account/perfil.php" style="color:white;">Mi cuenta</a>
-
-                                                <?php } ?>
-                                                <a class="dropdown-item" href="logout.php" style="color:white;">Cerrar sesión</a>
-                                            </div>
-                                        </li>
-
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
-                                                Login
-                                                <span class="icon-arrow-down"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                <a class="dropdown-item" href="login.php">Iniciar Sesión</a>
-                                                <a class="dropdown-item" href="registro.php">Registro</a>
-                                            </div>
-                                        </li>
-                                    <?php
-                                    }
-                                    ?>
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
@@ -141,91 +102,133 @@ if (isset($_SESSION['idRol'])) {
     </div>
 
     <main class="login-form" style="margin-top: 7%; margin-bottom:1%;">
-        <div class="cotainer">
-            <div class="row justify-content-center">
-            
-           
-            <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
+        <div class="container">
 
-            <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Registrate</div>
-                
+            <div class="jumbotron">
+                <h4 class="display-4" style="font-size: calc(1em + 1vw);">Si tienes un negocio, eres un profesionista o te dedicas a algún oficio y quieres anunciarte para llegar a más personas.</h4>
+                <p class="lead font-weight-bold"> Es muy sencillo, solo sigue los siguientes pasos:</p>
+                <p class="lead"> 1.- Registra los datos en el formulario de solicitud.</p>
+                <p class="lead"> 2.- Espera a que el administrador revise tu información y revise tus datos.</p>
+                <p class="lead"> 3.- Una vez verificados tus datos un asesor se pondrá en contacto contigo.</p>
+                <p class="lead"> 4.- ¡Listo! Tu negocio será publicado en miacambaro.mx</p>
+                <hr>
+                <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
+
+                <button type="button" class="btn btn-primary btn-lg w-50 d-block m-auto" data-toggle="modal" data-target="#exampleModal">
+                    ¡Registra ahora mi negocio!
+                </button>
+
+            </div>
+
+            <?php
+            require_once "lib/recaptcha.php";
+            include_once "lib/validar_registro.php";
+            ?>
+
+            <div class="row justify-content-center">
+                <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
+
                 <div class="col-md-10">
 
                     <div class="card" style="border: none;">
 
                         <div class="card-body">
-                            <?php
-                            require_once "lib/recaptcha.php";
-                            include_once "lib/validar_registro.php";
-                            ?>
-                            <form action="registro.php" method="post" id="form">
-
-                                <div class="form-group row">
-                                    <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
-                                    <div class="col-md-6">
-
-                                        <input type="text" id="nombre" class="form-control" name="nombre" placeholder="&#xf007" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf007'" value="<?php if (isset($_POST['nombre'])) {
-                                                                                                                                                                                                                    echo $_POST['nombre'];
-                                                                                                                                                                                                                } ?>" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="apellido" class="col-md-4 col-form-label text-md-right">Apellido</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="apellido" class="form-control" name="apellido" placeholder="&#xf007" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf007'" value="<?php if (isset($_POST['apellido'])) {
-                                                                                                                                                                                                                        echo $_POST['apellido'];
-                                                                                                                                                                                                                    } ?>" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">Correo electrónico</label>
-                                    <div class="col-md-6">
-                                        <input type="email" id="email" class="form-control" name="email" class="form-control" name="confirm_password" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="<?php if (isset($_POST['email'])) {
-                                                                                                                                                                                                                                                                echo $_POST['email'];
-                                                                                                                                                                                                                                                            } ?>" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="new_password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" id="new_password" class="form-control" name="new_password" placeholder="&#xf023 Ingresa una contraseña de al menos 8 caracteres" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf023 Ingresa una contraseña de al menos 8 caracteres'" value="" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="confirm_password" class="col-md-4 col-form-label text-md-right">Confirmar Password</label>
-                                    <div class="col-md-6">
-                                        <input type="password" id="confirm_password" class="form-control" name="confirm_password" placeholder="&#xf023" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf023'" value="" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="col-md-6 offset-md-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="politica_privacidad" required> He leído el <a href="aviso-privacidad.php" target="_blank"> aviso de privacidad</a>
-                                            </label>
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title" id="exampleModalLabel" class="text-center" style="font-size: calc(1.2em + 1vw);">Registra tu negocio</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-md-6 offset-md-4">
+                                        <div class="modal-body">
+                                            <form action="registro.php" method="post" id="form">
 
+                                            <div style="padding: 20px;">
+
+                                                <div class="form-group row">
+                                                    <label for="nombre_negocio">Nombre del Negocio</label>
+                                                    <input class="form-control" type="text" name="nombre_negocio" id="nombre_negocio" value="">
+                                                </div>
+                                                <!--
+                                                <div class="form-group">
+                                                    <label for="url_imagen">Imagen <small class="text-info ml-2">Seleccione la imagen que desea mostrar de su negocio Ejem: Portada, Logotipo.</small></label>
+                                                    <input class="form-control" type="file" name="url_imagen" id="url_imagen">
+                                                </div>
+                                                -->
+
+                                                <div class="form-group row">
+                                                    <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="tel">Télefono de contacto</label>
+                                                    <input class="form-control" type="text" name="tel" id="tel" value="">
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="calle">Calle</label>
+                                                    <input class="form-control" type="text" name="calle" id="calle" value="">
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="colonia">Colonia</label>
+                                                    <input class="form-control" type="text" name="colonia" id="colonia" value="">
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="cp">Código Postal</label>
+                                                    <input class="form-control" type="text" name="cp" id="cp" value="">
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="municipio">Localidad/Municipio</label>
+                                                    <input type="text" name="municipio" id="municipio" class="form-control">
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="tel">Estado</label>
+                                                    <input class="form-control" type="text" name="estado" id="estado" value="Guanajuato" readonly>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="descripcion">Cuentanos un poco de tu negocio</label>
+                                                    <textarea name="descripcion" id="descripcion" rows="4" class="form-control"></textarea>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    
+                                                        <div class="checkbox">
+                                                            <label>
+                                                                <input type="checkbox" name="politica_privacidad" required> He leído el <a href="aviso-privacidad.php" target="_blank"> aviso de privacidad</a>
+                                                            </label>
+                                                        </div>
+                                                    
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="col-md-6 offset-md-4">
+
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <button type="submit" class="btn btn-lg btn-dark w-100">
+                                                        Registrar mi negocio
+                                                    </button>
+                                                </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                 </div>
-                                <div class="col-md-6 offset-md-4 w-100">
-                                    <button type="submit" class="btn btn-dark w-100">
-                                        Registrarme
-                                    </button>
-                                </div>
-                       
-                        </form>
+                            </div>
                         </div>
 
-                        <script src="template/js/registro_validate.js"></script>
+                       <!-- <script src="template/js/registro_validate.js"></script>-->
                         <script>
                             $('#form').submit(function(event) {
 
@@ -244,14 +247,15 @@ if (isset($_SESSION['idRol'])) {
                                 }
                             });
                         </script>
-                        <?php
-                        include_once 'template/partials/msj_modal_activacion.php';
-                        ?>
                     </div>
                 </div>
             </div>
         </div>
-       
+
+        <?php 
+            include_once 'template/partials/msj_modal_registro_solicitud.php';
+        ?>
+
 
     </main>
 

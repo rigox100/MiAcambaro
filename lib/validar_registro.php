@@ -1,5 +1,5 @@
 <?php
-require_once 'admin/class/Usuario.php';
+require_once 'admin/class/Solicitud.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -23,40 +23,59 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // verificar la respuesta
   if($arrResponse["success"] == '1' && $arrResponse["action"] == $action && $arrResponse["score"] >= 0.5) {
      
-  $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : null;
-  $apellido = (isset($_POST['apellido'])) ? $_POST['apellido'] : null;
-  $email = (isset($_POST['email'])) ? $_POST['email'] : null;
-  $password = md5((isset($_POST['new_password'])) ? $_POST['new_password'] : null);
-  $estatus = "Inactivo";
-  $tokenId = md5($email);
-  $idRol = 3;
-  $usuario = new Usuario();
-  $usuario->setNombre($nombre);
-  $usuario->setApellido($apellido);
-  $usuario->setEmail($email);
-  $usuario->setPassword($password);
-  $usuario->setEstatus($estatus);
-  $usuario->setToken($tokenId);
-  $usuario->setIdRol($idRol);
+    $idUsuario = NULL;
+    $email= 'ventas@miacambaro.mx';
+    $nombre_negocio = (isset($_POST['nombre_negocio'])) ? $_POST['nombre_negocio'] : null;
+    $url_imagen = 'uploads/images/mi_negocio.jpg';
+    $rfc = (isset($_POST['rfc'])) ? $_POST['rfc'] : null;
+    $tel = (isset($_POST['tel'])) ? $_POST['tel'] : null;
+    $calle = (isset($_POST['calle'])) ? $_POST['calle'] : null;
+    $colonia = (isset($_POST['colonia'])) ? $_POST['colonia'] : null;
+    $cp = (isset($_POST['cp'])) ? $_POST['cp'] : null;
+    $municipio = (isset($_POST['municipio'])) ? $_POST['municipio'] : null;
+    $fecha_solicitud = date('Y-m-d');
+    $estatus_solicitud = "En Proceso";
+    $observaciones = NULL;
+    $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
+
+    $solicitud = new Solicitud();
+    $solicitud->setIdUsuario($idUsuario);
+    $solicitud->setNombreNegocio($nombre_negocio);
+    $solicitud->setUrlImagen($url_imagen1);
+    $solicitud->setRFC($rfc);
+    $solicitud->setTel($tel);
+    $solicitud->setCalle($calle);
+    $solicitud->setColonia($colonia);
+    $solicitud->setCP($cp);
+    $solicitud->setMunicipio($municipio);
+    $solicitud->setFechaSolicitud($fecha_solicitud);
+    $solicitud->setEstatusSolicitud($estatus_solicitud);
+    $solicitud->setDescripcion($descripcion);
+    $solicitud->setObservaciones($observaciones); 
+
   if ($usuario->guardar()) {
 
     // Mail
 	define("DEMO", false); 
 
 
-	$template_file = "./template/email_templates/template_email_activation.php";
+	$template_file = "./template/email_templates/template_solicitud.php";
 
 
-	$email_from = "MiAcambaro <admin@miacambaro.mx>";
+	$email_from = "Solicitud de registro <user@mmiacambaro.mx>";
 
 
 	$swap_var = array(
 		"{SITE_ADDR}" => "https://www.miacambaro.mx",
-		//"{EMAIL_LOGO}" => "",
-		"{EMAIL_TITLE}" => "Confirmar tu cuenta en MiAcambaro",
-		"{CUSTOM_URL}" => $tokenId,
-		//"{CUSTOM_IMG}" => "",
-		"{TO_NAME}" => $nombre
+		"{EMAIL_TITLE}" => "Ha recibido una Solicitud de ".$nombre_negocio,
+		"{NOMBRE_NEGOCIO}" => $nombre_negocio,
+    "{TEL}" => $tel,
+    "{CALLE}" => $calle,
+    "{COLONIA}" => $colonia,
+    "{CP}" => $cp,
+    "{MUNICIPIO}" => $municipio,
+    "{FECHA}" => date('d-m-Y'),
+    "{DESCRIPCION}" => $descripcion
 		//"{TO_EMAIL}" => "user@test.com"
 	);
 
@@ -86,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 	if (mail($email_to, $email_subject, $email_message, $email_headers) ){ 
-
+      
     ?>
 <script>
       $(document).ready(function()

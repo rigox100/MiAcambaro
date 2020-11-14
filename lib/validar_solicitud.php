@@ -50,10 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           }else{
             $solicitud->setUrlImagen($url_imagen1);
           }
-
-        
-        
-              
+       
     $solicitud->setIdUsuario($idUsuario);
     $solicitud->setNombreNegocio($nombre_negocio);
     $solicitud->setRFC($rfc);

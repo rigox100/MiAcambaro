@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -81,46 +81,9 @@ session_start();
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="index.php">Inicio</a>
                                     </li>
-
-                                    <?php
-                                    if (isset($_SESSION['idUsuario'])) {
-                                    ?>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
-                                                <?php echo $_SESSION['nombre'] ?>
-                                                <span class="icon-arrow-down"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-                                                <?php
-                                                if ($_SESSION['idRol'] != 3) {
-
-                                                    echo '<a class="dropdown-item" href="admin/index.php">CPANEL</a>';
-                                                } else {
-                                                ?>
-                                                    <a class="dropdown-item" href="user_account/perfil.php">Mi cuenta</a>
-
-                                                <?php } ?>
-                                                <a class="dropdown-item" href="logout.php">Cerrar sesión</a>
-                                            </div>
-                                        </li>
-
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white;">
-                                                Login
-                                                <span class="icon-arrow-down"></span>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                                <a class="dropdown-item" href="login.php">Iniciar Sesión</a>
-                                                <a class="dropdown-item" href="registro.php">Registro</a>
-                                            </div>
-                                        </li>
-                                    <?php
-                                    }
-                                    ?>
+                                    <li class="nav-item">
+                                        <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
@@ -144,8 +107,8 @@ session_start();
 
             <div class="col-12 display-4 mb-4 mt-4 text-center" style="font-size: calc(1.2em + 1vw); color:black;">Aviso de privacidad</div>
 
-                <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta plataforma está creada como apoyo para los comercios que buscan darse a conocer,
-                    así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento y mejora se basan en cooperaciones o aportaciones de los negocios afilidos.</p>
+                <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta fue creada como apoyo para los comercios que buscan darse a conocer,
+                    así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento, mejoras y nuevas funcionalidades, los ingresos se basan en cooperaciones o aportaciones de los negocios afilidos.</p>
                 <p> Esta plataforma es la responsable del uso y protección de sus datos personales, y al respecto le informamos a continuación.</p>
                 <p>Su información personal puede ser utilizada para las siguientes finalidades secundarias que no son necesarias para el servicio solicitado, pero que nos permiten y facilitan brindarle una mejor atención: </p>
                 <ul>

@@ -1,6 +1,6 @@
 <?php session_start(); 
-if($_SESSION['idRol']== null || $_SESSION['idRol']==3){
-  header('Location: ../index.php');
+if($_SESSION['idRol']== null || $_SESSION['idRol']!=1){
+  header('Location: ../login.php');
 }
 require_once 'class/Solicitud.php';
 $solicitudes_recientes = Solicitud::buscarRecientes();
@@ -9,7 +9,7 @@ $num_solcitudes = Solicitud::obtenerTotalSolicitudes();
 $total = array_values($num_solcitudes)[0];
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,20 +52,6 @@ $total = array_values($num_solcitudes)[0];
         <a href="	https://analytics.google.com/analytics/web" target="_blank" class="nav-link">Analytics</a>
       </li>
     </ul>
-
-    <!-- SEARCH FORM 
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    -->
-
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
@@ -182,15 +168,15 @@ $total = array_values($num_solcitudes)[0];
               <li class="nav-item">
                 <a href="modules/users/index.php" class="nav-link">
                 <i class="fas fa-users"></i>
-                  <p>Usuarios Registrados</p>
+                  <p>Colaboradores registrados</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="modules/roles/index.php" class="nav-link">
                   <i class="fa fa-user-circle"></i>
                   <p>Roles de usuarios</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="modules/posts_categories/index.php" class="nav-link">
                   <i class="fa fa-cog"></i>
@@ -209,23 +195,8 @@ $total = array_values($num_solcitudes)[0];
                   <p>Solicitudes de anuncio</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fa fa-comments"></i>
-                  <p>Comentarios</p>
-                </a>
-              </li>
             </ul>
           </li>
-          <!--<li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>-->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
