@@ -5,7 +5,6 @@ require_once 'Conexion.php';
 class Solicitud {
 
     private $idSolicitud;
-    private $idUsuario;
     private $nombre_negocio;
     private $url_imagen;
     private $rfc;
@@ -21,9 +20,9 @@ class Solicitud {
 
     const TABLA = 'solicitudes';
 
-    public function __construct($idUsuario=null, $nombre_negocio=null, $url_imagen=null, $rfc=null, $tel=null, $calle=null, $colonia=null, $cp=null, $municipio=null, $estatus_solicitud=null, $fecha_solicitud=null, $descripcion=null, $observaciones=null, $idSolicitud=null ) {
+    public function __construct($nombre_negocio=null, $url_imagen=null, $rfc=null, $tel=null, $calle=null, $colonia=null, $cp=null, $municipio=null, $estatus_solicitud=null, $fecha_solicitud=null, $descripcion=null, $observaciones=null, $idSolicitud=null ) {
 
-        $this->idUsuario = $idUsuario;
+        
         $this->nombre_negocio = $nombre_negocio;
         $this->url_imagen = $url_imagen;
         $this->rfc = $rfc;
@@ -42,10 +41,6 @@ class Solicitud {
 
     public function getIdSolicitud() {
         return $this->idSolicitud;
-    }
-
-    public function getIdUsuario() {
-        return $this->idUsuario;
     }
 
     public function getNombreNegocio() {
@@ -102,9 +97,6 @@ class Solicitud {
         $this->idSolicitud = $idSolicitud;
     }
 
-    public function setIdUsuario($idUsuario) {
-        $this->idUsuario = $idUsuario;
-    }
 
     public function setNombreNegocio($nombre_negocio) {
         $this->nombre_negocio = $nombre_negocio;
@@ -177,8 +169,7 @@ class Solicitud {
             $consulta->execute();
             //var_dump($consulta);
         } else /* Inserta */ {
-            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (idUsuario, nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:idUsuario, :nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
-            $consulta->bindParam(':idUsuario', $this->idUsuario);
+            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:idUsuario, :nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
             $consulta->bindParam(':nombre_negocio', $this->nombre_negocio);
             $consulta->bindParam(':url_imagen', $this->url_imagen);
             $consulta->bindParam(':rfc', $this->rfc);
@@ -214,14 +205,14 @@ class Solicitud {
     public static function buscarPorId($idSolicitud) {
 
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT  idUsuario, nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion, observaciones FROM ' . self::TABLA . ' WHERE idSolicitud = :idSolicitud');
+        $consulta = $conexion->prepare('SELECT  nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion, observaciones FROM ' . self::TABLA . ' WHERE idSolicitud = :idSolicitud');
         $consulta->bindParam(':idSolicitud', $idSolicitud);
         $consulta->execute();
         $registro = $consulta->fetch();
         //var_dump($registro);
         $conexion = null;
         if ($registro) {
-            return new self($registro['idUsuario'], $registro['nombre_negocio'], $registro['url_imagen'], $registro['rfc'], $registro['tel'], $registro['calle'], $registro['colonia'], $registro['cp'], $registro['municipio'], $registro['estatus_solicitud'], $registro['fecha_solicitud'], $registro['descripcion'], $registro['observaciones'], $idSolicitud);
+            return new self($registro['nombre_negocio'], $registro['url_imagen'], $registro['rfc'], $registro['tel'], $registro['calle'], $registro['colonia'], $registro['cp'], $registro['municipio'], $registro['estatus_solicitud'], $registro['fecha_solicitud'], $registro['descripcion'], $registro['observaciones'], $idSolicitud);
 
         } else {
             return false;
@@ -229,7 +220,7 @@ class Solicitud {
         }
     }
 
-    public static function buscarPorIdUsuario($idUsuario) {
+    /* public static function buscarPorIdUsuario($idUsuario) {
 
         $conexion = new Conexion();
         $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d-%m-%Y") FROM ' . self::TABLA . ' WHERE idUsuario = :idUsuario');
@@ -240,13 +231,13 @@ class Solicitud {
         $conexion = null;
         return $registro;
 
-    }
+    } */
 
 
 
     public static function recuperarTodos() {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d-%m-%Y") FROM solicitudes INNER JOIN usuarios ON usuarios.idUsuario = solicitudes.idUsuario');
+        $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d-%m-%Y") FROM solicitudes');
         $consulta->execute();
         $registros = $consulta->fetchAll();
         $conexion = null;
@@ -254,7 +245,7 @@ class Solicitud {
     }
 
     
-    public static function buscarPorIdSolicitud($idSolicitud) {
+   /*  public static function buscarPorIdSolicitud($idSolicitud) {
         $conexion = new Conexion();
         $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d %m %Y") FROM ' . self::TABLA . ' INNER JOIN usuarios ON usuarios.idUsuario = solicitudes.idUsuario WHERE idSolicitud = :idSolicitud');
         $consulta->bindParam(':idSolicitud', $idSolicitud);
@@ -264,7 +255,7 @@ class Solicitud {
         $conexion = null;
         return $registro;
     }
-
+ */
 
     public static function buscarRecientes() {
         $conexion = new Conexion();

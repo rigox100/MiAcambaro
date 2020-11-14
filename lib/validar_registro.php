@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // verificar la respuesta
   if($arrResponse["success"] == '1' && $arrResponse["action"] == $action && $arrResponse["score"] >= 0.5) {
      
-    $idUsuario = NULL;
+    
     $email= 'ventas@miacambaro.mx';
     $nombre_negocio = (isset($_POST['nombre_negocio'])) ? $_POST['nombre_negocio'] : null;
     $url_imagen = 'uploads/images/mi_negocio.jpg';
@@ -52,6 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
     $solicitud->setObservaciones($observaciones); 
+    
+    echo '<script>
+    
+      alert("Hola");
+</script>';
 
   if ($usuario->guardar()) {
 
@@ -108,12 +113,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       
     ?>
 <script>
-      $(document).ready(function()
+     $(document).ready(function()
       {
         $('#exampleModalCenter').modal({backdrop: 'static', keyboard: false}); 
          $("#exampleModalCenter").modal("show");
         
-      });
+      }); 
 </script>
 
  <?php 
