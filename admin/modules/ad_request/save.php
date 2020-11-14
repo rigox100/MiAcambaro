@@ -3,7 +3,6 @@ require_once '../../class/Solicitud.php';
 require_once '../../class/Anuncio.php';
 
 
-
     $idSolicitud = (isset($_REQUEST['idSolicitud'])) ? $_REQUEST['idSolicitud'] : null;
     $solicitud = solicitud::buscarPorIdSolicitud($idSolicitud);  
     $actualizar_solicitud = new Solicitud(); 
@@ -17,7 +16,6 @@ require_once '../../class/Anuncio.php';
 
         
         $idSolicitud= (isset($_POST['idSolicitud'])) ? $_POST['idSolicitud'] : null;
-        $idUsuario = (isset($_POST['idUsuario'])) ? $_POST['idUsuario'] : null;
         $nombre_negocio = (isset($_POST['nombre_negocio'])) ? $_POST['nombre_negocio'] : null;
         $url_image = (isset($_POST['url_image'])) ? $_POST['url_image'] : null;
         $rfc = (isset($_POST['rfc'])) ? $_POST['rfc'] : null;
@@ -90,19 +88,8 @@ foreach($solicitud as $item):
 -->
 
     <div class="form-group">
-      <label for="RFC">Nombre del solicitante</label>
-            <input class="form-control input-clean" type="text" name="nombre" id="nombre" value="<?php echo $item[16]." ".$item[17] ?>" readonly >
-    </div>
- 
-
-    <div class="form-group">
       <label for="tel">Teléfono</label>
             <input class="form-control input-clean" type="text" name="tel" id="tel" value="<?php echo $item[5] ?>" readonly >
-    </div>
-  
-    <div class="form-group">
-      <label for="email">Email</label>
-            <input class="form-control input-clean" type="text" name="email" id="email" value="<?php echo $item[18] ?>" readonly >
     </div>
   
     <div class="form-group">

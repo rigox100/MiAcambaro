@@ -245,9 +245,9 @@ class Solicitud {
     }
 
     
-   /*  public static function buscarPorIdSolicitud($idSolicitud) {
+    public static function buscarPorIdSolicitud($idSolicitud) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d %m %Y") FROM ' . self::TABLA . ' INNER JOIN usuarios ON usuarios.idUsuario = solicitudes.idUsuario WHERE idSolicitud = :idSolicitud');
+        $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d %m %Y") FROM ' . self::TABLA . ' WHERE idSolicitud = :idSolicitud');
         $consulta->bindParam(':idSolicitud', $idSolicitud);
         $consulta->execute();
         $registro = $consulta->fetchAll();
@@ -255,7 +255,7 @@ class Solicitud {
         $conexion = null;
         return $registro;
     }
- */
+
 
     public static function buscarRecientes() {
         $conexion = new Conexion();
