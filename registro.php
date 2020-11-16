@@ -148,29 +148,25 @@ session_start();
 
                                                 <div style="padding: 20px;">
 
+                                                <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
+
                                                     <div class="form-group row">
                                                         <label for="nombre_negocio">Nombre del Negocio</label>
                                                         <input class="form-control" type="text" name="nombre_negocio" id="nombre_negocio" value="">
                                                     </div>
-                                                    <!--
-                                                <div class="form-group">
-                                                    <label for="url_imagen">Imagen <small class="text-info ml-2">Seleccione la imagen que desea mostrar de su negocio Ejem: Portada, Logotipo.</small></label>
-                                                    <input class="form-control" type="file" name="url_imagen" id="url_imagen">
-                                                </div>
-                                                -->
-
-                                                    <div class="form-group row">
-                                                        <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
-                                                    </div>
-
+                                       
+                                                  
                                                     <div class="form-group row">
                                                         <label for="tel">Télefono de contacto</label>
                                                         <input class="form-control" type="text" name="tel" id="tel" value="">
                                                     </div>
 
+                                                     
+                                                    
                                                     <div class="form-group row">
-                                                        <label for="calle">Calle</label>
-                                                        <input class="form-control" type="text" name="calle" id="calle" value="">
+                                                    <label for="calle">Dirección</label>
+                                                         <input class="form-control" type="text" name="calle" id="calle" placeholder="Ingrese calle y número del negocio" value="">
+                                                        
                                                     </div>
 
                                                     <div class="form-group row">
@@ -229,7 +225,7 @@ session_start();
                                 </div>
                             </div>
 
-                            <!-- <script src="template/js/registro_validate.js"></script>-->
+                            <script src="template/js/registro_validate.js"></script>-->
                             <script>
                                 $('#form').submit(function(event) {
 

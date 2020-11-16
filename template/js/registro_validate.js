@@ -11,6 +11,13 @@ $(document).ready(function() {
         return this.optional(element) || pattern2.test(value);
     }, "Debe ingresar un email válido");
 
+    $.validator.addMethod("codigo_postal", function(value, element) {
+        var pattern2 = /^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$/;
+        return this.optional(element) || pattern2.test(value);
+    }, "Debe ingresar un código postal válido");
+
+    
+
     /*
     $.validator.addMethod("password", function(value, element) {
         var pattern3 = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,20}$/;
@@ -35,35 +42,38 @@ $(document).ready(function() {
 
 
         rules: {
-            nombre: {
+            nombre_negocio: {
                 required: true,
-                minlength: 2,
-                maxlength: 25,
+                minlength: 5,
+                maxlength: 100,
                 formAlphanumeric: true
             },
-            apellido: {
+            tel: {
                 required: true,
-                minlength: 2,
-                maxlength: 25,
-                formAlphanumeric: true
+                minlength: 10,
+                maxlength: 10
             },
-            email: {
+            calle: {
                 required: true,
-                maxlength: 50,
-                email: true
+                maxlength: 100,
+                minlength: 5
             },
-            new_password: {
+            colonia: {
                 required: true,
-                minlength: 8,
-                maxlength: 20
+                maxlength: 50
                 
             },
 
-            confirm_password: {
+            cp: {
                 required: true,
-                equalTo: "#new_password"
+                codigo_postal:true
             },
-
+            
+            descripcion: {
+                required: true,
+                maxlength: 500
+            },
+            
 
             politica_privacidad:{
                 required: true
@@ -72,41 +82,49 @@ $(document).ready(function() {
 
         messages: {
 
-            nombre: {
-                required: 'Por favor introduzca su nombre',
+            nombre_negocio: {
+                required: 'Por favor introduzca el nombre del negocio',
                 formAlphanumeric: "El nombre solo puede contener letras",
-                maxlength: "Solo se admite un máximo de 25 caracteres"
+                minlength: "Debe tener al menos 5 caracteres",
+                maxlength: "Solo se admite un máximo de 100 caracteres"
             },
 
-            apellido: {
-                required: "Por favor introduzca su apellido.",
-                formAlphanumeric: "El apellido solo puede contener letras",
-                maxlength: "Solo se admite un máximo de 25 caracteres"
+            tel: {
+                required: "Por favor introduzca un teléfono de contacto",
+                minlength: "Ingrese un teléfono válido de 10 dígitos",
+                maxlength: "Ingrese un teléfono válido de 10 dígitos"
+               
             },
 
-            email: {
-                required: "Por favor introduzca su email",
-                maxlength: "Solo se admite un máximo de 50 caracteres",
-                email: "Debe ingresar un email válido"
+            calle: {
+                required: "Por favor introduzca la dirección",
+                minlength: "Debe tener al menos 5 caracteres",
+                maxlength: "Solo se admite un máximo de 100 caracteres"
+                
             },
+
+            colonia: {
+                required: "Por favor introduzca la colonia",
+                maxlength: "Solo se admite un máximo de 50 caracteres"
+                
+            },
+
+            cp: {
+                required: "Por favor introduzca el código postal",
+                codigo_postal: "Debe ingresar un código postal válido"
+                
+                
+            },
+
+            descripcion: {
+                required: "Porfavor introduzca una breve descripción",
+                maxlength: "Solo se admite un máximo de 500 caracteres"
+            },
+
 
             politica_privacidad: {
                 required: "Debe aceptar la política de privacidad"
             },
-
-            new_password: {
-                required: "Por favor introduzca una contraseña",
-                minlength: "La contraseña debe tener al menos 8 caracteres",
-                maxlength: "La contraseña solo admite un máximo de 20 caracteres"
-
-            },
-
-            confirm_password: {
-                required: "Por favor introduzca una contraseña",
-                equalTo: "Por favor introduzca la misma contraseña que la anterior"
-            },
-
-            
 
 
         },
