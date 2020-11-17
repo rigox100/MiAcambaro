@@ -43,13 +43,18 @@ $total = array_values($num_solcitudes)[0];
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../index.php" class="nav-link">Ver sitio</a>
+        <a href="../index.php" class="nav-link" target="_blank">Ver sitio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="	https://webmail.hostinger.mx" target="_blank" class="nav-link">Webmail</a>
+        <a href="https://analytics.google.com/analytics/web" target="_blank" class="nav-link">Analytics</a>
       </li>
+
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="	https://analytics.google.com/analytics/web" target="_blank" class="nav-link">Analytics</a>
+        <a href="https://webmail.hostinger.mx" target="_blank" class="nav-link">Webmail</a>
+      </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="https://auth-db270.hostinger.mx/" target="_blank" class="nav-link">PHPMyAdmin</a>
       </li>
     </ul>
     <!-- Right navbar links -->
