@@ -9,7 +9,7 @@ if (isset($_POST['enviar'])) {
         $mensaje = $_POST['mensaje'];
         $destino = "ventas@miacambaro.mx";
 
-        $contenido = "Nombre: " . $nombre . "\n Email: " . $email . "\nTeléfono: " . $telefono . "\n Mensaje" . $mensaje;
+        $contenido = "Nombre: " . $nombre . "\n Email: " . $email . "\nTeléfono: " . $telefono . "\n Mensaje: " . $mensaje;
         mail($destino, "Contacto", $contenido);
         header('Location:index.php');
     }
