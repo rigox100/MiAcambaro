@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    $('input[type="text"]').change(function(){
+        this.value = $.trim(this.value);
+    });
 
     $.validator.addMethod("formAlphanumeric", function(value, element) {
         var pattern1 = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
@@ -45,8 +48,8 @@ $(document).ready(function() {
             nombre_negocio: {
                 required: true,
                 minlength: 5,
-                maxlength: 100,
-                formAlphanumeric: true
+                maxlength: 100
+                
             },
             tel: {
                 required: true,
@@ -85,8 +88,8 @@ $(document).ready(function() {
             nombre_negocio: {
                 required: 'Por favor introduzca el nombre del negocio',
                 formAlphanumeric: "El nombre solo puede contener letras",
-                minlength: "Debe tener al menos 5 caracteres",
-                maxlength: "Solo se admite un máximo de 100 caracteres"
+                minlength: "Debe tener al menos 5 caracteres"
+                
             },
 
             tel: {
