@@ -7,7 +7,7 @@ if (isset($_POST['enviar'])) {
         $telefono = $_POST['telefono'];
         $email = $_POST['email'];
         $mensaje = $_POST['mensaje'];
-        $destino = "rigox100@gmail.com";
+        $destino = "ventas@miacambaro.mx";
 
         $contenido = "Nombre: " . $nombre . "\n Email: " . $email . "\nTeléfono: " . $telefono . "\n Mensaje" . $mensaje;
         mail($destino, "Contacto", $contenido);
