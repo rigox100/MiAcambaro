@@ -84,6 +84,9 @@ session_start();
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
                                     </li>
+                                    <li class="nav-item d-none d-md-block">
+                                        <a class="nav-link" href="" data-toggle="modal" data-target="#ModalApp" style="color:white;">Descarga la app</a>
+                                    </li>
 
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
@@ -115,7 +118,7 @@ session_start();
                         <hr>
                         <p class="lead font-weight-bold text-primary"> <small>*Todas las solicitudes del municipio de Acámbaro y sus alrededores pueden postularse. </small></p>
 
-                        <button type="button" class="btn btn-primary btn-lg w-100"  data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-primary btn-lg w-100" data-toggle="modal" data-target="#exampleModal">
                             <span style="font-size: calc(0.5em + 1vw);">¡Registrar mi negocio!</span>
                         </button>
                     </div>
@@ -148,25 +151,25 @@ session_start();
 
                                                 <div style="padding: 20px;">
 
-                                                <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
+                                                    <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
 
                                                     <div class="form-group row">
                                                         <label for="nombre_negocio">Nombre del Negocio</label>
                                                         <input class="form-control" type="text" name="nombre_negocio" id="nombre_negocio" value="">
                                                     </div>
-                                       
-                                                  
+
+
                                                     <div class="form-group row">
                                                         <label for="tel">Teléfono de contacto</label>
                                                         <input class="form-control" type="text" name="tel" id="tel" value="">
                                                     </div>
 
-                                                     
-                                                    
+
+
                                                     <div class="form-group row">
-                                                    <label for="calle">Dirección</label>
-                                                         <input class="form-control" type="text" name="calle" id="calle" placeholder="Ingrese calle y número del negocio" value="">
-                                                        
+                                                        <label for="calle">Dirección</label>
+                                                        <input class="form-control" type="text" name="calle" id="calle" placeholder="Ingrese calle y número del negocio" value="">
+
                                                     </div>
 
                                                     <div class="form-group row">
@@ -251,6 +254,9 @@ session_start();
 
             <?php
             include_once 'template/partials/msj_modal_registro_solicitud.php';
+
+            include_once 'template/partials/msj_modal_descarga_app.php';
+
             ?>
 
 

@@ -93,6 +93,11 @@ session_start();
                                     <li class="nav-item">
                                         <a class="nav-link" href="registro.php">Registra tu negocio</a>
                                     </li> 
+                                    
+                                    <li class="nav-item d-none d-md-block">
+                                        <a class="nav-link" href="" data-toggle="modal" data-target="#ModalApp">Descarga la app</a>
+                                    </li>
+                                  
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php">Contacto</a>
                                     </li>
@@ -273,10 +278,10 @@ session_start();
 
 
     <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="styled-heading">
-                <h3></h3>
-            </div>
+        <div class="col">
+            <?php 
+            include_once 'template/partials/msj_modal_descarga_app.php';
+            ?>
         </div>
     </div>
     </div>

@@ -91,6 +91,9 @@ $paginas = ceil($total / $articulosPagina);
 					<ul class="nav-menu">
 						<li><a href="index.php">Inicio</a></li>
 						<li><a href="registro.php">Registra tu negocio</a></li>
+						<li class="d-none d-md-block">
+                        <a href="" data-toggle="modal" data-target="#ModalApp">Descarga la app</a>
+                            </li>
 						<li><a href="contacto.php">Contacto</a></li>
 						<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
 					</ul>
@@ -494,6 +497,9 @@ $paginas = ceil($total / $articulosPagina);
 
 								</div>
 							</div>
+							<?php
+							include_once 'template/partials/msj_modal_descarga_app.php';
+							?>
 						</div>
 	</section>
 	<!-- End post Area -->

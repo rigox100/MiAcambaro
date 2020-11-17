@@ -84,6 +84,9 @@ session_start();
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
                                     </li>
+                                    <li class="nav-item d-none d-md-block">
+                                        <a class="nav-link" href="" data-toggle="modal" data-target="#ModalApp" style="color:white;">Descarga la app</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
@@ -102,33 +105,36 @@ session_start();
     <main style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
             <div class="jumbotron">
-            <div class="row chida">
-            
-            <div style="height:40px;" class="col-12 d-md-none d-lg-none"></div>
+                <div class="row chida">
 
-            <div class="col-12 display-4 mb-4 mt-4 text-center" style="font-size: calc(1.2em + 1vw); color:black;">Aviso de privacidad</div>
+                    <div style="height:40px;" class="col-12 d-md-none d-lg-none"></div>
 
-                <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta fue creada como apoyo para los comercios que buscan darse a conocer,
-                    así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento, mejoras y nuevas funcionalidades, los ingresos se basan en cooperaciones o aportaciones de los negocios afilidos.</p>
-                <p> Esta plataforma es la responsable del uso y protección de sus datos personales, y al respecto le informamos a continuación.</p>
-                <p>Su información personal puede ser utilizada para las siguientes finalidades secundarias que no son necesarias para el servicio solicitado, pero que nos permiten y facilitan brindarle una mejor atención: </p>
-                <ul>
-                    <li>Verificar la identidad de los suscriptores</li>
-                    <li>Obtener los datos necesarios para dar a conocer su negocio en la plataforma.</li>
-                </ul>
-                <br>
-                <p> En caso de que no desee que sus datos personales sean tratados para estos fines secundarios, desde este momento usted nos puede comunicar lo anterior a través del siguiente mecanismo: </p>
-                <ul>
-                    <li>Enviar un mensaje al administrador de la plataforma por medio de la sección <a href="Contacto.php">Contacto</a></li>
-                    <li>Enviar un correo electrónico directamente al Administrador a la dirección <a href="mailto:admin@miacambaro.mx" target="_blank"> admin@miacambaro.mx </a></li>
-                </ul>
-                <br>
-                <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
+                    <div class="col-12 display-4 mb-4 mt-4 text-center" style="font-size: calc(1.2em + 1vw); color:black;">Aviso de privacidad</div>
 
+                    <p><a href="https://www.miacambaro.mx">MiAcambaro</a> , es una plataforma web desarrollada en la ciudad de Acámbaro, Gto. México, esta fue creada como apoyo para los comercios que buscan darse a conocer,
+                        así como buscar una reactivación económica en la región de Acámbaro, Guanajuato. y sus zonas aledañas. Esta plataforma no busca fines de lucro y los recursos obtenidos para su mantenimiento, mejoras y nuevas funcionalidades, los ingresos se basan en cooperaciones o aportaciones de los negocios afilidos.</p>
+                    <p> Esta plataforma es la responsable del uso y protección de sus datos personales, y al respecto le informamos a continuación.</p>
+                    <p>Su información personal puede ser utilizada para las siguientes finalidades secundarias que no son necesarias para el servicio solicitado, pero que nos permiten y facilitan brindarle una mejor atención: </p>
+                    <ul>
+                        <li>Verificar la identidad de los suscriptores</li>
+                        <li>Obtener los datos necesarios para dar a conocer su negocio en la plataforma.</li>
+                    </ul>
+                    <br>
+                    <p> En caso de que no desee que sus datos personales sean tratados para estos fines secundarios, desde este momento usted nos puede comunicar lo anterior a través del siguiente mecanismo: </p>
+                    <ul>
+                        <li>Enviar un mensaje al administrador de la plataforma por medio de la sección <a href="Contacto.php">Contacto</a></li>
+                        <li>Enviar un correo electrónico directamente al Administrador a la dirección <a href="mailto:admin@miacambaro.mx" target="_blank"> admin@miacambaro.mx </a></li>
+                    </ul>
+                    <br>
+                    <p>La negativa para el uso de sus datos personales para estas finalidades no podrá ser un motivo para que le neguemos los servicios y productos que solicita o contrata con nosotros.</p>
+
+
+                </div>
 
             </div>
-
-            </div>
+            <?php
+            include_once 'template/partials/msj_modal_descarga_app.php';
+            ?>
         </div>
     </main>
 

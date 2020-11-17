@@ -99,6 +99,9 @@ if (isset($_POST['enviar'])) {
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
                                     </li>
+                                    <li class="nav-item d-none d-md-block">
+                                        <a class="nav-link" href="" data-toggle="modal" data-target="#ModalApp" style="color:white;">Descarga la app</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
@@ -171,6 +174,9 @@ if (isset($_POST['enviar'])) {
                     </div>
                 </div>
             </div>
+            <?php
+            include_once 'template/partials/msj_modal_descarga_app.php';
+            ?>
         </div>
         </div>
 
