@@ -145,7 +145,7 @@ $paginas = ceil($total / $articulosPagina);
 	<section class="post-area section-gap">
 
 
-		<div class="container">
+		<div class="container ">
 			<?php if ($total > 0) : ?>
 				<?php
 
@@ -168,16 +168,17 @@ $paginas = ceil($total / $articulosPagina);
 								</tr>
 
 							</thead>
-							<tbody>
+							<tbody >
 								<?php foreach ($busqueda as $item) : ?>
 									<tr>
 										<td>
 											<div class="single-post d-flex flex-row">
 
 												<div class="thumb">
-													<a href="" data-toggle="modal" data-target="#modal<?php echo $item[0]; ?>"><img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle"></a>
+													<a href="" data-toggle="modal" data-target="#modal<?php echo $item[0]; ?>"><img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle mx-auto d-block"></a>
 												</div>
 
+												<div class="marle">
 												<div class="details">
 													<div class="title d-flex flex-row justify-content-between">
 														<div class="titles">
@@ -210,7 +211,7 @@ $paginas = ceil($total / $articulosPagina);
 													<div class="closed-now">ABIERTO AHORA</div>
 
 
-
+													</div>
 
 
 

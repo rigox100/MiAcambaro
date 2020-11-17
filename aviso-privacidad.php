@@ -101,6 +101,7 @@ session_start();
     </div>
     <main style="margin-top: 7%; margin-bottom:1%;">
         <div class="container">
+            <div class="jumbotron">
             <div class="row chida">
             
             <div style="height:40px;" class="col-12 d-md-none d-lg-none"></div>
@@ -127,7 +128,7 @@ session_start();
 
             </div>
 
-
+            </div>
         </div>
     </main>
 

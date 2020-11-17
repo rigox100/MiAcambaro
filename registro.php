@@ -157,7 +157,7 @@ session_start();
                                        
                                                   
                                                     <div class="form-group row">
-                                                        <label for="tel">Télefono de contacto</label>
+                                                        <label for="tel">Teléfono de contacto</label>
                                                         <input class="form-control" type="text" name="tel" id="tel" value="">
                                                     </div>
 
@@ -225,7 +225,7 @@ session_start();
                                 </div>
                             </div>
 
-                            <script src="template/js/registro_validate.js"></script>-->
+                            <script src="template/js/registro_validate.js"></script>
                             <script>
                                 $('#form').submit(function(event) {
 

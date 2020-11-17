@@ -1,8 +1,24 @@
-<?php 
+<?php
 session_start();
+
+if (isset($_POST['enviar'])) {
+    if (!empty($_POST['nombre']) && !empty($_POST['telefono']) && !empty($_POST['email']) && !empty($_POST['mensaje'])) {
+        $nombre = $_POST['nombre'];
+        $telefono = $_POST['telefono'];
+        $email = $_POST['email'];
+        $mensaje = $_POST['mensaje'];
+        $destino = "rigox100@gmail.com";
+
+        $contenido = "Nombre: " . $nombre . "\n Email: " . $email . "\nTeléfono: " . $telefono . "\n Mensaje" . $mensaje;
+        mail($destino, "Contacto", $contenido);
+        header('Location:index.php');
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
+
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSY7H1BK2G"></script>
@@ -82,7 +98,7 @@ session_start();
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" style="color:white;" href="registro.php">Registra tu negocio</a>
-                                    </li>       
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="contacto.php" style="color:white;">Contacto</a>
                                     </li>
@@ -103,50 +119,50 @@ session_start();
         <div class="cotainer">
             <div class="row justify-content-center">
 
-            <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
-                
-                    <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Contáctanos</div>
-                
+                <div style="height:35px;" class="col-12 d-md-none d-lg-none"></div>
+
+                <div class="col-12 display-4 mb-3 mt-2 text-center" style="font-size: calc(1.2em + 1vw);">Contáctanos</div>
+
                 <div class="col-md-10">
 
 
                     <div class="card" style="border: none;">
                         <div class="card-body">
-
-                            <div class="form-group row">
-                                <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
-                                <div class="col-md-6">
-                                    <input type="text" id="nombre" class="form-control" name="nombrte" placeholder="&#x1f935;&#xfe0e;" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#x1f935;&#xfe0e;'" value="" required>
+                            <form action="contacto.php" method="post" id="formulario">
+                                <div class="form-group row">
+                                    <label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="nombre" class="form-control" name="nombre" placeholder="&#x1f935;&#xfe0e;" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#x1f935;&#xfe0e;'" value="" required>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="telefono" class="col-md-4 col-form-label text-md-right">Teléfono</label>
-                                <div class="col-md-6">
-                                    <input type="text" id="telefono" class="form-control" name="telefono" placeholder="&#x1f57f;" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#x1f57f;'" value="" required>
+                                <div class="form-group row">
+                                    <label for="telefono" class="col-md-4 col-form-label text-md-right">Teléfono</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="telefono" class="form-control" name="telefono" placeholder="&#x1f57f;" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#x1f57f;'" value="" required>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
-                                <div class="col-md-6">
-                                    <input type="text" id="email" class="form-control" name="email" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="" required>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-4 col-form-label text-md-right">Correo Electrónico</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="email" class="form-control" name="email" placeholder="&#xf0e0" onfocus="this.placeholder = ''" onblur="this.placeholder = '&#xf0e0'" value="" required>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
-                                <label for="mensaje" class="col-md-4 col-form-label text-md-right">Mensaje</label>
-                                <div class="col-md-6">
-                                    <textarea class="form-control" id="mensaje" rows="10"></textarea>
+                                <div class="form-group row">
+                                    <label for="mensaje" class="col-md-4 col-form-label text-md-right">Mensaje</label>
+                                    <div class="col-md-6">
+                                        <textarea class="form-control" id="mensaje" rows="10" name="mensaje"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-dark w-100">
-                                    Enviar
-                                </button>
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" name="enviar" class="btn btn-dark w-100">
+                                        Enviar
+                                    </button>
 
 
-                            </div>
+                                </div>
                         </div>
                         </form>
 
@@ -180,6 +196,98 @@ session_start();
         </div>
     </footer>
     <!--//END FOOTER -->
+
+
+
+    <script>
+        $(document).ready(function() {
+            $.validator.addMethod("formAlphanumeric", function(value, element) {
+                var pattern1 = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
+                return this.optional(element) || pattern1.test(value);
+            }, "El campo debe tener un valor alfanumérico");
+
+            $.validator.addMethod("email", function(value, element) {
+                var pattern2 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
+                return this.optional(element) || pattern2.test(value);
+            }, "Debe ingresar un email válido");
+
+
+            $("#formulario").validate({
+
+                wrapper: 'span',
+                errorPlacement: function(error, element) {
+                    error.css({
+                        'padding-left': '10px',
+                        'margin-right': '20px',
+                        'padding-bottom': '2px',
+                        'color': 'red',
+                        'font-size': 'small'
+                    });
+                    error.addClass("arrow")
+                    error.insertAfter(element);
+                },
+
+
+                rules: {
+                    nombre: {
+                        required: true,
+                        minlength: 5,
+                        maxlength: 100,
+                        formAlphanumeric: true
+                    },
+                    telefono: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 10
+                    },
+                    email: {
+                        required: true,
+                        maxlength: 50,
+                        email: true
+                    },
+
+                    mensaje: {
+                        required: true,
+                        maxlength: 500
+                    }
+                },
+
+
+                messages: {
+
+                    nombre: {
+                        required: 'Por favor introduzca su nombre',
+                        formAlphanumeric: "El nombre solo puede contener letras",
+                        minlength: "Debe tener al menos 5 caracteres",
+                        maxlength: "Solo se admite un máximo de 100 caracteres"
+                    },
+
+                    telefono: {
+                        required: "Por favor introduzca un teléfono de contacto",
+                        minlength: "Ingrese un teléfono válido de 10 dígitos",
+                        maxlength: "Ingrese un teléfono válido de 10 dígitos"
+
+                    },
+
+                    email: {
+                        required: "Por favor introduzca su email",
+                        maxlength: "Solo se admite un máximo de 50 caracteres",
+                        email: "Debe ingresar un email válido"
+                    },
+
+                    mensaje: {
+                        required: "Porfavor introduzca una breve descripción",
+                        maxlength: "Solo se admite un máximo de 500 caracteres"
+                    },
+
+                },
+
+
+
+            });
+
+        });
+    </script>
 </body>
 
 </html>

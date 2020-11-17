@@ -48,19 +48,22 @@ session_start();
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/whats.css">
    
 
 </head>
 
 <body>
 
+
+
     <div class="d-none d-md-block social-body">
         <ul>
             <li class="facebook"><a href="https://www.facebook.com/miacambaro.app.7" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li class="twitter"><a href="#" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+            <li class="twitter"><a href="https://api.whatsapp.com/send?phone=524171063400&text=%C2%A1Hola!%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20para%20registrar%20mi%20negocio%20en%20miacambaro.mx" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
 
             <li class="instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-            <li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+            <!-- <li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li> -->
         </ul>
     </div>
 
@@ -74,15 +77,16 @@ session_start();
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg navbar-light">
-                            <a class="navbar-brand " style="text-shadow: black 0.1em 0.1em 0.2em;" href="index.php">
-                                MiAcámbaro
-                                <!--  <img src="images/logo.png" width="145" height="100" class="d-inline-block align-top" alt="">  -->
+                        <img src="images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt=""> &nbsp;
+                            <a class="navbar-brand" style="text-shadow: black 0.1em 0.1em 0.2em; " href="index.php">
+                            
+                                MiAcámbaro     
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="icon-menu"></span>
                             </button>
                             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                                <ul class="navbar-nav" style="text-shadow: black 0.1em 0.1em 0.2em;">
+                                <ul class="navbar-nav" style="text-shadow: black 0.1em 0.1em 0.2em; ">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Inicio</a>
                                     </li>
@@ -113,7 +117,7 @@ session_start();
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="slider-content_wrap contenedor-texto">
-                                    <h1 class="tam" style="font-size: calc(1em + 1vw);">Descubre lugares en Acámbaro </h1>
+                                    <h1 class="tam" style="font-size: calc(1em + 1vw);">Buscador Comercial Acámbaro </h1>
                                     <h1 style="font-size: calc(1.4em + 1vw); margin-bottom:8px;"><span class="typed"></span></h1>
                                     <!-- <h5><span class="typed"></span></h5> -->
                                 </div>
@@ -135,7 +139,7 @@ session_start();
                                 <br>
 
                                 <a href="registro.php">
-                                    <p style="font-size: 17px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate con nosotros | miacambaro.mx</p>
+                                    <p style="font-size: 20px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate en | miacambaro.mx</p>
                                     
                                 </a>
                              
