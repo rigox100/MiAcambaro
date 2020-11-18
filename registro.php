@@ -184,7 +184,7 @@ session_start();
 
                                                     <div class="form-group row">
                                                         <label for="municipio">Localidad/Municipio</label>
-                                                        <input type="text" name="municipio" id="municipio" class="form-control" value="Acámbaro" readonly>
+                                                        <input type="text" name="municipio" id="municipio" class="form-control" value="Acámbaro">
                                                     </div>
 
                                                     <div class="form-group row">
