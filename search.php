@@ -201,7 +201,7 @@ $paginas = ceil($total / $articulosPagina);
 															<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
 															<li class="list-inline-item"><i class="fas fa-star amber-text"></i></li>
 															<li class="list-inline-item">
-																<p class="text-muted">5.0 (413)</p>
+																<p class="text-muted">5.0 (333)</p>
 															</li>
 														</ul>
 													</div>
@@ -296,7 +296,7 @@ $paginas = ceil($total / $articulosPagina);
 																				<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
 																				<li class="list-inline-item"><i class="fas fa-star amber-text"></i></li>
 																				<li class="list-inline-item">
-																					<p class="text-muted">5.0 (413)</p>
+																					<p class="text-muted">5.0 (333)</p>
 																				</li>
 																			</ul>
 																		</div>
@@ -477,7 +477,7 @@ $paginas = ceil($total / $articulosPagina);
 																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
 																<li class="list-inline-item"><i class="fas fa-star amber-text"></i></li>
 																<li class="list-inline-item">
-																	<p class="text-muted">5.0 (413)</p>
+																	<p class="text-muted">5.0 (333)</p>
 																</li>
 															</ul>
 														</div>
