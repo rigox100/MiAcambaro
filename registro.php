@@ -194,7 +194,7 @@ session_start();
 
                                                     <div class="form-group row">
                                                         <label for="descripcion">Cuentanos un poco de tu negocio</label>
-                                                        <textarea name="descripcion" id="descripcion" rows="4" class="form-control"></textarea>
+                                                        <textarea name="descripcion" id="descripcion" rows="4" class="form-control" placeholder="Describe el giro tiene tu negocio, los servicios o productos ofreces..."></textarea>
                                                     </div>
 
 
