@@ -207,9 +207,9 @@ session_start();
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
                                     <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-                                    <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+                                    <li class="list-inline-item"><i class="fas fa-star amber-text"></i></li>
                                     <li class="list-inline-item">
-                                        <p class="text-muted">4.5 (413)</p>
+                                        <p class="text-muted">5.0 (413)</p>
                                     </li>
                                 </ul>
 
