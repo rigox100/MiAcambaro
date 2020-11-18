@@ -206,7 +206,37 @@ $paginas = ceil($total / $articulosPagina);
 														</ul>
 													</div>
 
-													<div class="closed-ca ti-home"><?php echo $item['calle']; ?>,&nbsp;&nbsp; <span class="fa fa-whatsapp closed-wa ">&nbsp;417-117-3020</span> &nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span> </div>
+													<div class="closed-ca ti-home"><?php echo $item['calle']; ?>.&nbsp;&nbsp; 
+													<span class="closed-wa ">
+
+															<?php
+															$tel = $item['telefono'];
+															if(!empty($tel)){
+																echo "&#x260e;&nbsp;". $tel;
+															}else{
+																echo "";
+															}
+															
+															
+															?>
+													</span> 
+													&nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span> 
+													<span class="closed-cat">
+														<?php 
+															$cate = $item['nombre'];
+															//echo $item['nombre'];
+															
+															if($cate == "Sin clasificación"){
+																echo " ";
+															}else{
+																echo " - " .$cate;		
+															}
+															
+														
+															
+														?>
+													</span> 
+												   </div>
 
 
 
@@ -274,6 +304,10 @@ $paginas = ceil($total / $articulosPagina);
 																		<div class="">
 																			<h6 class="fa fa-map-marker">&nbsp;<span class="model"><?php echo $item['calle']; ?>&nbsp;<?php echo $item['cp']; ?> &nbsp;<?php echo $item['municipio']; ?> - Guanajuato </span></h6>
 																		</div>
+																		
+																		<div class="">
+																			<h6>&#x260e;</h6>
+																		</div>
 
 																		<br>
 																		<h4>Horario</h4>
@@ -287,8 +321,8 @@ $paginas = ceil($total / $articulosPagina);
 																		<h4>Información de Contacto</h4>
 																		<hr>
 
-																		<a href="#">
-																			<h6 class="fa fa-whatsapp">&nbsp;<span class="model">&nbsp;417-117-8956</span></h6>
+																	<!-- 	<a href="#">
+																			<h6 class="fa fa-whatsapp">&nbsp;<span class="model">&nbsp;</span></h6>
 																		</a><br>
 																		<a href="#">
 																			<h6 class="fa fa-envelope">&nbsp;<span class="model">&nbsp;minegocio@miacambaro.mx</span></h6>
@@ -298,7 +332,14 @@ $paginas = ceil($total / $articulosPagina);
 																		</a><br>
 																		<a href="#">
 																			<h6 class="fa fa-instagram">&nbsp;<span class="model">&nbsp;https://www.instagram.com/minegocio</span>
-																		</a></h6>
+																		</a></h6> -->
+
+																		<div class="text-center">
+																			<a href="#"><img src="images/face.png" width="40px" height="40px"></a>
+																			<a href="#"><img src="images/what.png" width="40px" height="40px"></a>
+																			<a href="#"><img src="images/insta.png" width="40px" height="40px"></a>
+																			<a href="#"><img src="images/youtu.png" width="40px" height="40px"></a>
+																		</div>
 
 
 
@@ -451,11 +492,11 @@ $paginas = ceil($total / $articulosPagina);
 														</div>
 
 														<div>
-															<h5 class="direc"> &#x260e; &nbsp;417-117-5025</h5>
+															<h5 class="direc"> &#x260e; &nbsp;<?php echo $item['telefono']; ?></h5>
 														</div>
 
 														<div>
-															<h5 class="direc">&#x23f0;&#xfe0e;&nbsp;<?php echo $item['entrada']; ?> 7:00 - 20:00 <?php echo $item['cierre']; ?></h5>
+															<h5 class="direc">&#x23f0;&#xfe0e;&nbsp;<?php echo $item['entrada']; ?> - <?php echo $item['cierre']; ?></h5>
 														</div>
 
 														<hr>
