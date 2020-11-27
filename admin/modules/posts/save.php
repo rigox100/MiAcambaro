@@ -298,8 +298,8 @@ $categoria = Categoria::recuperarTodos();
             </select> 
             
             <br>
-            <label>Abierto desde: </label><input class="form-control" type="time" name="entrada" id="entrada" value="<?php if($anuncio->getEntrada()){ echo $anuncio->getEntrada();}else{echo "00:00";} ?>" min="00:00" max="24:00" step="3600" style="width: 60%;">
-            <label>Hasta: </label><input class="form-control" type="time" name="cierre" id="cierre" value="<?php if($anuncio->getCierre()){ echo $anuncio->getCierre();}else{echo "00:00";} ?>" min="00:00" max="24:00" step="3600" style="width: 60%;">
+            <label>Abierto desde: </label><input class="form-control" type="time" name="entrada" id="entrada" value="<?php if($anuncio->getEntrada()){ echo $anuncio->getEntrada();}else{echo "00:00";} ?>" min="00:00" max="24:00" style="width: 60%;">
+            <label>Hasta: </label><input class="form-control" type="time" name="cierre" id="cierre" value="<?php if($anuncio->getCierre()){ echo $anuncio->getCierre();}else{echo "00:00";} ?>" min="00:00" max="24:00" style="width: 60%;">
             </div> 
 
 
