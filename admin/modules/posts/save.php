@@ -42,8 +42,12 @@ $categoria = Categoria::recuperarTodos();
       $destacado = (isset($_POST['destacado'])) ? $_POST['destacado'] : null;
       $keywords = (isset($_POST['keywords'])) ? $_POST['keywords'] : null;
       $url = (isset($_REQUEST['url'])) ? $_REQUEST['url'] : null;
+        if($_POST['fecha_publicacion']=""){
       $fecha_publicacion = date('Y-m-d');
-
+        }else{
+          $fecha_publicacion = (isset($_REQUEST['fecha_publicacion'])) ? $_REQUEST['fecha_publicacion'] : null;
+        }
+      
     
             //Procesamiento Anuncio
               $anuncio->setIdCategoria($idCategoria);
@@ -171,6 +175,10 @@ $categoria = Categoria::recuperarTodos();
 
             <div class="form-group">
             <input class="form-control" type="hidden" name="idSolicitud" id="idSolicitud" value="<?php echo $anuncio->getIdSolicitud();?>">
+            </div>
+
+            <div class="form-group">
+            <input class="form-control" type="text" name="fecha_publicacion" id="fecha_publicacion" value="<?php echo $anuncio->getFechaPublicacion();?>">
             </div>
            
             <div class="form-group">
