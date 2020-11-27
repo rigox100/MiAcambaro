@@ -47,7 +47,7 @@
             </div>
 
             <div class="form-group">
-            <label for="tel">Télefono de contacto</label>
+            <label for="tel">Télefono comercial</label>
             <input class="form-control" type="text" name="tel" id="tel" value="">
             </div>
 
