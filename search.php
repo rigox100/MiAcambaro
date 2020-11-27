@@ -300,13 +300,13 @@ $paginas = ceil($total / $articulosPagina);
 																				</li>
 																			</ul>
 																		</div>
-
+																			<br>
 																		<div class="">
 																			<h6 class="fa fa-map-marker">&nbsp;<span class="model"><?php echo $item['calle']; ?>&nbsp;<?php echo $item['cp']; ?> &nbsp;<?php echo $item['municipio']; ?> - Guanajuato </span></h6>
 																		</div>
-																		
+																			<br>
 																		<div class="">
-																			<h6>&#x260e;</h6>
+																			<h6>&#x260e; <?php echo $item['telefono']; ?></h6>
 																		</div>
 
 																		<br>
@@ -314,7 +314,7 @@ $paginas = ceil($total / $articulosPagina);
 																		<hr>
 
 																		<div class="closed-now2">ABIERTO AHORA</div><br>
-																		<h6 class="fa fa-clock-o">&nbsp;<span class="model">&nbsp;8:00 AM - 11:00 PM </span></h6>
+																		<h6 class="fa fa-clock-o">&nbsp;<span class="model">&nbsp;<?php echo $item['entrada'] ?> - <?php echo $item['cierre'] ?></span></h6>
 
 
 																		<br><br>
@@ -335,10 +335,10 @@ $paginas = ceil($total / $articulosPagina);
 																		</a></h6> -->
 
 																		<div class="text-center">
-																			<a href="#"><img src="images/face.png" width="40px" height="40px"></a>
-																			<a href="#"><img src="images/what.png" width="40px" height="40px"></a>
-																			<a href="#"><img src="images/insta.png" width="40px" height="40px"></a>
-																			<a href="#"><img src="images/youtu.png" width="40px" height="40px"></a>
+																			<a href="<?php echo $item['facebook'] ?>"  target="_blank"><img src="images/face.png" width="40px" height="40px"></a>
+																			<a href="https://api.whatsapp.com/send?phone=52<?php echo $item['telefono'] ?>"  target="_blank"><img src="images/what.png" width="40px" height="40px"></a>
+																			<a href="<?php $item['instagram'] ?>"  target="_blank"><img src="images/insta.png" width="40px" height="40px"></a>
+																			<a href="<?php $item['youtube'] ?>"  target="_blank"><img src="images/youtu.png" width="40px" height="40px"></a>
 																		</div>
 
 
