@@ -282,7 +282,7 @@ $paginas = ceil($total / $articulosPagina);
 																<div class="tab-pane fade show active" id="nav-home<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-home-tab">
 																	<br>
 																	<div>
-																		<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" class="img-fluid d-block m-auto" style="width: 85%; height:300px;">
+																		<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" class="img-fluid d-block m-auto" style="width: 50%; height:200px;">
 																	</div>
 																	<div>
 																		<br>
