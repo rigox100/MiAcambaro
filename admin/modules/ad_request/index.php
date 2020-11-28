@@ -53,7 +53,7 @@ $solicitudes = Solicitud::recuperarTodos();
                     } elseif ($item[11] == 'Aceptada') {
                       echo '<small class="alert alert-primary text-center">' . $item[11] . '</small>';
                     } elseif ($item[11] == 'Publicada') {
-                      echo '<small class="alert alert-success text-center">' . $item[10] . '</small>';
+                      echo '<small class="alert alert-success text-center">' . $item[11] . '</small>';
                     } else {
                       echo '<small class="alert alert-danger text-center">' . $item[11] . '</small>';
                     }
