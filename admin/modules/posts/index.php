@@ -129,7 +129,7 @@ $categoria = Categoria::recuperarTodos();
       </td>
       <td class="text-center"><a href="show.php?idAnuncio=<?php echo $item[0];?>" class="btn btn-info far fa-edit" target="_blank"></a></td>
       <td class="text-center"><a href="save.php?idAnuncio=<?php echo $item[0];?>" class="btn btn-warning far fa-edit"></a></td>
-      <td class="text-center"><a href="delete.php?idAnuncio=<?php echo $item[0];?>&idSolicitud=<?php echo $item[24];?>" onclick="return confirm('¿Está seguro que desea eliminar este anuncio?')" class="btn btn-danger far fa-trash-alt"></a></td> 
+      <td class="text-center"><a href="delete.php?idAnuncio=<?php echo $item[0];?>&idSolicitud=<?php echo $item[25];?>" onclick="return confirm('¿Está seguro que desea eliminar este anuncio?')" class="btn btn-danger far fa-trash-alt"></a></td> 
 
     </tr>
     <?php endforeach; ?>
