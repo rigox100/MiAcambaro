@@ -174,7 +174,7 @@ include_once '../../assets/template/header.php';
 
               <div class="form-group">
                 <label for="whatsapp">Whatsapp</label>
-                <input class="form-control" type="text" name="whatsapp" id="whatsapp" value="<?php echo $solicitud->getWhatsapp(); ?>" readonly>
+                <input class="form-control" type="text" name="whatsapp" id="whatsapp" value="<?php echo $solicitud->getWhatsapp(); ?>">
               </div>
 
               <div class="form-group">
