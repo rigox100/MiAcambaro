@@ -43,19 +43,19 @@ $solicitudes = Solicitud::recuperarTodos();
                 <tr>
 
                   <td><?php echo $item[0] ?></td>
-                  <td><?php echo $item[14] ?></td>
+                  <td><?php echo $item[15] ?></td>
                   <td><?php echo $item['nombre_negocio'] ?></td>
 
                   <td>
                     <?php
-                    if ($item[10] == 'En proceso') {
-                      echo '<small class="alert alert-secondary text-center">' . $item[10] . '</small>';
-                    } elseif ($item[10] == 'Aceptada') {
-                      echo '<small class="alert alert-primary text-center">' . $item[10] . '</small>';
-                    } elseif ($item[10] == 'Publicada') {
+                    if ($item[11] == 'En proceso') {
+                      echo '<small class="alert alert-secondary text-center">' . $item[11] . '</small>';
+                    } elseif ($item[11] == 'Aceptada') {
+                      echo '<small class="alert alert-primary text-center">' . $item[11] . '</small>';
+                    } elseif ($item[11] == 'Publicada') {
                       echo '<small class="alert alert-success text-center">' . $item[10] . '</small>';
                     } else {
-                      echo '<small class="alert alert-danger text-center">' . $item[10] . '</small>';
+                      echo '<small class="alert alert-danger text-center">' . $item[11] . '</small>';
                     }
 
                     ?>
@@ -64,9 +64,9 @@ $solicitudes = Solicitud::recuperarTodos();
                   <td class="text-center"><a href="delete.php?idSolicitud=<?php echo $item[0]; ?>" onclick="return confirm('¿Está seguro que desea eliminar esta solicitud?')" class="btn btn-danger far fa-trash-alt"></a></td>
 
                   <?php
-                  if ($item[10] == 'Aceptada') {
+                  if ($item[11] == 'Aceptada') {
                     echo '<td class="text-center"><a href="publicar.php?idSolicitud=' . $item[0] . '" class="btn btn-primary fas fa-file mr-2" title="Clic para publicar esta solicitud"></a></td>';
-                  } elseif ($item[10] == 'Publicada') {
+                  } elseif ($item[11] == 'Publicada') {
                     echo '<td class="text-center"><a href="#" class="btn btn-success fas fa fa-check-circle mr-2 btn2"></a></td>';
                   } else {
                     echo '<td class="text-center"><strong>---</strong></td>';
