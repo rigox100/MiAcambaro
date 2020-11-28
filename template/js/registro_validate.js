@@ -53,9 +53,17 @@ $(document).ready(function() {
             },
             tel: {
                 required: true,
+                digits: true,
                 minlength: 10,
                 maxlength: 10
             },
+
+            whatsapp: {
+                digits: true,
+                minlength: 10,
+                maxlength: 10
+            },
+
             calle: {
                 required: true,
                 maxlength: 100,
@@ -94,8 +102,16 @@ $(document).ready(function() {
 
             tel: {
                 required: "Por favor introduzca un teléfono de contacto",
+                digits: "Ingrese un teléfono válido de 10 dígitos",
                 minlength: "Ingrese un teléfono válido de 10 dígitos",
                 maxlength: "Ingrese un teléfono válido de 10 dígitos"
+               
+            },
+
+            whatsapp: {
+                digits: "Ingrese un número de whatsapp válido de 10 dígitos",
+                minlength: "Ingrese un número de whatsapp válido de 10 dígitos",
+                maxlength: "Ingrese un número de whatsapp válido de 10 dígitos"
                
             },
 

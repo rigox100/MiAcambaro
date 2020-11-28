@@ -52,6 +52,11 @@
             </div>
 
             <div class="form-group">
+            <label for="whatsapp">Whatsapp</label>
+            <input class="form-control" type="text" name="whatsapp" id="whatsapp" value="">
+            </div>
+
+            <div class="form-group">
             <label for="calle">Calle</label>
             <input class="form-control" type="text" name="calle" id="calle" value="">
             </div>

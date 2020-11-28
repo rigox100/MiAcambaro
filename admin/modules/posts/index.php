@@ -97,7 +97,7 @@ $categoria = Categoria::recuperarTodos();
     <tr>
     <th scope="col">ID</th>  
     <th scope="col">Portada</th>
-      <th scope="col">Empresa</th>
+      <th scope="col">Negocio</th>
       <th scope="col">Clasificación</th>
       <th scope="col">Teléfono</th>
       <th scope="col">Fecha de Publicación</th>
@@ -116,7 +116,7 @@ $categoria = Categoria::recuperarTodos();
       <td><?php if($item['idSolicitud']!=NULL){?><span class="far fa-user"></span> <?php } echo $item['titulo']; ?></td>
       <td><?php echo $item['nombre']; ?></td>
       <td><?php echo $item['telefono']; ?></td>
-      <td><?php echo $item[28]; ?></td>
+      <td><?php echo $item[29]; ?></td>
       <td class="text-center">
         <?php 
         if($item['estatus_anuncio']=='Publicado'){

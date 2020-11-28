@@ -28,6 +28,7 @@ $categoria = Categoria::recuperarTodos();
       $colonia = (isset($_POST['colonia'])) ? $_POST['colonia'] : null;
       $cp = (isset($_POST['cp'])) ? $_POST['cp'] : null;
       $tel = (isset($_POST['tel'])) ? $_POST['tel'] : null;
+      $whatsapp = (isset($_POST['whatsapp'])) ? $_POST['whatsapp'] : null;
       $facebook = (isset($_POST['facebook'])) ? $_POST['facebook'] : null;
       $instagram = (isset($_POST['instagram'])) ? $_POST['instagram'] : null;
       $youtube = (isset($_POST['youtube'])) ? $_POST['youtube'] : null;
@@ -59,6 +60,7 @@ $categoria = Categoria::recuperarTodos();
               $anuncio->setColonia($colonia);
               $anuncio->setCp($cp);
               $anuncio->setTelefono($tel);
+              $anuncio->setWhatsapp($whatsapp);
               $anuncio->setFacebook($facebook);
               $anuncio->setInstagram($instagram);
               $anuncio->setYoutube($youtube);
@@ -236,8 +238,13 @@ $categoria = Categoria::recuperarTodos();
             </div>
 
             <div class="form-group">
-            <label for="nombre">Teléfono</label>
+            <label for="tel">Teléfono Comercial</label>
             <input class="form-control" type="text" name="tel" id="tel" value="<?php echo $anuncio->getTelefono(); ?>">
+            </div>
+
+            <div class="form-group">
+            <label for="whatsapp">Whatsapp</label>
+            <input class="form-control" type="text" name="whatsapp" id="whatsapp" value="<?php echo $anuncio->getWhatsapp(); ?>">
             </div>
 
             <div class="form-group">

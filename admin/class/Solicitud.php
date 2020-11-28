@@ -9,6 +9,7 @@ class Solicitud {
     private $url_imagen;
     private $rfc;
     private $tel;
+    private $whatsapp;
     private $calle;
     private $colonia;
     private $cp;
@@ -20,13 +21,14 @@ class Solicitud {
 
     const TABLA = 'solicitudes';
 
-    public function __construct($nombre_negocio=null, $url_imagen=null, $rfc=null, $tel=null, $calle=null, $colonia=null, $cp=null, $municipio=null, $estatus_solicitud=null, $fecha_solicitud=null, $descripcion=null, $observaciones=null, $idSolicitud=null ) {
+    public function __construct($nombre_negocio=null, $url_imagen=null, $rfc=null, $tel=null, $whatsapp=null, $calle=null, $colonia=null, $cp=null, $municipio=null, $estatus_solicitud=null, $fecha_solicitud=null, $descripcion=null, $observaciones=null, $idSolicitud=null ) {
 
         
         $this->nombre_negocio = $nombre_negocio;
         $this->url_imagen = $url_imagen;
         $this->rfc = $rfc;
         $this->tel = $tel; 
+        $this->whatsapp = $whatsapp; 
         $this->calle = $calle; 
         $this->colonia = $colonia; 
         $this->cp = $cp; 
@@ -57,6 +59,9 @@ class Solicitud {
 
     public function getTel() {
         return $this->tel;
+    }
+    public function getWhatsapp() {
+        return $this->whatsapp;
     }
 
     public function getCalle() {
@@ -115,6 +120,10 @@ class Solicitud {
         $this->tel = $tel;
     }
 
+    public function setWhatsapp($whatsapp) {
+        $this->tel = $whatsapp;
+    }
+
     public function setCalle($calle) {
         $this->calle = $calle;
     }
@@ -152,12 +161,13 @@ class Solicitud {
     public function guardar() {
         $conexion = new Conexion();
         if ($this->idSolicitud) /* Modifica */ {
-            $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET nombre_negocio=:nombre_negocio, url_imagen=:url_imagen, rfc=:rfc, tel=:tel, calle=:calle, colonia=:colonia, cp=:cp, municipio=:municipio, fecha_solicitud=:fecha_solicitud, estatus_solicitud=:estatus_solicitud, descripcion=:descripcion, observaciones = :observaciones WHERE idSolicitud = :idSolicitud');
+            $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET nombre_negocio=:nombre_negocio, url_imagen=:url_imagen, rfc=:rfc, tel=:tel, whatsapp=:whatsapp, calle=:calle, colonia=:colonia, cp=:cp, municipio=:municipio, fecha_solicitud=:fecha_solicitud, estatus_solicitud=:estatus_solicitud, descripcion=:descripcion, observaciones = :observaciones WHERE idSolicitud = :idSolicitud');
             $consulta->bindParam(':idSolicitud', $this->idSolicitud);
             $consulta->bindParam(':nombre_negocio', $this->nombre_negocio);
             $consulta->bindParam(':url_imagen', $this->url_imagen);
             $consulta->bindParam(':rfc', $this->rfc);
             $consulta->bindParam(':tel', $this->tel);
+            $consulta->bindParam(':whatsapp', $this->whatsapp);
             $consulta->bindParam(':calle', $this->calle);
             $consulta->bindParam(':colonia', $this->colonia);
             $consulta->bindParam(':cp', $this->cp);
@@ -169,11 +179,12 @@ class Solicitud {
             $consulta->execute();
             //var_dump($consulta);
         } else /* Inserta */ {
-            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (nombre_negocio, url_imagen, rfc, tel, whatsapp, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
             $consulta->bindParam(':nombre_negocio', $this->nombre_negocio);
             $consulta->bindParam(':url_imagen', $this->url_imagen);
             $consulta->bindParam(':rfc', $this->rfc);
             $consulta->bindParam(':tel', $this->tel);
+            $consulta->bindParam(':whatsapp', $this->whatsapp);
             $consulta->bindParam(':calle', $this->calle);
             $consulta->bindParam(':colonia', $this->colonia);
             $consulta->bindParam(':cp', $this->cp);
@@ -205,14 +216,14 @@ class Solicitud {
     public static function buscarPorId($idSolicitud) {
 
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT  nombre_negocio, url_imagen, rfc, tel, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion, observaciones FROM ' . self::TABLA . ' WHERE idSolicitud = :idSolicitud');
+        $consulta = $conexion->prepare('SELECT  nombre_negocio, url_imagen, rfc, tel, whatsapp, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion, observaciones FROM ' . self::TABLA . ' WHERE idSolicitud = :idSolicitud');
         $consulta->bindParam(':idSolicitud', $idSolicitud);
         $consulta->execute();
         $registro = $consulta->fetch();
         //var_dump($registro);
         $conexion = null;
         if ($registro) {
-            return new self($registro['nombre_negocio'], $registro['url_imagen'], $registro['rfc'], $registro['tel'], $registro['calle'], $registro['colonia'], $registro['cp'], $registro['municipio'], $registro['estatus_solicitud'], $registro['fecha_solicitud'], $registro['descripcion'], $registro['observaciones'], $idSolicitud);
+            return new self($registro['nombre_negocio'], $registro['url_imagen'], $registro['rfc'], $registro['tel'], $registro['whatsapp'], $registro['calle'], $registro['colonia'], $registro['cp'], $registro['municipio'], $registro['estatus_solicitud'], $registro['fecha_solicitud'], $registro['descripcion'], $registro['observaciones'], $idSolicitud);
 
         } else {
             return false;
@@ -291,11 +302,12 @@ class Solicitud {
     public function actualizarSolicitud(){
             $conexion = new Conexion();
             if ($this->idSolicitud) /* Modifica */ {
-                $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET nombre_negocio=:nombre_negocio, url_imagen=:url_imagen, tel=:tel, calle=:calle, colonia=:colonia, cp=:cp, municipio=:municipio, estatus_solicitud=:estatus_solicitud, descripcion=:descripcion, observaciones = :observaciones WHERE idSolicitud = :idSolicitud');
+                $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET nombre_negocio=:nombre_negocio, url_imagen=:url_imagen, tel=:tel, whatsapp=:whatsapp, calle=:calle, colonia=:colonia, cp=:cp, municipio=:municipio, estatus_solicitud=:estatus_solicitud, descripcion=:descripcion, observaciones = :observaciones WHERE idSolicitud = :idSolicitud');
                 $consulta->bindParam(':idSolicitud', $this->idSolicitud);
                 $consulta->bindParam(':nombre_negocio', $this->nombre_negocio);
                 $consulta->bindParam(':url_imagen', $this->url_imagen);
                 $consulta->bindParam(':tel', $this->tel);
+                $consulta->bindParam(':whatsapp', $this->whatsapp);
                 $consulta->bindParam(':calle', $this->calle);
                 $consulta->bindParam(':colonia', $this->colonia);
                 $consulta->bindParam(':cp', $this->cp);

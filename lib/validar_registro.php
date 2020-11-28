@@ -29,6 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $url_imagen = 'uploads/images/mi_negocio.jpg';
     $rfc = (isset($_POST['rfc'])) ? $_POST['rfc'] : null;
     $tel = (isset($_POST['tel'])) ? $_POST['tel'] : null;
+    $whatsapp = (isset($_POST['whatsapp'])) ? $_POST['whatsapp'] : null;
     $calle = (isset($_POST['calle'])) ? $_POST['calle'] : null;
     $colonia = (isset($_POST['colonia'])) ? $_POST['colonia'] : null;
     $cp = (isset($_POST['cp'])) ? $_POST['cp'] : null;
@@ -42,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setUrlImagen($url_imagen);
     $solicitud->setRFC($rfc);
     $solicitud->setTel($tel);
+    $solicitud->setWhatsapp($whatsapp);
     $solicitud->setCalle($calle);
     $solicitud->setColonia($colonia);
     $solicitud->setCP($cp);

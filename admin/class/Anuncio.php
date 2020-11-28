@@ -14,6 +14,7 @@ class Anuncio {
     private $colonia;
     private $cp;
     private $telefono;
+    private $whatsapp;
     private $facebook;
     private $instagram;
     private $youtube;
@@ -36,7 +37,7 @@ class Anuncio {
     
   
     
-    public function __construct( $titulo=null, $url_imagen=null, $municipio=null, $estado=null, $calle=null, $colonia=null, $cp=null, $telefono=null, $facebook=null, $instagram=null, $youtube=null,
+    public function __construct( $titulo=null, $url_imagen=null, $municipio=null, $estado=null, $calle=null, $colonia=null, $cp=null, $telefono=null, $whatsapp=null, $facebook=null, $instagram=null, $youtube=null,
      $sitio=null, $google_maps=null, $descripcion=null, $primer_dia_sem=null, $ultimo_dia_sem=null, $entrada=null, $cierre = null, $estatus_anuncio=null, $keywords=null, $fecha_publicacion=null, $destacado=null, $idAnuncio=null, $idCategoria=null, $idSolicitud=null) {
        
         
@@ -48,6 +49,7 @@ class Anuncio {
         $this->colonia = $colonia;
         $this->cp = $cp;
         $this->telefono = $telefono;
+        $this->whatsapp = $whatsapp;
         $this->facebook = $facebook;
         $this->instagram = $instagram;
         $this->youtube = $youtube;
@@ -107,6 +109,10 @@ class Anuncio {
 
     public function getTelefono() {
         return $this->telefono;
+    }
+
+    public function getWhatsapp() {
+        return $this->whatsapp;
     }
 
     public function getFacebook() {
@@ -209,6 +215,9 @@ class Anuncio {
     public function setTelefono($telefono) {
         $this->telefono = $telefono;
     }
+    public function setWhatsapp($whatsapp) {
+        $this->whatsapp = $whatsapp;
+    }
 
     public function setFacebook($facebook) {
         $this->facebook = $facebook;
@@ -277,7 +286,7 @@ class Anuncio {
     public function guardar() {
         $conexion = new Conexion();
         if($this->idAnuncio)/*UPDATE*/{
-            $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET idCategoria = :idCategoria, titulo = :titulo, url_imagen = :url_imagen, municipio=:municipio, estado = :estado, calle = :calle, colonia = :colonia, cp = :cp, telefono = :telefono, facebook = :facebook, instagram = :instagram, youtube = :youtube, sitio = :sitio, google_maps = :google_maps, descripcion = :descripcion, primer_dia_sem = :primer_dia_sem, ultimo_dia_sem = :ultimo_dia_sem, entrada = :entrada, cierre = :cierre, estatus_anuncio = :estatus_anuncio, keywords = :keywords, fecha_publicacion = :fecha_publicacion, destacado = :destacado WHERE idAnuncio = :idAnuncio');
+            $consulta = $conexion->prepare('UPDATE ' . self::TABLA . ' SET idCategoria = :idCategoria, titulo = :titulo, url_imagen = :url_imagen, municipio=:municipio, estado = :estado, calle = :calle, colonia = :colonia, cp = :cp, telefono = :telefono, whatsapp = :whatsapp, facebook = :facebook, instagram = :instagram, youtube = :youtube, sitio = :sitio, google_maps = :google_maps, descripcion = :descripcion, primer_dia_sem = :primer_dia_sem, ultimo_dia_sem = :ultimo_dia_sem, entrada = :entrada, cierre = :cierre, estatus_anuncio = :estatus_anuncio, keywords = :keywords, fecha_publicacion = :fecha_publicacion, destacado = :destacado WHERE idAnuncio = :idAnuncio');
             
             $consulta->bindParam(':idAnuncio', $this->idAnuncio);
             $consulta->bindParam(':idCategoria', $this->idCategoria);           
@@ -289,6 +298,7 @@ class Anuncio {
             $consulta->bindParam(':colonia', $this->colonia);        
             $consulta->bindParam(':cp', $this->cp);      
             $consulta->bindParam(':telefono', $this->telefono); 
+            $consulta->bindParam(':whatsapp', $this->whatsapp); 
             $consulta->bindParam(':facebook', $this->facebook);
             $consulta->bindParam(':instagram', $this->instagram); 
             $consulta->bindParam(':youtube', $this->youtube);             
@@ -305,7 +315,7 @@ class Anuncio {
             $consulta->bindParam(':destacado', $this->destacado);    
             $consulta->execute();
         }else /*Insert*/{
-            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (idCategoria, titulo, url_imagen, municipio, estado, calle, colonia, cp, telefono, facebook, instagram, youtube, sitio, google_maps, descripcion, primer_dia_sem, ultimo_dia_sem, entrada, cierre, estatus_anuncio, keywords, fecha_publicacion, destacado, idSolicitud) VALUES (:idCategoria, :titulo, :url_imagen, :municipio, :estado, :calle, :colonia, :cp, :telefono, :facebook, :instagram, :youtube, :sitio, :google_maps, :descripcion, :primer_dia_sem, :ultimo_dia_sem, :entrada, :cierre, :estatus_anuncio, :keywords, :fecha_publicacion, :destacado, :idSolicitud)');
+            $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA . ' (idCategoria, titulo, url_imagen, municipio, estado, calle, colonia, cp, telefono, whatsapp, facebook, instagram, youtube, sitio, google_maps, descripcion, primer_dia_sem, ultimo_dia_sem, entrada, cierre, estatus_anuncio, keywords, fecha_publicacion, destacado, idSolicitud) VALUES (:idCategoria, :titulo, :url_imagen, :municipio, :estado, :calle, :colonia, :cp, :telefono, :whatsapp, :facebook, :instagram, :youtube, :sitio, :google_maps, :descripcion, :primer_dia_sem, :ultimo_dia_sem, :entrada, :cierre, :estatus_anuncio, :keywords, :fecha_publicacion, :destacado, :idSolicitud)');
             $consulta->bindParam(':idCategoria', $this->idCategoria);           
             $consulta->bindParam(':titulo', $this->titulo);
             $consulta->bindParam(':url_imagen', $this->url_imagen);            
@@ -315,6 +325,7 @@ class Anuncio {
             $consulta->bindParam(':colonia', $this->colonia);        
             $consulta->bindParam(':cp', $this->cp);      
             $consulta->bindParam(':telefono', $this->telefono); 
+            $consulta->bindParam(':whatsapp', $this->whatsapp); 
             $consulta->bindParam(':facebook', $this->facebook);
             $consulta->bindParam(':instagram', $this->instagram); 
             $consulta->bindParam(':youtube', $this->youtube);             
@@ -369,7 +380,7 @@ class Anuncio {
         $conexion = null;
         if ($registro) {
            
-            return new self($registro['titulo'], $registro['url_imagen'], $registro['municipio'], $registro['estado'], $registro['calle'], $registro['colonia'], $registro['cp'], $registro['telefono'], $registro['facebook'], $registro['instagram'], $registro['youtube'], $registro['sitio'], $registro['google_maps'], $registro['descripcion'], $registro['primer_dia_sem'], $registro['ultimo_dia_sem'], $registro['entrada'], $registro['cierre'], $registro['estatus_anuncio'], $registro['keywords'], $registro['fecha_publicacion'], $registro['destacado'], $idAnuncio, $registro['idCategoria'],$registro['idSolicitud']);
+            return new self($registro['titulo'], $registro['url_imagen'], $registro['municipio'], $registro['estado'], $registro['calle'], $registro['colonia'], $registro['cp'], $registro['telefono'], $registro['whatsapp'], $registro['facebook'], $registro['instagram'], $registro['youtube'], $registro['sitio'], $registro['google_maps'], $registro['descripcion'], $registro['primer_dia_sem'], $registro['ultimo_dia_sem'], $registro['entrada'], $registro['cierre'], $registro['estatus_anuncio'], $registro['keywords'], $registro['fecha_publicacion'], $registro['destacado'], $idAnuncio, $registro['idCategoria'],$registro['idSolicitud']);
             
         } else {
             return false;

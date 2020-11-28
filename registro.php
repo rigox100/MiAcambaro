@@ -154,31 +154,35 @@ session_start();
                                                     <input class="form-control" type="hidden" name="rfc" id="rfc" placeholder="Ingresa el RFC de tu negocio" value="">
 
                                                     <div class="form-group row">
-                                                        <label for="nombre_negocio">Nombre del Negocio</label>
+                                                        <label for="nombre_negocio">Nombre del Negocio <span class="text-danger">*</span></label>
                                                         <input class="form-control" type="text" name="nombre_negocio" id="nombre_negocio" value="">
                                                     </div>
 
 
                                                     <div class="form-group row">
-                                                        <label for="tel">Teléfono de contacto</label>
+                                                        <label for="tel">Teléfono comercial <span class="text-danger">*</span></label>
                                                         <input class="form-control" type="text" name="tel" id="tel" value="">
                                                     </div>
 
+                                                    <div class="form-group row">
+                                                        <label for="whatsapp">Whatsapp</label>
+                                                        <input class="form-control" type="text" name="whatsapp" id="whatsapp" value="">
+                                                    </div>
 
 
                                                     <div class="form-group row">
-                                                        <label for="calle">Dirección</label>
+                                                        <label for="calle">Dirección <span class="text-danger">*</span></label>
                                                         <input class="form-control" type="text" name="calle" id="calle" placeholder="Ingrese calle y número del negocio" value="">
 
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <label for="colonia">Colonia</label>
+                                                        <label for="colonia">Colonia <span class="text-danger">*</span></label>
                                                         <input class="form-control" type="text" name="colonia" id="colonia" value="">
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <label for="cp">Código Postal</label>
+                                                        <label for="cp">Código Postal <span class="text-danger">*</span></label>
                                                         <input class="form-control" type="text" name="cp" id="cp" value="">
                                                     </div>
 
@@ -188,12 +192,12 @@ session_start();
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <label for="tel">Estado</label>
+                                                        <label for="estado">Estado</label>
                                                         <input class="form-control" type="text" name="estado" id="estado" value="Guanajuato" readonly>
                                                     </div>
 
                                                     <div class="form-group row">
-                                                        <label for="descripcion">Cuentanos un poco de tu negocio</label>
+                                                        <label for="descripcion">Cuentanos un poco de tu negocio <span class="text-danger">*</span></label>
                                                         <textarea name="descripcion" id="descripcion" rows="4" class="form-control" placeholder="Describe el giro tiene tu negocio, los servicios o productos ofreces..."></textarea>
                                                     </div>
 
@@ -217,6 +221,8 @@ session_start();
                                                             Registrar ahora
                                                         </button>
                                                     </div>
+                                                    <br>
+                                                    <p>Los campos <span class="text-danger">*</span> son obligatorios el registro.</p>
                                                 </div>
                                             </form>
                                         </div>
