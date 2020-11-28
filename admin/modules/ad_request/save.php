@@ -90,40 +90,40 @@ include_once '../../assets/template/header.php';
 
               <div class="form-group">
                 <label for="calle">Dirección</label>
-                <input class="form-control input-clean" type="text" name="calle" id="calle" value="<?php echo $item[5] ?>" readonly>
+                <input class="form-control input-clean" type="text" name="calle" id="calle" value="<?php echo $item[6] ?>" readonly>
               </div>
 
               <div class="form-group">
                 <label for="colonia">Colonia</label>
-                <input class="form-control input-clean" type="text" name="colonia" id="colonia" value="<?php echo $item[6] ?>" readonly>
+                <input class="form-control input-clean" type="text" name="colonia" id="colonia" value="<?php echo $item[7] ?>" readonly>
               </div>
 
               <div class="form-group">
                 <label for="cp">Código Postal</label>
-                <input class="form-control input-clean" type="text" name="cp" id="cp" value="<?php echo $item[7] ?>" readonly>
+                <input class="form-control input-clean" type="text" name="cp" id="cp" value="<?php echo $item[8] ?>" readonly>
               </div>
 
               <div class="form-group">
                 <label for="municipio">Municipio</label>
-                <input class="form-control input-clean" type="text" name="munucipio" id="municipio" value="<?php echo $item[8] ?>" readonly>
+                <input class="form-control input-clean" type="text" name="munucipio" id="municipio" value="<?php echo $item[9] ?>" readonly>
               </div>
 
               <div class="form-group">
                 <label for="estado">Estado</label>
-                <input class="form-control input-clean" type="text" name="estado" id="estado" value="<?php echo $item[9] ?>" readonly>
+                <input class="form-control input-clean" type="text" name="estado" id="estado" value="<?php echo $item[10] ?>" readonly>
               </div>
 
               <div class="form-group">
                 <label for="estado">Estatus actual de la solicitud</label>
                 <?php
-                if ($item[10] == 'En proceso') {
-                  echo '<p class="alert alert-secondary text-center w-50">' . $item[10] . '</p>';
-                } elseif ($item[10] == 'Aceptada') {
-                  echo '<p class="alert alert-primary text-center w-50">' . $item[10] . '</p>';
-                } elseif ($item[10] == 'Publicada') {
-                  echo '<p class="alert alert-success text-center w-50">' . $item[10] . '</p>';
+                if ($item[11] == 'En proceso') {
+                  echo '<p class="alert alert-secondary text-center w-50">' . $item[11] . '</p>';
+                } elseif ($item[11] == 'Aceptada') {
+                  echo '<p class="alert alert-primary text-center w-50">' . $item[11] . '</p>';
+                } elseif ($item[11] == 'Publicada') {
+                  echo '<p class="alert alert-success text-center w-50">' . $item[11] . '</p>';
                 } else {
-                  echo '<p class="alert alert-danger text-center w-50">' . $item[10] . '</p>';
+                  echo '<p class="alert alert-danger text-center w-50">' . $item[11] . '</p>';
                 }
                 ?>
               </div>
@@ -136,19 +136,19 @@ include_once '../../assets/template/header.php';
               <div class="form-group">
                 <label for="estatus_solicitud">Cambiar estatus</label>
                 <select name="estatus_solicitud" id="estatus_solicitud" class="form-control">
-                  <option value="En proceso" <?php if ($item[10] == "En proceso") {
+                  <option value="En proceso" <?php if ($item[11] == "En proceso") {
                                                 echo 'selected';
                                               } ?>>En Proceso</option>
-                  <option value="Aceptada" <?php if ($item[10] == "Aceptada") {
+                  <option value="Aceptada" <?php if ($item[11] == "Aceptada") {
                                               echo 'selected';
                                             } ?>>Aceptada</option>
-                  <option value="Rechazada" <?php if ($item[10] == "Rechazada") {
+                  <option value="Rechazada" <?php if ($item[11] == "Rechazada") {
                                               echo 'selected';
                                             } ?>>Rechazada</option>
                   <?php
-                  if ($item[10] == 'Publicada') {
+                  if ($item[11] == 'Publicada') {
                   ?>
-                    <option value="Publicada" <?php if ($item[10] == "Publicada") {
+                    <option value="Publicada" <?php if ($item[11] == "Publicada") {
                                                 echo 'selected';
                                               } ?>>Publicada</option>
                   <?php
@@ -160,7 +160,7 @@ include_once '../../assets/template/header.php';
 
               <div class="form-group">
                 <label for="observaciones">Observaciones</label>
-                <textarea class="form-control" name="observaciones" id="observaciones" rows="3"><?php echo $item[13]; ?></textarea>
+                <textarea class="form-control" name="observaciones" id="observaciones" rows="3"><?php echo $item[14]; ?></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" onclick="return confirm('¿Desea guardar los cambios de esta solicitud?')" class="btn btn-primary w-100" value="Guardar cambios">
