@@ -248,7 +248,7 @@ class Solicitud {
 
     public static function recuperarTodos() {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d-%m-%Y") FROM solicitudes');
+        $consulta = $conexion->prepare('SELECT *, DATE_FORMAT(fecha_solicitud, "%d-%m-%Y") FROM solicitudes ORDER BY fecha_solicitud DESC');
         $consulta->execute();
         $registros = $consulta->fetchAll();
         $conexion = null;
