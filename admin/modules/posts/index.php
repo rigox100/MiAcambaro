@@ -58,7 +58,8 @@ $categoria = Categoria::recuperarTodos();
               <form action="" method="post">
                 <input type="hidden" name="search2" value="2">
                 <div class="form-group">
-                  <select name="estatus_anuncio" id="estatus_anuncio">
+                  <select name="estatus_anuncio" id="estatus_anuncio" class="w-100" required>
+                  <option value="">Selecciona una opción</option>
                   <option value="Publicado">Publicados</option>
                   <option value="Borrador">Borradores</option>
                   <option value="Inactivo">Inactivos</option>
