@@ -94,15 +94,15 @@
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                  Mi cuenta
+                  Promotor
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="perfil.php" class="nav-link">
+                  <a href="registro.php" class="nav-link">
                     <i class="fa fa-user-circle"></i>
-                    <p>Perfil</p>
+                    <p>Registrar Negocio</p>
                   </a>
                 </li>
                 <!--
@@ -113,14 +113,14 @@
                   </a>
                 </li>
                  -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a href="mi_negocio.php" class="nav-link">
                     <i class="fa fa-cog"></i>
                     <p>Anunciar mi negocio</p>
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> -->
             <!--<li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -144,12 +144,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Mi cuenta</h1>
+            
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Mi cuenta</li>
+                <li class="breadcrumb-item"><a href="#">Promotor</a></li>
+                <li class="breadcrumb-item active">Registrar anuncio</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->

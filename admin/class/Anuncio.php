@@ -435,6 +435,17 @@ class Anuncio {
 
     public static function busqueda($search) {
         $conexion = new Conexion();
+        $consulta = $conexion->prepare("SELECT *,DATE_FORMAT(fecha_publicacion, '%d-%m-%Y') FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( keywords LIKE '%$search%') AND estatus_anuncio='Publicado'");
+        //$consulta = $conexion->prepare("SELECT * from anuncios WHERE keywords LIKE '%$search%'");
+        $consulta->execute();
+        $registros = $consulta->fetchAll();
+  
+        $conexion = null;
+        return $registros;
+    }
+
+    public static function busqueda2($search) {
+        $conexion = new Conexion();
         $consulta = $conexion->prepare("SELECT *,DATE_FORMAT(fecha_publicacion, '%d-%m-%Y') FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE ( keywords LIKE '%$search%')");
         //$consulta = $conexion->prepare("SELECT * from anuncios WHERE keywords LIKE '%$search%'");
         $consulta->execute();
@@ -446,7 +457,7 @@ class Anuncio {
 
     public static function getRandom(){
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria ORDER BY RAND() LIMIT 6');
+        $consulta = $conexion->prepare('SELECT * FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE estatus_anuncio="Publicado" ORDER BY RAND() LIMIT 6');
         $consulta->execute();
         $registros = $consulta->fetchAll();
   

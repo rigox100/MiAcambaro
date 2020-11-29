@@ -7,7 +7,7 @@ $anuncio = Anuncio::recuperarPorCorte($_POST['rango1'], $_POST['rango2']);
 }elseif(isset($_POST['search2'])){
 $anuncio = Anuncio::recuperarPorEstatus($_POST['estatus_anuncio']);
 }elseif(isset($_POST['search3'])){
-$anuncio = Anuncio::busqueda($_POST['search']);
+$anuncio = Anuncio::busqueda2($_POST['search']);
 }else{
 $anuncio = Anuncio::recuperarTodos();
 }
