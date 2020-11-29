@@ -73,11 +73,11 @@ $categoria = Categoria::recuperarTodos();
               </div>
 
               <div class="col-xs-12 col-md-3 frm-search">
-              <p><strong>Buscar por palabras clave</strong> </p>
+              <p><strong>Buscar por nombre del negocio</strong> </p>
               <form action="" method="post">
                 <input type="hidden" name="search3" value="2">
                 <div class="form-group">
-                  <label for="cortes">Palabras clave </label>
+                  <label for="search">Nombre del negocio </label>
                   <input type="text" name="search" class="w-100" value="<?php if(isset($_POST['search'])){echo $_POST['search'];}?>" required>
                 </div>
                <div class="form-group">
