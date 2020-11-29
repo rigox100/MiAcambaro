@@ -11,11 +11,13 @@ require_once '../admin/class/Usuario.php';
     $usuario->setPassword($password);
     if($usuario->logIn()){
 
-        if($_SESSION['idRol']!=3){
+        if($_SESSION['idRol']==1){
 
             header('Location: ../admin/index.php');
-        }else{
+        }elseif($_SESSION['idRol']==2){
 
+            header('Location: ../promotor.php');
+        }else{
             header('Location: ../index.php');
         }
 

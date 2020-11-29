@@ -1,5 +1,6 @@
 <?php 
-session_start(); if($_SESSION['idRol']== null || $_SESSION['idRol']!=1){
+session_start(); 
+if($_SESSION['idRol']== null || $_SESSION['idRol']!=1){
   header('Location: ../../login.php');
 }
 require_once '../../class/Solicitud.php';
@@ -166,12 +167,12 @@ $total = array_values($num_solcitudes)[0];
                   <p>Solicitudes de anuncio</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="../comments/index.php" class="nav-link">
                   <i class="fa fa-comments"></i>
                   <p>Comentarios</p>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </li>
         </ul>

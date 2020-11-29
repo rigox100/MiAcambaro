@@ -174,7 +174,7 @@ class Usuario
     public static function recuperarTodos()
     {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT * FROM usuarios INNER JOIN roles ON roles.idRol = usuarios.idRol WHERE usuarios.idRol = 3');
+        $consulta = $conexion->prepare('SELECT * FROM usuarios INNER JOIN roles ON roles.idRol = usuarios.idRol');
         $consulta->execute();
         $registros = $consulta->fetchAll();
         $conexion = null;

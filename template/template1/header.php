@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['idUsuario']) || $_SESSION['idRol'] != 2) {
+  header('Location: ../login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 

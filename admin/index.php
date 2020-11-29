@@ -173,15 +173,15 @@ $total = array_values($num_solcitudes)[0];
               <li class="nav-item">
                 <a href="modules/users/index.php" class="nav-link">
                 <i class="fas fa-users"></i>
-                  <p>Colaboradores registrados</p>
+                  <p>Usuarios registrados</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a href="modules/roles/index.php" class="nav-link">
                   <i class="fa fa-user-circle"></i>
                   <p>Roles de usuarios</p>
                 </a>
-              </li> -->
+              </li> 
               <li class="nav-item">
                 <a href="modules/posts_categories/index.php" class="nav-link">
                   <i class="fa fa-cog"></i>

@@ -1,7 +1,4 @@
 <?php
-session_start();
-if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] != 3) {
-
   include_once '../admin/class/Anuncio.php';
   require_once '../admin/class/Categoria.php';
 
@@ -306,8 +303,4 @@ if (isset($_SESSION['idUsuario']) && $_SESSION['idRol'] != 3) {
 
 <?php
   include_once '../template/template1/footer.php';
-} else {
-
-  header('Location: ../index.php');
-}
 ?>
