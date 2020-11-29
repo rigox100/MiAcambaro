@@ -392,7 +392,7 @@ class Anuncio {
 
     public static function recuperarTodos() {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE idAnuncio LIMIT 50');
+        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria LIMIT 100');
         $consulta->execute();
         $registros = $consulta->fetchAll();
   
