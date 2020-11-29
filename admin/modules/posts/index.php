@@ -30,25 +30,21 @@ $categoria = Categoria::recuperarTodos();
               <!-- <a href="save.php" class="btn btn-primary" readonly>+ Nuevo Anuncio</a><br><br> -->
               <p class="alert alert-info"> Por favor registre las clasificaciones de los anuncios </p>
             <?php endif; ?>
-
-
-
-
-            <?php  if (count($anuncio) > 0): ?>
+           
               <div class="row">
                 <div class="col-12">
                   <h4>Opciones de búsqueda </h4>
-                <p>Realiza una búsqueda de un total de <strong class="text-primary"> <?php echo $total ?> registros </strong></p>
+                <p>Realiza una búsqueda de un total de <strong class="text-primary"> <a href=""> <?php echo $total ?> registros </strong> </a></p>
                 </div>
               <div class="col-xs-12 col-md-5 frm-search">  
-              <p><strong>Buscar registros por cortes</strong> </p>
+              <p><strong>Buscar por cortes</strong> </p>
               <form action="" method="post">
                 <input type="hidden" name="search1" value="1">
                 <div class="form-group">
-                  <label for="cortes">Obtener registros del ID </label>
-                  <input type="number" name="rango1"  value="<?php if(isset($_POST['rango1'])){echo $_POST['rango1'];}else{echo "1";}?>" min="1"  max="<?php echo $total ?>">
-                  <label for="cortes">al </label>
-                  <input type="number" name="rango2" value="<?php if(isset($_POST['rango2'])){echo $_POST['rango2'];}else{echo "50";}?>" min="1"  max="<?php echo $total ?>">
+                  <label for="rango1">Del </label>
+                  <input type="date" name="rango1">
+                  <label for="rango2">al </label>
+                  <input type="date" name="rango2">
                 </div>
                <div class="form-group">
                  <button class="btn btn-dark w-100">Buscar registros</button>
@@ -89,6 +85,9 @@ $categoria = Categoria::recuperarTodos();
 
 
               </div> 
+              <br>
+
+              <?php  if (count($anuncio) > 0): ?>
 
               <hr>
 
@@ -137,7 +136,7 @@ $categoria = Categoria::recuperarTodos();
 </table>
 
 <?php else: ?>
-            <p class="alert alert-info"> No hay anuncios agregados </p>
+            <p class="alert alert-info"> No se encontraron registros </p>
         <?php endif; ?>
           
             
