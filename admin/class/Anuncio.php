@@ -412,10 +412,10 @@ class Anuncio {
     }
 
 
-    public static function recuperarPorID($id_search) {
+    public static function recuperarPorEstatus($estatus_anuncio) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE idAnuncio = :id_search LIMIT 1');
-        $consulta->bindParam(':id_search', $id_search);
+        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE estatus_anuncio = :estatus_anuncio');
+        $consulta->bindParam(':estatus_anuncio', $estatus_anuncio);
         $consulta->execute();
         $registros = $consulta->fetchAll();
         $conexion = null;

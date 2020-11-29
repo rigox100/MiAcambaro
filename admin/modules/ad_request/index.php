@@ -27,7 +27,6 @@ $solicitudes = Solicitud::recuperarTodos();
           <table class="table table-bordered" id="table-data">
             <thead class="thead-dark">
               <tr>
-                <th scope="col">Folio</th>
                 <th scope="col">Fecha </th>
                 <th scope="col">Negocio</th>
                 <th scope="col">Estatus</th>
@@ -41,8 +40,6 @@ $solicitudes = Solicitud::recuperarTodos();
             <tbody>
               <?php foreach ($solicitudes as $item) : ?>
                 <tr>
-
-                  <td><?php echo $item[0] ?></td>
                   <td><?php echo $item[15] ?></td>
                   <td><?php echo $item['nombre_negocio'] ?></td>
 
