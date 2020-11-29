@@ -16,7 +16,7 @@ require_once '../admin/class/Usuario.php';
             header('Location: ../admin/index.php');
         }elseif($_SESSION['idRol']==2){
 
-            header('Location: ../promotor.php');
+            header('Location: ../promotor/registro.php');
         }else{
             header('Location: ../index.php');
         }
