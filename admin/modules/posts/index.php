@@ -77,7 +77,6 @@ $categoria = Categoria::recuperarTodos();
               <form action="" method="post">
                 <input type="hidden" name="search3" value="2">
                 <div class="form-group">
-                  <label for="search">Nombre del negocio </label>
                   <input type="text" name="search" class="w-100" value="<?php if(isset($_POST['search'])){echo $_POST['search'];}?>" required>
                 </div>
                <div class="form-group">
