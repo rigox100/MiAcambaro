@@ -107,8 +107,14 @@ if (!isset($_SESSION['idUsuario']) || $_SESSION['idRol'] != 2) {
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="registro.php" class="nav-link">
-                    <i class="fa fa-user-circle"></i>
+                    <i class="fa fa-flag"></i>
                     <p>Registrar Negocio</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="registro.php" class="nav-link">
+                    <i class="fas fa-sticky-note"></i>
+                    <p>Reportes de Negocios</p>
                   </a>
                 </li>
                 <!--
