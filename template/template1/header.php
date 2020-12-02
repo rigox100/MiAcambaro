@@ -27,7 +27,7 @@ if (!isset($_SESSION['idUsuario']) || $_SESSION['idRol'] != 2) {
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <!-- Card CSS -->
   <link rel="stylesheet" href="../template/css/style.css">
-  <title>Mi cuenta | Mi Acámbaro</title>
+  <title>Promotor | Mi Acámbaro</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -112,7 +112,7 @@ if (!isset($_SESSION['idUsuario']) || $_SESSION['idRol'] != 2) {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="registro.php" class="nav-link">
+                  <a href="reportes.php" class="nav-link">
                     <i class="fas fa-sticky-note"></i>
                     <p>Reportes de Negocios</p>
                   </a>
