@@ -82,6 +82,8 @@ $categoria = Categoria::recuperarTodos();
               </div> 
               <br>
               <?php  if (count($anuncio) > 0): ?>
+               
+                <input type="button" name="print" value="Imprimir Reporte" class="btn btn-dark fas fa-print" onclick="window.print();" >
            
                 
       <table class="table table-bordered" id="table-data">
