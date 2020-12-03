@@ -62,7 +62,7 @@ session_start();
             <li class="facebook"><a href="https://www.facebook.com/miacambaro.app.7" target="_blank"><i class="fa fa-facebook"></i></a></li>
             <li class="twitter"><a href="https://api.whatsapp.com/send?phone=524171063400&text=%C2%A1Hola!%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20para%20registrar%20mi%20negocio%20en%20miacambaro.mx" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
 
-            <li class="instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+            <!-- <li class="instagram"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li> -->
             <!-- <li class="pinterest"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li> -->
         </ul>
     </div>
@@ -168,7 +168,7 @@ session_start();
             <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class="styled-heading">
-                        <h3>Lugares Destacados</h3>
+                        <h3>Comercios Destacados</h3>
                     </div>
                 </div>
             </div>
@@ -234,7 +234,16 @@ session_start();
 
                                     <a href="#">
                                         <li><span class="fa fa-whatsapp"></span>
-                                            <p><?php echo $item['telefono']; ?></p>
+                                            <p><?php $tel= $item['telefono']; 
+                                            
+                                                        $posiUno = substr($tel, 0, 3);
+                                                        $posiDos = substr($tel, 3, 3);
+                                                        $posiTres = substr($tel, 6, 4);
+                                                        echo $posiUno . "-" . $posiDos . "-" . $posiTres;
+                                                      
+                                                     
+                                            
+                                            ?></p>
                                         </li>
                                     </a>
 
@@ -250,10 +259,20 @@ session_start();
                                 </ul>
                                 <hr class="my-4">
                                 <div class="text-center">
-                                    <a href="#"><img src="images/face.png" width="50px" height="50px"></a>
-                                    <a href="#"><img src="images/what.png" width="50px" height="50px"></a>
-                                    <a href="#"><img src="images/insta.png" width="50px" height="50px"></a>
-                                    <a href="#"><img src="images/youtu.png" width="50px" height="50px"></a>
+                                    <?php if(!empty($item['facebook'])):?>
+                                        <a href="<?php  echo $item['facebook'] ?>" target="_blank"><img src="images/face.png" width="50px" height="50px"></a>     
+                                    <?php endif; ?>
+
+                                    <?php if(!empty($item['telefono'])):?>
+                                        <a href="https://api.whatsapp.com/send?phone=52<?php echo $item['telefono'] ?>" target="_blank"><img src="images/what.png" width="50px" height="50px"></a>
+                                    <?php endif; ?>
+
+                                    <?php if(!empty($item['instagram'])):?>
+                                        <a href="<?php echo $item['instagram'] ?>" target="_blank"><img src="images/insta.png" width="50px" height="50px"></a>
+                                    <?php endif; ?>
+
+                                    
+                                    <!-- <a href="#"><img src="images/youtu.png" width="50px" height="50px"></a> -->
                                 </div>
 
 
@@ -666,9 +685,9 @@ session_start();
                         <p>Copyright &copy; 2020. Todos los derechos reservados | miacambaro.mx</p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <ul>
-                            <li><a href="#"><span class="ti-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-whatsapp" style="font-size:28px"></span></a></li>
-                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                            <li><a href="https://www.facebook.com/miacambaro.app.7" target="_blank"><span class="ti-facebook"></span></a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=524171063400&text=%C2%A1Hola!%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20para%20registrar%20mi%20negocio%20en%20miacambaro.mx" target="_blank"><span class="fa fa-whatsapp" style="font-size:28px"></span></a></li>
+                            <!-- <li><a href="#"><span class="ti-instagram"></span></a></li> -->
                         </ul>
                     </div>
                 </div>

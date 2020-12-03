@@ -92,8 +92,8 @@ $paginas = ceil($total / $articulosPagina);
 						<li><a href="index.php">Inicio</a></li>
 						<li><a href="registro.php">Registra tu negocio</a></li>
 						<li class="d-none d-md-block">
-                        <a href="" data-toggle="modal" data-target="#ModalApp">Descarga la app</a>
-                            </li>
+							<a href="" data-toggle="modal" data-target="#ModalApp">Descarga la app</a>
+						</li>
 						<li><a href="contacto.php">Contacto</a></li>
 						<li><a href="aviso-privacidad.php">Aviso de privacidad</a></li>
 					</ul>
@@ -171,7 +171,7 @@ $paginas = ceil($total / $articulosPagina);
 								</tr>
 
 							</thead>
-							<tbody >
+							<tbody>
 								<?php foreach ($busqueda as $item) : ?>
 									<tr>
 										<td>
@@ -182,66 +182,71 @@ $paginas = ceil($total / $articulosPagina);
 												</div>
 
 												<div class="marle">
-												<div class="details">
-													<div class="title d-flex flex-row justify-content-between">
-														<div class="titles">
-															<a href="" data-toggle="modal" data-target="#modal<?php echo $item[0]; ?>">
-																<h4><?php echo $item['titulo']; ?></h4>
-															</a>
+													<div class="details">
+														<div class="title d-flex flex-row justify-content-between">
+															<div class="titles">
+																<a href="" data-toggle="modal" data-target="#modal<?php echo $item[0]; ?>">
+																	<h4><?php echo $item['titulo']; ?></h4>
+																</a>
+															</div>
 														</div>
-													</div>
 
 
 
-													<div class="starts">
-														<ul class="list-unstyled list-inline rating mb-0">
-															<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-															<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-															<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-															<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-															<li class="list-inline-item"><i class="fas fa-star amber-text"></i></li>
-															<li class="list-inline-item">
-																<p class="text-muted">5.0 (333)</p>
-															</li>
-														</ul>
-													</div>
+														<div class="starts">
+															<ul class="list-unstyled list-inline rating mb-0">
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item"><i class="fas fa-star amber-text"></i></li>
+																<li class="list-inline-item">
+																	<p class="text-muted">5.0 (333)</p>
+																</li>
+															</ul>
+														</div>
 
-													<div class="closed-ca ti-home"><?php echo $item['calle']; ?>.&nbsp;&nbsp; 
-													<span class="closed-wa ">
+														<div class="closed-ca ti-home"><?php echo $item['calle']; ?>.&nbsp;&nbsp;
+															<span class="closed-wa ">
 
-															<?php
-															$tel = $item['telefono'];
-															if(!empty($tel)){
-																echo "&#x260e;&nbsp;". $tel;
-															}else{
-																echo "";
-															}
-															
-															
-															?>
-													</span> 
-													&nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span> 
-													<span class="closed-cat">
-														<?php 
-															$cate = $item['nombre'];
-															//echo $item['nombre'];
-															
-															if($cate == "Sin clasificación"){
-																echo " ";
-															}else{
-																echo " - " .$cate;		
-															}
-															
-														
-															
-														?>
-													</span> 
-												   </div>
+																<?php
+																$tel = $item['telefono'];
 
+																$posiUno = substr($tel, 0, 3);
+																$posiDos = substr($tel, 3, 3);
+																$posiTres = substr($tel, 6, 4);
+
+																if (!empty($tel)) {
+																	echo "&#x260e;&nbsp;" . $posiUno . "-" . $posiDos . "-" . $posiTres;
+																} else {
+																	echo "";
+																}
+
+
+																?>
+															</span>
+															&nbsp;&nbsp; <span class="closed-mun"><?php echo $item['municipio']; ?> </span>
+															<span class="closed-cat">
+																<?php
+																$cate = $item['nombre'];
+																//echo $item['nombre'];
+
+																if ($cate == "Sin clasificación") {
+																	echo " ";
+																} else {
+																	echo " - " . $cate;
+																}
 
 
 
-													<div class="closed-now">ABIERTO AHORA</div>
+																?>
+															</span>
+														</div>
+
+
+
+
+														<div class="closed-now">ABIERTO AHORA</div>
 
 
 													</div>
@@ -275,7 +280,7 @@ $paginas = ceil($total / $articulosPagina);
 																<div class="nav nav-tabs" id="nav-tab" role="tablist">
 																	<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home<?php echo $item[0]; ?>" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
 																	<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile<?php echo $item[0]; ?>" role="tab" aria-controls="nav-profile" aria-selected="false">Encuentranos</a>
-																	<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact<?php echo $item[0]; ?>" role="tab" aria-controls="nav-contact" aria-selected="false">Opiniones</a>
+																	<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact<?php echo $item[0]; ?>" role="tab" aria-controls="nav-contact" aria-selected="false">Galería</a>
 																</div>
 															</nav>
 															<div class="tab-content" id="nav-tabContent">
@@ -300,13 +305,23 @@ $paginas = ceil($total / $articulosPagina);
 																				</li>
 																			</ul>
 																		</div>
-																			<br>
+																		<br>
 																		<div class="">
 																			<h6 class="fa fa-map-marker">&nbsp;<span class="model"><?php echo $item['calle']; ?>&nbsp;<?php echo $item['cp']; ?> &nbsp;<?php echo $item['municipio']; ?> - Guanajuato </span></h6>
 																		</div>
-																			<br>
+																		<br>
 																		<div class="">
-																			<h6>&#x260e; <?php echo $item['telefono']; ?></h6>
+																			<h6>&#x260e; <?php
+																			
+																			$tel = $item['telefono'];
+
+																			$posiUno = substr($tel, 0, 3);
+																			$posiDos = substr($tel, 3, 3);
+																			$posiTres = substr($tel, 6, 4);
+																			echo $posiUno . "-" . $posiDos . "-" . $posiTres;
+																			
+																			
+																			?></h6>
 																		</div>
 
 																		<br>
@@ -321,24 +336,23 @@ $paginas = ceil($total / $articulosPagina);
 																		<h4>Información de Contacto</h4>
 																		<hr>
 
-																	<!-- 	<a href="#">
-																			<h6 class="fa fa-whatsapp">&nbsp;<span class="model">&nbsp;</span></h6>
-																		</a><br>
-																		<a href="#">
-																			<h6 class="fa fa-envelope">&nbsp;<span class="model">&nbsp;minegocio@miacambaro.mx</span></h6>
-																		</a><br>
-																		<a href="#">
-																			<h6 class="fa fa-facebook-square">&nbsp;<span class="model">&nbsp;www.facebook.com/minegocio</span></h6>
-																		</a><br>
-																		<a href="#">
-																			<h6 class="fa fa-instagram">&nbsp;<span class="model">&nbsp;https://www.instagram.com/minegocio</span>
-																		</a></h6> -->
+															
 
 																		<div class="text-center">
-																			<a href="<?php echo $item['facebook'] ?>"  target="_blank"><img src="images/face.png" width="40px" height="40px"></a>
-																			<a href="https://api.whatsapp.com/send?phone=52<?php echo $item['telefono'] ?>"  target="_blank"><img src="images/what.png" width="40px" height="40px"></a>
-																			<a href="<?php $item['instagram'] ?>"  target="_blank"><img src="images/insta.png" width="40px" height="40px"></a>
-																			<a href="<?php $item['youtube'] ?>"  target="_blank"><img src="images/youtu.png" width="40px" height="40px"></a>
+
+
+																			<?php if (!empty($item['facebook'])) : ?>
+																				<a href="<?php echo $item['facebook'] ?>" target="_blank"><img src="images/face.png" width="50px" height="50px"></a>
+																			<?php endif; ?>
+
+																			<?php if (!empty($item['telefono'])) : ?>
+																				<a href="https://api.whatsapp.com/send?phone=52<?php echo $item['telefono'] ?>" target="_blank"><img src="images/what.png" width="50px" height="50px"></a>
+																			<?php endif; ?>
+
+																			<?php if (!empty($item['instagram'])) : ?>
+																				<a href="<?php echo $item['instagram'] ?>" target="_blank"><img src="images/insta.png" width="50px" height="50px"></a>
+																			<?php endif; ?>
+																			
 																		</div>
 
 
@@ -364,20 +378,20 @@ $paginas = ceil($total / $articulosPagina);
 																<div class="tab-pane fade" id="nav-contact<?php echo $item[0]; ?>" role="tabpanel" aria-labelledby="nav-contact-tab">
 																	<div class="single-post d-flex flex-row">
 
-																		<div class="thumb">
-																			<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" width="70" height="70" class="rounded-circle">
-																		</div>
+																		<!-- <div class="thumb">
+																			<img src="admin/modules/posts/?>" alt="" width="70" height="70" class="rounded-circle">
+																		</div> -->
 
 																		<div class="details">
 																			<div class="title d-flex flex-row justify-content-between">
 																				<div class="titles">
 																					<br>
-																					<h4>José Hernández</h4>
+																					<h4></h4>
 
 																				</div>
 																			</div>
 
-																			<div class="closed-ca"> Excelente lugar, muy recomendado.</div>
+																			<div class="closed-ca"> </div>
 
 																		</div>
 
@@ -451,7 +465,7 @@ $paginas = ceil($total / $articulosPagina);
 
 									<div class="single-slidebar">
 
-										<h4 class="text-center">Lugares Destacados</h4>
+										<h4 class="text-center">Comercios Destacados</h4>
 
 										<?php
 										include_once 'admin/class/Anuncio.php';
@@ -492,7 +506,12 @@ $paginas = ceil($total / $articulosPagina);
 														</div>
 
 														<div>
-															<h5 class="direc"> &#x260e; &nbsp;<?php echo $item['telefono']; ?></h5>
+															<h5 class="direc"> &#x260e; &nbsp;<?php 
+																							$tel = $item['telefono'];
+																								$posiUno = substr($tel, 0, 3);
+																								$posiDos = substr($tel, 3, 3);
+																								$posiTres = substr($tel, 6, 4);
+																								echo $posiUno . "-" . $posiDos . "-" . $posiTres;?></h5>
 														</div>
 
 														<div>
@@ -561,10 +580,10 @@ $paginas = ceil($total / $articulosPagina);
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 				<div class="col-lg-4 col-sm-12 footer-social">
-					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.facebook.com/miacambaro.app.7" target="_blank"><i class="fa fa-facebook"></i></a>
 
-					<a href="#"><i class="fa fa-whatsapp"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
+					<a href="https://api.whatsapp.com/send?phone=524171063400&text=%C2%A1Hola!%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20para%20registrar%20mi%20negocio%20en%20miacambaro.mx" target="_blank"><i class="fa fa-whatsapp"></i></a>
+					<!-- <a href="#"><i class="fa fa-instagram"></i></a> -->
 
 				</div>
 			</div>
