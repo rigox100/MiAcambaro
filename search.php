@@ -496,9 +496,10 @@ $paginas = ceil($total / $articulosPagina);
 															</ul>
 														</div>
 														<h6><span class="closed-mun"><?php echo $item['municipio']; ?> </span> - <span class="closed-cat"><?php echo $item['nombre']; ?></span></h6>
-														<p>
-															<?php echo $item[11]; ?>
-														</p>
+														<!-- <p>
+															 //echo $item[11]; 
+															
+														</p> -->
 														<hr>
 														<h4>Información</h4>
 														<div>
