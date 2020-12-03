@@ -24,7 +24,6 @@
   <li class="list-group-item">CP: <?php echo $item['colonia'];?></li>
   <li class="list-group-item"><?php echo $item['municipio']." ".$item['estado'];?></li>
   <li class="list-group-item">Teléfono: <?php echo $item['telefono'];?></li>
-    <li class="list-group-item">Teléfono: <?php echo $item['telefono'];?></li>
     <li class="list-group-item">Whatsapp: <?php echo $item['whatsapp'];?></li>
     <li class="list-group-item">Facebook: <?php echo $item['facebook'];?></li>
     <li class="list-group-item">Youtube: <?php echo $item['youtube'];?></li>

@@ -254,7 +254,7 @@ $categoria = Categoria::recuperarTodos();
 
             <div class="form-group">
             <label for="instagram">Instagram <small>(Opcional)</small></label>
-            <input class="form-control" type="text" name="instagram" id="instagram" placeholder="Ingresa enlace de la cuenta de Instagram" value="<?php echo $anuncio->getFacebook(); ?>">
+            <input class="form-control" type="text" name="instagram" id="instagram" placeholder="Ingresa enlace de la cuenta de Instagram" value="<?php echo $anuncio->getInstagram(); ?>">
             </div>
 
             <div class="form-group">
