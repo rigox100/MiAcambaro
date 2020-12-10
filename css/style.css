@@ -622,7 +622,7 @@ p {
 }
 
 .featured-title-box p {
-    color: #000;
+    color: #2b2727;
     display: inline-block;
     margin: 0;
 }
@@ -639,7 +639,7 @@ p {
 }
 
 .featured-title-box span {
-    color: #000;
+    color: #616161;
     padding: 0 10px;
 }
 
@@ -1565,4 +1565,9 @@ footer {
     font-size: 16px;
     text-align: justify;
     padding: 18px;
+}
+
+.tele {
+    color: #216fdb !important;
+    font-weight: 450;
 }

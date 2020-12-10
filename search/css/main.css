@@ -2833,7 +2833,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .sidebar .owl-carousel .owl-item img {
-    width: auto !important;
+    width: 100% !important;
+    height: 201px;
 }
 
 .sidebar .owl-dots {
@@ -4303,6 +4304,11 @@ body.mobile-nav-active #mobile-nav-toggle {
     font-size: 13px;
 }
 
+.closed-mund {
+    color: #a60d0dd4;
+    font-size: 14px;
+}
+
 .closed-ca {
     color: #777777;
     font-size: 13px;
@@ -4349,9 +4355,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .model {
     font-family: "Poppins", sans-serif;
-    color: #858282;
+    color: #241616;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .closed-now2 {
@@ -4380,8 +4386,17 @@ body.mobile-nav-active #mobile-nav-toggle {
     margin-left: 20px;
 }
 
-.img-anuncio{
-    -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.75);
+.img-anuncio {
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.75);
+}
+
+.tele {
+    color: #216fdb !important;
+    font-weight: 450;
+}
+
+.gris {
+    color: #65676b !important;
 }

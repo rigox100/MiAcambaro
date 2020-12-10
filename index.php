@@ -90,10 +90,25 @@ session_start();
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Inicio</a>
                                     </li>
-                                    <li class="nav-item">
+                                    <!-- <li class="nav-item">
                                         <a class="nav-link" href="registro.php">Registra tu negocio</a>
-                                    </li> 
-                                    
+                                    </li>  -->
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Mi Municipio
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="#">Cultura</a>
+                                                <a class="dropdown-item" href="#">Tradiciones</a>
+                                                <a class="dropdown-item" href="#">Monumentos</a>
+                                                <a class="dropdown-item" href="#">Recorridos Turísticos</a>
+                                                <a class="dropdown-item" href="#">Gastronomía</a>
+                                                <a class="dropdown-item" href="#">Tradiciones</a>
+                                               
+                                        </div>
+                                    </li>
+                                                                    
                                     <li class="nav-item d-none d-md-block">
                                         <a class="nav-link" href="" data-toggle="modal" data-target="#ModalApp">Descarga la app</a>
                                     </li>
@@ -234,7 +249,7 @@ session_start();
 
                                     <a href="#">
                                         <li><span class="fa fa-whatsapp"></span>
-                                            <p><?php $tel= $item['telefono']; 
+                                            <p class="tele"><?php $tel= $item['telefono']; 
                                             
                                                         $posiUno = substr($tel, 0, 3);
                                                         $posiDos = substr($tel, 3, 3);
@@ -247,11 +262,11 @@ session_start();
                                         </li>
                                     </a>
 
-                                    <a href="#">
+                                    <!-- <a href="#">
                                         <li><span class="ti-world"></span>
-                                            <p><?php echo $item['sitio']; ?></p>
+                                            <p></p>
                                         </li>
-                                    </a>
+                                    </a> -->
                                     <li><span class="icon-clock"></span>
                                         <p><?php echo $item['entrada']; ?> - <?php echo $item['cierre']; ?></p>
                                     </li>

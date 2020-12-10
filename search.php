@@ -268,7 +268,10 @@ $paginas = ceil($total / $articulosPagina);
 												<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 													<div class="modal-content">
 														<div class="modal-header">
-															<h5 class="text-center modal-title" id="exampleModalCenterTitle" style="font-size: calc(0.5em + 1vw);"><?php echo $item['titulo']; ?></h5>
+															<h5 class="text-center modal-title" id="exampleModalCenterTitle" style="font-size: calc(0.5em + 1vw);"><?php echo $item['titulo']; ?>
+														
+														</h5>
+													
 															<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 																<span aria-hidden="true">&times;</span>
 															</button>
@@ -290,10 +293,10 @@ $paginas = ceil($total / $articulosPagina);
 																		<img src="admin/modules/posts/<?php echo $item['url_imagen']; ?>" alt="" class="img-fluid d-block m-auto img-anuncio" style="width: 60%; height:auto;">
 																	</div>
 																	<div>
-																		<br>
-																		<h4>General</h4>
+																		
+																		<h4 class="gris">General</h4>
 																		<hr>
-																		<div class="starts">
+																		<div class="starts mb-2">
 																			<ul class="list-unstyled list-inline rating mb-0">
 																				<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
 																				<li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
@@ -305,13 +308,13 @@ $paginas = ceil($total / $articulosPagina);
 																				</li>
 																			</ul>
 																		</div>
-																		<br>
+																	
 																		<div class="">
-																			<h6 class="fa fa-map-marker">&nbsp;<span class="model"><?php echo $item['calle']; ?>&nbsp;<?php echo $item['cp']; ?> &nbsp;<?php echo $item['municipio']; ?> - Guanajuato </span></h6>
+																			<h6 class="fa fa-map-marker">&nbsp;<span class="model"><?php echo $item['calle']; ?>,&nbsp;<?php echo $item['cp']; ?> &nbsp;<span class="closed-mund"><?php echo $item['municipio']; ?> </span></span></h6>
 																		</div>
-																		<br>
-																		<div class="">
-																			<h6>&#x260e; <?php
+																	
+																		<div class="mt-2">
+																			<h6>&#x260e; <span class="tele"><?php
 																			
 																			$tel = $item['telefono'];
 
@@ -321,11 +324,11 @@ $paginas = ceil($total / $articulosPagina);
 																			echo $posiUno . "-" . $posiDos . "-" . $posiTres;
 																			
 																			
-																			?></h6>
+																			?></span></h6>
 																		</div>
 
 																		<br>
-																		<h4>Horario</h4>
+																		<h4 class="gris">Horario</h4>
 																		<hr>
 
 																		<div class="closed-now2">ABIERTO AHORA</div><br>
@@ -333,7 +336,7 @@ $paginas = ceil($total / $articulosPagina);
 
 
 																		<br><br>
-																		<h4>Información de Contacto</h4>
+																		<h4 class="gris">Información de Contacto</h4>
 																		<hr>
 
 															
@@ -477,7 +480,7 @@ $paginas = ceil($total / $articulosPagina);
 											<div class="active-relatedjob-carusel">
 												<?php foreach ($anuncio as $item) : ?>
 
-													<div class="single-rated">
+													<div class="single-rated"> 
 														<a href="#">
 															<img src="./admin/modules/posts/<?php echo $item['url_imagen']; ?>" class="img-fluid" alt="#">
 															<h4><?php echo $item['titulo']; ?></h4>
