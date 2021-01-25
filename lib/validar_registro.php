@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cp = (isset($_POST['cp'])) ? $_POST['cp'] : null;
     $municipio = (isset($_POST['municipio'])) ? $_POST['municipio'] : null;
     $fecha_solicitud = date('Y-m-d');
-    $estatus_solicitud = "En Proceso";
+    $estatus_solicitud = "En proceso";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
     $solicitud = new Solicitud();
@@ -51,6 +51,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setFechaSolicitud($fecha_solicitud);
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
+
+    echo $solicitud->getNombreNegocio();
+    echo $solicitud->getUrlImagen();
+    echo $solicitud->getRFC();
+    echo $solicitud->getTel();
+    echo $solicitud->getWhatsapp();
+    echo $solicitud->getCalle();
+    echo $solicitud->getColonia();
+    echo $solicitud->getCP();
+    echo $solicitud->getMunicipio();
+    echo $solicitud->getFechaSolicitud();
+    echo $solicitud->getEstatusSolicitud();
+    echo $solicitud->getDescripcion();
+
   if ($solicitud->guardar()) {
 
     // Mail
