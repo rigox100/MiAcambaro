@@ -710,9 +710,32 @@ session_start();
         </div>
     </footer>
     <!--//END FOOTER -->
+<!--Modal Start-->
 
 
+<div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
 
+    <div class="modal-header">
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <img src="images/publicidad.jpg" class="img-fluid" style="height: 450px;">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar anuncio</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End Modal -->
 
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -724,6 +747,11 @@ session_start();
     <script src="./js/main.js"></script>
     <script src="js/superplaceholder.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+    $( document ).ready(function() {
+    $('#modalStart').modal('toggle')
+});
+    </script>
     <script>
         $(window).scroll(function() {
             // 100 = The point you would like to fade the nav in.
