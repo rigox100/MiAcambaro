@@ -1,4 +1,5 @@
 <?php
+header('Location: offline.php');
 include_once '../template/template1/header.php';
 require_once '../admin/class/Anuncio.php';
 

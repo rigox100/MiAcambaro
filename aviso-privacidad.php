@@ -1,4 +1,5 @@
 <?php
+header('Location: offline.php');
 session_start();
 ?>
 <!DOCTYPE html>

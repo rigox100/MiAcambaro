@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Location: offline.php');
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
