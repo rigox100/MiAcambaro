@@ -715,7 +715,7 @@ session_start();
 
 
 <div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
+  <div class="modal-dialog modal" role="document">
     <div class="modal-content">
 
     <div class="modal-header">
@@ -726,7 +726,7 @@ session_start();
       </div>
       
       <div class="modal-body">
-        <img src="images/publicidad.jpg" class="img-fluid" style="height: 450px;">
+        <img src="images/publicidad.jpg" class="img-fluid">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar anuncio</button>
