@@ -737,6 +737,8 @@ session_start();
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src='http://cdn.mejorcodigo.net/mejor-push/mejor-push.js'></script>
+  <script src='http://cdn.mejorcodigo.net/mejor-push/mejor-push-helper.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -749,6 +751,14 @@ session_start();
     $('#exampleModalCenter1').modal('toggle')
 });
     </script>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      initPush("db5f9a61-7285-405a-9c27-644938cc9d5b");
+    });
+  </script>
+
     <script>
         $(window).scroll(function() {
             // 100 = The point you would like to fade the nav in.
@@ -804,7 +814,13 @@ session_start();
 
 			});
     </script>
-
+<script src='http://cdn.mejorcodigo.net/mejor-push/mejor-push.js'></script>
+  <script src='http://cdn.mejorcodigo.net/mejor-push/mejor-push-helper.js'></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      initPush("db5f9a61-7285-405a-9c27-644938cc9d5b");
+    });
+  </script>
 
 </body>
 
