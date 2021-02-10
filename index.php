@@ -714,7 +714,7 @@ session_start();
 <!--Modal Start-->
 
 
-<!-- <div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal" role="document">
     <div class="modal-content">
 
@@ -734,7 +734,7 @@ session_start();
       </div>
     </div>
   </div>
-</div> -->
+</div> 
 
 <!-- End Modal -->
 
