@@ -711,32 +711,28 @@ session_start();
         </div>
     </footer>
     <!--//END FOOTER -->
-<!--Modal Start-->
 
 
-<div class="modal fade" id="modalStart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal" role="document">
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-
-    <div class="modal-header">
+      <div class="modal-header">
         
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
       <div class="modal-body">
-        <img src="images/publicidad.jpg" class="img-fluid">
+        <img src="images/publicidad_predial.jpg" style="width: 100%; height: auto;">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-dark" data-dismiss="modal">Cerrar anuncio</button>
-       
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        
       </div>
     </div>
   </div>
-</div> 
-
-<!-- End Modal -->
+</div>
 
     <!-- jQuery, Bootstrap JS. -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -750,7 +746,7 @@ session_start();
     <script src="js/script.js"></script>
     <script>
     $( document ).ready(function() {
-    $('#modalStart').modal('toggle')
+    $('#exampleModalCenter1').modal('toggle')
 });
     </script>
     <script>
