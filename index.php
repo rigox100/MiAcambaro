@@ -724,7 +724,7 @@ session_start();
         </button>
       </div>
       <div class="modal-body">
-        <img src="images/publicidad_predial.jpg" style="width: 100%; height: auto;">
+        <img src="images/publicidad_predial1.jpg" style="width: 100%; height: auto;">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -814,14 +814,6 @@ session_start();
 
 			});
     </script>
-<script src='http://cdn.mejorcodigo.net/mejor-push/mejor-push.js'></script>
-  <script src='http://cdn.mejorcodigo.net/mejor-push/mejor-push-helper.js'></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      initPush("db5f9a61-7285-405a-9c27-644938cc9d5b");
-    });
-  </script>
-
 </body>
 
 </html>
