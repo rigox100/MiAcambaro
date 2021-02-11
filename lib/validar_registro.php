@@ -38,6 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estatus_solicitud = "En proceso";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
+echo $email.$nombre_negocio.$url_imagen.$tel.$whatsapp;
+
+
     $solicitud = new Solicitud();
     $solicitud->setNombreNegocio($nombre_negocio);
     $solicitud->setUrlImagen($url_imagen);
