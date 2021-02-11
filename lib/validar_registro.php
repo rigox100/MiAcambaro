@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estatus_solicitud = "En proceso";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
-echo $rfc;
+
 
     $solicitud = new Solicitud();
     $solicitud->setNombreNegocio($nombre_negocio);
@@ -54,7 +54,7 @@ echo $rfc;
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
 
-    echo $solicitud->getRFC();
+    
 
    /*  echo $solicitud->getNombreNegocio();
     echo $solicitud->getUrlImagen();
