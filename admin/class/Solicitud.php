@@ -177,7 +177,7 @@ class Solicitud {
             $consulta->bindParam(':descripcion', $this->descripcion);
             $consulta->bindParam(':observaciones', $this->observaciones);
             $consulta->execute();
-            //var_dump($consulta);
+          
         } else /* Inserta */ {
             $consulta = $conexion->prepare('INSERT INTO solicitudes (nombre_negocio, url_imagen, rfc, tel, whatsapp, calle, colonia, cp, municipio, estatus_solicitud, fecha_solicitud, descripcion) VALUES (:nombre_negocio, :url_imagen, :rfc, :tel, :calle, :colonia, :cp, :municipio, :estatus_solicitud, :fecha_solicitud, :descripcion)');
             $consulta->bindParam(':nombre_negocio', $this->nombre_negocio);
@@ -192,11 +192,10 @@ class Solicitud {
             $consulta->bindParam(':estatus_solicitud', $this->estatus_solicitud);
             $consulta->bindParam(':fecha_solicitud', $this->fecha_solicitud);
             $consulta->bindParam(':descripcion', $this->descripcion);
-           
+           var_dump($consulta->execute());
             echo $this->nombre_negocio.$this->url_imagen.$this->rfc.$this->tel.$this->whatsapp.$this->calle.$this->colonia.$this->cp.$this->municipio.$this->estatus_solicitud.$this->fecha_solicitud.$this->descripcion;
 
             if($consulta->execute()){
-                $this->id = $conexion->lastInsertId();
                 return true;
             }else{
                 return false;
