@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud = new Solicitud();
     $solicitud->setNombreNegocio($nombre_negocio);
     $solicitud->setUrlImagen($url_imagen);
-    $solicitud->setRFC($rfc);
+    $solicitud->setRFC(NULL);
     $solicitud->setTel($tel);
     $solicitud->setWhatsapp($whatsapp);
     $solicitud->setCalle($calle);
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
 
-    echo $solicitud->getNombreNegocio();
+   /*  echo $solicitud->getNombreNegocio();
     echo $solicitud->getUrlImagen();
     echo $solicitud->getRFC();
     echo $solicitud->getTel();
@@ -65,7 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo $solicitud->getMunicipio();
     echo $solicitud->getFechaSolicitud();
     echo $solicitud->getEstatusSolicitud();
-    echo $solicitud->getDescripcion();
+    echo $solicitud->getDescripcion(); */
+    echo $solicitud->guardar();
 
   if ($solicitud->guardar()) {
 
