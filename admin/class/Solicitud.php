@@ -192,8 +192,8 @@ class Solicitud {
             $consulta->bindParam(':estatus_solicitud', $this->estatus_solicitud);
             $consulta->bindParam(':fecha_solicitud', $this->fecha_solicitud);
             $consulta->bindParam(':descripcion', $this->descripcion);
-            var_dump($consulta);
-            echo $this->nombre_negocio.$this->url_imagen.$this->rfc.$this->tel.$this->whatsapp;
+            /* var_dump($consulta);
+            echo $this->nombre_negocio.$this->url_imagen.$this->rfc.$this->tel.$this->whatsapp; */
 
             if($consulta->execute()){
                 $this->id = $conexion->lastInsertId();

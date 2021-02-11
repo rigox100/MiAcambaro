@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email= 'ventas@miacambaro.mx';
     $nombre_negocio = (isset($_POST['nombre_negocio'])) ? $_POST['nombre_negocio'] : null;
     $url_imagen = 'uploads/images/mi_negocio.jpg';
-    $rfc = (isset($_POST['rfc'])) ? $_POST['rfc'] : null;
+    $rfc = "RFC";
     $tel = (isset($_POST['tel'])) ? $_POST['tel'] : null;
     $whatsapp = (isset($_POST['whatsapp'])) ? $_POST['whatsapp'] : null;
     $calle = (isset($_POST['calle'])) ? $_POST['calle'] : null;
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estatus_solicitud = "En proceso";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
-
+echo $rfc;
 
     $solicitud = new Solicitud();
     $solicitud->setNombreNegocio($nombre_negocio);
