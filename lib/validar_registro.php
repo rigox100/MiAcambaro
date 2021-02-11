@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estatus_solicitud = "En proceso";
     $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : null;
 
-echo $email.$nombre_negocio.$url_imagen.$tel.$whatsapp;
 
 
     $solicitud = new Solicitud();
@@ -138,7 +137,7 @@ echo $email.$nombre_negocio.$url_imagen.$tel.$whatsapp;
   
   } else {
 
-    echo '<p class="aler alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';
+    echo '<p class="alert alert-warning">Ocurrió un error al procesar el registro, por favor vuelva a intentarlo</p>';
   }
 
   } else {
