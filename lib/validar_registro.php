@@ -54,6 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud->setEstatusSolicitud($estatus_solicitud);
     $solicitud->setDescripcion($descripcion);
 
+    echo $solicitud->getRFC();
+
    /*  echo $solicitud->getNombreNegocio();
     echo $solicitud->getUrlImagen();
     echo $solicitud->getRFC();
