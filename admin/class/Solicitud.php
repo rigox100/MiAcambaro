@@ -192,9 +192,7 @@ class Solicitud {
             $consulta->bindParam(':estatus_solicitud', $this->estatus_solicitud);
             $consulta->bindParam(':fecha_solicitud', $this->fecha_solicitud);
             $consulta->bindParam(':descripcion', $this->descripcion);
-           var_dump($consulta);
-            echo $this->nombre_negocio.$this->url_imagen.$this->rfc.$this->tel.$this->whatsapp.$this->calle.$this->colonia.$this->cp.$this->municipio.$this->estatus_solicitud.$this->fecha_solicitud.$this->descripcion;
-
+           
             if($consulta->execute()){
                 return true;
             }else{

@@ -159,7 +159,7 @@ session_start();
 
                                 <br>
 
-                                <a href="#">
+                                <a href="registro.php">
                                     <p style="font-size: 20px; color: #fff; text-shadow: black 0.1em 0.1em 0.2em; ">Registrate en | miacambaro.mx</p>
                                     
                                 </a>
