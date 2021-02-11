@@ -43,7 +43,7 @@
 
             
             <div class="form-group">
-            <input class="form-control" type="hidden" name="rfc" id="rfc"  placeholder="Ingresa el RFC de tu negocio" value="">
+            <input class="form-control" type="hidden" name="rfc" id="rfc" value="NULL">
             </div>
 
             <div class="form-group">

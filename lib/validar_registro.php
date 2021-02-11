@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $solicitud = new Solicitud();
     $solicitud->setNombreNegocio($nombre_negocio);
     $solicitud->setUrlImagen($url_imagen);
-    $solicitud->setRFC(NULL);
+    $solicitud->setRFC($rfc);
     $solicitud->setTel($tel);
     $solicitud->setWhatsapp($whatsapp);
     $solicitud->setCalle($calle);
@@ -66,8 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo $solicitud->getFechaSolicitud();
     echo $solicitud->getEstatusSolicitud();
     echo $solicitud->getDescripcion(); */
-    echo $solicitud->guardar();
-
+    
   if ($solicitud->guardar()) {
 
     // Mail
