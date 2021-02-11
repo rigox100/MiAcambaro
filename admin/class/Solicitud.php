@@ -121,7 +121,7 @@ class Solicitud {
     }
 
     public function setWhatsapp($whatsapp) {
-        $this->tel = $whatsapp;
+        $this->whatsapp = $whatsapp;
     }
 
     public function setCalle($calle) {
