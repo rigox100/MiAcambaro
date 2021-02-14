@@ -137,7 +137,7 @@ $categoria = Categoria::recuperarTodos();
 </table>
 
 <?php else: ?>
-            <p class="alert alert-info"> No se encontraron registros </p>
+            <p class="alert alert-info"> No se encontraron registros pendientes </p>
         <?php endif; ?>
           
             

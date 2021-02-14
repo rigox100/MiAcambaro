@@ -402,7 +402,7 @@ class Anuncio {
 
     public static function recuperarPorCorte($rango1, $rango2) {
         $conexion = new Conexion();
-        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE fecha_publicacion BETWEEN :rango1 AND :rango2 LIMIT 200');
+        $consulta = $conexion->prepare('SELECT *,DATE_FORMAT(fecha_publicacion, "%d-%m-%Y") FROM anuncios INNER JOIN categorias ON categorias.idCategoria = anuncios.idCategoria WHERE fecha_publicacion BETWEEN :rango1 AND :rango2');
         $consulta->bindParam(':rango1', $rango1);
         $consulta->bindParam(':rango2', $rango2);
         $consulta->execute();

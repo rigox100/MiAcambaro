@@ -326,16 +326,15 @@ $paginas = ceil($total / $articulosPagina);
 																			
 																			?></span></h6>
 																		</div>
-
+																		<div><p><?php echo $item[14] ?></p></div>
 																		<br>
 																		<h4 class="gris">Horario</h4>
 																		<hr>
 
 																		<div class="closed-now2">ABIERTO AHORA</div><br>
 																		<h6 class="fa fa-clock-o">&nbsp;<span class="model">&nbsp;<?php echo $item['entrada'] ?> - <?php echo $item['cierre'] ?></span></h6>
-																		<br>
-																		<h4 class="gris">Descripción</h4>
-																		<p><?php echo $item['descripcion'] ?></p>
+																		
+																		
 																		<br><br>
 																		<h4 class="gris">Información de Contacto</h4>
 																		<hr>
