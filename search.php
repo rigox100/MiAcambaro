@@ -326,7 +326,7 @@ $paginas = ceil($total / $articulosPagina);
 																			
 																			?></span></h6>
 																		</div>
-																		<div><p><?php echo $item[14] ?></p></div>
+																		<div><p><?php echo $item['calle'] ?></p></div>
 																		<br>
 																		<h4 class="gris">Horario</h4>
 																		<hr>
