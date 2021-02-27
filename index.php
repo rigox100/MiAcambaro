@@ -698,7 +698,7 @@ session_start();
                 <div class="col-md-12">
                     <div class="copyright">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright &copy; 2020. Todos los derechos reservados | miacambaro.mx</p>
+                        <p>Copyright &copy; 2020. Todos los derechos reservados |<a href="test.php"> miacambaro.mx </a></p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <ul>
                             <li><a href="https://www.facebook.com/miacambaro.app.7" target="_blank"><span class="ti-facebook"></span></a></li>
