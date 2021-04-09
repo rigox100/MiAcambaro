@@ -1,5 +1,5 @@
 <?php
-header('Location: offline.php');
+//header('Location: offline.php');
 session_start();
 
 if (isset($_POST['enviar'])) {
