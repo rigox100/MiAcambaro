@@ -1,5 +1,5 @@
 <?php
-//header('Location: offline.php');
+header('Location: offline.php');
   include_once '../admin/class/Anuncio.php';
   require_once '../admin/class/Categoria.php';
 
